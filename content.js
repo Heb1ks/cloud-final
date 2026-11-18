@@ -6,7 +6,7 @@ window.CLOUD_CONTENT = {
       "terms": "IaaS, PaaS, SaaS · модели размещения · AWS CAF",
       "number": 1,
       "course": "Foundations",
-      "html": "<p><strong>Cloud computing</strong>: получение IT-ресурсов по запросу через интернет с оплатой по использованию. Ресурсы можно создавать программно, без покупки физических серверов.</p>\n<table>\n<thead>\n<tr>\n<th>Модель</th>\n<th>Что получает клиент</th>\n<th>Что клиент обычно контролирует</th>\n<th>Пример для понимания</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>IaaS</td>\n<td>Инфраструктуру</td>\n<td>ОС, приложения, данные, настройки сети</td>\n<td>EC2</td>\n</tr>\n<tr>\n<td>PaaS</td>\n<td>Платформу для запуска приложения</td>\n<td>Свой код, данные, настройки приложения</td>\n<td>Elastic Beanstalk</td>\n</tr>\n<tr>\n<td>SaaS</td>\n<td>Готовое приложение</td>\n<td>Использование и доступные настройки</td>\n<td>Готовая почта/CRM</td>\n</tr>\n</tbody></table>\n<p><strong>Deployment models</strong>: cloud — размещение в облаке; on-premises/private cloud — собственная инфраструктура; hybrid — сочетание своей инфраструктуры и облака. IaaS/PaaS/SaaS отвечают на другой вопрос: какой уровень сервиса предоставляют.</p>\n<p>Шесть преимуществ из лекции:</p>\n<ol>\n<li>Trade capital expense for variable expense: заменить крупные предварительные вложения расходами по использованию.</li>\n<li>Benefit from massive economies of scale: масштаб AWS снижает удельные затраты.</li>\n<li>Stop guessing capacity: выделять ресурсы по потребности.</li>\n<li>Increase speed and agility: быстрее запускать изменения.</li>\n<li>Stop spending money running and maintaining data centers: меньше работы с физической инфраструктурой.</li>\n<li>Go global in minutes: быстро разворачивать ресурсы в разных регионах.</li>\n</ol>\n<p><strong>Scalability</strong> — возможность выдержать рост нагрузки добавлением мощности. <strong>Elasticity</strong> — подстраивать мощность под изменения нагрузки, включая уменьшение.</p>\n<p><strong>AWS CAF, Cloud Adoption Framework</strong>, помогает планировать переход в облако. Шесть perspectives: <strong>Business, People, Governance, Platform, Security, Operations</strong>. Business — бизнес-ценность; People — навыки и изменения в организации; Governance — управление и контроль; Platform — технологическая платформа; Security — безопасность; Operations — эксплуатация. Не путай их с шестью pillars Well-Architected.</p>\n",
+      "html": "<h3>Что проверить перед тестом</h3>\n<ul>\n<li><strong>От физической инфраструктуры к ресурсам по запросу.</strong> AWS обслуживает оборудование, а клиент выделяет нужную ёмкость. Это уменьшает начальные вложения и сокращает время запуска в новых регионах.</li>\n<li><strong>Pay as you go</strong> означает оплату по мере использования. <strong>Economies of scale</strong> возникают, когда AWS объединяет спрос многих клиентов и распределяет затраты на больший объём.</li>\n<li><strong>Модели и интерфейсы.</strong> IaaS, PaaS и SaaS описывают, чем управляет провайдер. Console, CLI и SDK — способы работать с сервисами. EC2 относится к вычислениям.</li>\n</ul>\n<h3>Конспект лекции</h3>\n<p><strong>Cloud computing</strong>: получение IT-ресурсов по запросу через интернет с оплатой по использованию. Ресурсы можно создавать программно, без покупки физических серверов.</p>\n<table>\n<thead>\n<tr>\n<th>Модель</th>\n<th>Что получает клиент</th>\n<th>Что клиент обычно контролирует</th>\n<th>Пример для понимания</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>IaaS</td>\n<td>Инфраструктуру</td>\n<td>ОС, приложения, данные, настройки сети</td>\n<td>EC2</td>\n</tr>\n<tr>\n<td>PaaS</td>\n<td>Платформу для запуска приложения</td>\n<td>Свой код, данные, настройки приложения</td>\n<td>Elastic Beanstalk</td>\n</tr>\n<tr>\n<td>SaaS</td>\n<td>Готовое приложение</td>\n<td>Использование и доступные настройки</td>\n<td>Готовая почта/CRM</td>\n</tr>\n</tbody></table>\n<p><strong>Deployment models</strong>: cloud — размещение в облаке; on-premises/private cloud — собственная инфраструктура; hybrid — сочетание своей инфраструктуры и облака. IaaS/PaaS/SaaS отвечают на другой вопрос: какой уровень сервиса предоставляют.</p>\n<p>Шесть преимуществ из лекции:</p>\n<ol>\n<li>Trade capital expense for variable expense: заменить крупные предварительные вложения расходами по использованию.</li>\n<li>Benefit from massive economies of scale: масштаб AWS снижает удельные затраты.</li>\n<li>Stop guessing capacity: выделять ресурсы по потребности.</li>\n<li>Increase speed and agility: быстрее запускать изменения.</li>\n<li>Stop spending money running and maintaining data centers: меньше работы с физической инфраструктурой.</li>\n<li>Go global in minutes: быстро разворачивать ресурсы в разных регионах.</li>\n</ol>\n<p><strong>Scalability</strong> — возможность выдержать рост нагрузки добавлением мощности. <strong>Elasticity</strong> — подстраивать мощность под изменения нагрузки, включая уменьшение.</p>\n<p><strong>AWS CAF, Cloud Adoption Framework</strong>, помогает планировать переход в облако. Шесть perspectives: <strong>Business, People, Governance, Platform, Security, Operations</strong>. Business — бизнес-ценность; People — навыки и изменения в организации; Governance — управление и контроль; Platform — технологическая платформа; Security — безопасность; Operations — эксплуатация. Не путай их с шестью pillars Well-Architected.</p>\n",
       "academy": null
     },
     {
@@ -15,7 +15,7 @@ window.CLOUD_CONTENT = {
       "terms": "Pricing Calculator · Cost Explorer · AWS Budgets · TCO",
       "number": 2,
       "course": "Foundations",
-      "html": "<p>Основные составляющие оплаты в лекции: <strong>compute, storage, outbound data transfer</strong>. Входящий трафик обычно бесплатен, но стоимость передачи зависит от сервиса, маршрута и зон/регионов. Не превращай правило «обычно» в утверждение «любой трафик внутри региона бесплатен».</p>\n<p><strong>CapEx</strong> — предварительные капитальные расходы, например покупка серверов. <strong>OpEx</strong> — операционные расходы. <strong>TCO, Total Cost of Ownership</strong> — совокупные прямые и косвенные расходы: серверы, storage, сеть, лицензии, электричество, охлаждение, помещения, обслуживание и работа персонала.</p>\n<table>\n<thead>\n<tr>\n<th>Инструмент</th>\n<th>На какой вопрос отвечает</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>AWS Pricing Calculator</td>\n<td>Сколько примерно будет стоить спроектированная система?</td>\n</tr>\n<tr>\n<td>AWS Bills / Billing dashboard</td>\n<td>Что начислили и как выглядит текущий счёт?</td>\n</tr>\n<tr>\n<td>AWS Cost Explorer</td>\n<td>Куда ушли расходы, как они меняются, каков прогноз?</td>\n</tr>\n<tr>\n<td>AWS Budgets</td>\n<td>Когда фактические или прогнозируемые расходы/использование пересекут заданный порог?</td>\n</tr>\n<tr>\n<td>Cost and Usage Report</td>\n<td>Где получить подробные данные о расходах и использовании?</td>\n</tr>\n<tr>\n<td>AWS Organizations</td>\n<td>Как управлять несколькими аккаунтами и объединить billing?</td>\n</tr>\n</tbody></table>\n<p><strong>Consolidated billing</strong> объединяет оплату аккаунтов, сохраняя их отдельными аккаунтами. <strong>OU</strong> — organizational unit, группа аккаунтов. <strong>SCP, service control policy</strong>, ограничивает максимально допустимые разрешения в организации. Сам по себе SCP не выдаёт пользователю разрешение на операцию.</p>\n<p>В лекции приведены <strong>Basic, Developer, Business, Enterprise Support</strong>. Для теста по этим слайдам выучи соответствия: Basic — базовые ресурсы и помощь по аккаунту/billing; Developer — разработка; Business — production; Enterprise — business/mission-critical. <strong>TAM, Technical Account Manager</strong>, связан с Enterprise в учебной модели. Это перечень из лекции, а не проверенный актуальный каталог коммерческих тарифов.</p>\n<p>IAM и Elastic Beanstalk не имеют отдельной платы за сам сервис в модели лекции, но созданные ими или используемые вместе ресурсы могут стоить денег. «No additional charge» не означает «вся архитектура бесплатна». Не заучивай старые суммы, сроки Free Tier и проценты из case study как универсальные гарантии.</p>\n",
+      "html": "<h3>Что проверить перед тестом</h3>\n<ul>\n<li><strong>Сначала оцени, потом отслеживай.</strong> Pricing Calculator оценивает будущую архитектуру. Cost Explorer показывает уже возникшие расходы, например стоимость EC2 три месяца назад. Budgets отслеживает заданные пороги.</li>\n<li><strong>Резервирование и счета.</strong> AURI, PURI и NURI означают All, Partial и No Upfront. Даже при No Upfront действует обязательство на срок. Хранилища часто тарифицируются по объёму за период. Если у управляющего сервиса нет отдельной платы, его ресурсы всё равно могут стоить денег.</li>\n<li><strong>Управление несколькими аккаунтами.</strong> OUs группируют аккаунты, SCP задают границы доступных разрешений, а API Organizations автоматизирует работу с аккаунтами.</li>\n<li><strong>Версия курса.</strong> Basic, Developer, Business и Enterprise — список из лекции. Free Tier имеет ограничения по сроку, кредитам или объёму. Условия проверяй в документации. <a href=\"https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html\">AWS Support</a> · <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-free-tier-usage.html\">AWS Free Tier</a></li>\n</ul>\n<h3>Конспект лекции</h3>\n<p>Основные составляющие оплаты в лекции: <strong>compute, storage, outbound data transfer</strong>. Входящий трафик обычно бесплатен, но стоимость передачи зависит от сервиса, маршрута и зон/регионов. Не превращай правило «обычно» в утверждение «любой трафик внутри региона бесплатен».</p>\n<p><strong>CapEx</strong> — предварительные капитальные расходы, например покупка серверов. <strong>OpEx</strong> — операционные расходы. <strong>TCO, Total Cost of Ownership</strong> — совокупные прямые и косвенные расходы: серверы, storage, сеть, лицензии, электричество, охлаждение, помещения, обслуживание и работа персонала.</p>\n<table>\n<thead>\n<tr>\n<th>Инструмент</th>\n<th>На какой вопрос отвечает</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>AWS Pricing Calculator</td>\n<td>Сколько примерно будет стоить спроектированная система?</td>\n</tr>\n<tr>\n<td>AWS Bills / Billing dashboard</td>\n<td>Что начислили и как выглядит текущий счёт?</td>\n</tr>\n<tr>\n<td>AWS Cost Explorer</td>\n<td>Куда ушли расходы, как они меняются, каков прогноз?</td>\n</tr>\n<tr>\n<td>AWS Budgets</td>\n<td>Когда фактические или прогнозируемые расходы/использование пересекут заданный порог?</td>\n</tr>\n<tr>\n<td>Cost and Usage Report</td>\n<td>Где получить подробные данные о расходах и использовании?</td>\n</tr>\n<tr>\n<td>AWS Organizations</td>\n<td>Как управлять несколькими аккаунтами и объединить billing?</td>\n</tr>\n</tbody></table>\n<p><strong>Consolidated billing</strong> объединяет оплату аккаунтов, сохраняя их отдельными аккаунтами. <strong>OU</strong> — organizational unit, группа аккаунтов. <strong>SCP, service control policy</strong>, ограничивает максимально допустимые разрешения в организации. Сам по себе SCP не выдаёт пользователю разрешение на операцию.</p>\n<p>В лекции приведены <strong>Basic, Developer, Business, Enterprise Support</strong>. Для теста по этим слайдам выучи соответствия: Basic — базовые ресурсы и помощь по аккаунту/billing; Developer — разработка; Business — production; Enterprise — business/mission-critical. <strong>TAM, Technical Account Manager</strong>, связан с Enterprise в учебной модели. Это перечень из лекции, а не проверенный актуальный каталог коммерческих тарифов.</p>\n<p>IAM и Elastic Beanstalk не имеют отдельной платы за сам сервис в модели лекции, но созданные ими или используемые вместе ресурсы могут стоить денег. «No additional charge» не означает «вся архитектура бесплатна». Не заучивай старые суммы, сроки Free Tier и проценты из case study как универсальные гарантии.</p>\n",
       "academy": null
     },
     {
@@ -24,7 +24,7 @@ window.CLOUD_CONTENT = {
       "terms": "Regions · Availability Zones · edge locations",
       "number": 3,
       "course": "Foundations",
-      "html": "<table>\n<thead>\n<tr>\n<th>Термин</th>\n<th>Смысл</th>\n<th>Экзаменационная подсказка</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Region</td>\n<td>Географическая область с несколькими AZ</td>\n<td>Выбор по требованиям к данным, latency, сервисам и цене</td>\n</tr>\n<tr>\n<td>Availability Zone</td>\n<td>Изолированная инфраструктура из одного или нескольких дата-центров внутри Region</td>\n<td>Размещение в нескольких AZ повышает устойчивость</td>\n</tr>\n<tr>\n<td>Data center</td>\n<td>Физический объект с оборудованием</td>\n<td>AZ не обязана равняться одному дата-центру</td>\n</tr>\n<tr>\n<td>Edge location</td>\n<td>Точка присутствия ближе к пользователям</td>\n<td>CloudFront, доставка с низкой latency</td>\n</tr>\n</tbody></table>\n<p><strong>VPC</strong> относится к одному Region и может охватывать несколько AZ. <strong>Subnet</strong> относится к одной AZ. <strong>IAM и Route 53</strong> рассматриваются в курсе как глобальные сервисы, <strong>EC2 и Lambda</strong> — региональные.</p>\n<p>Репликация между регионами требует выбора и настройки подходящего механизма. Создание ресурса в одном регионе само по себе не гарантирует его копию в другом.</p>\n",
+      "html": "<h3>Что проверить перед тестом</h3>\n<ul>\n<li><strong>Region → AZ → дата-центры.</strong> Region включает несколько AZ. Каждая зона содержит один или несколько своих дата-центров. Быстрые приватные каналы связывают зоны внутри региона.</li>\n<li><strong>Задержка и устойчивость.</strong> Близкий Region обычно снижает задержку до приложения. Edge locations позволяют CloudFront доставлять контент ещё ближе к пользователям. Размещение в нескольких AZ уменьшает зависимость от одной зоны.</li>\n<li><strong>Резервирование и ёмкость.</strong> Fault tolerance поддерживает работу при отказе части компонентов. Elasticity подстраивает ёмкость под рост и спад нагрузки.</li>\n</ul>\n<h3>Конспект лекции</h3>\n<table>\n<thead>\n<tr>\n<th>Термин</th>\n<th>Смысл</th>\n<th>Экзаменационная подсказка</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Region</td>\n<td>Географическая область с несколькими AZ</td>\n<td>Выбор по требованиям к данным, latency, сервисам и цене</td>\n</tr>\n<tr>\n<td>Availability Zone</td>\n<td>Изолированная инфраструктура из одного или нескольких дата-центров внутри Region</td>\n<td>Размещение в нескольких AZ повышает устойчивость</td>\n</tr>\n<tr>\n<td>Data center</td>\n<td>Физический объект с оборудованием</td>\n<td>AZ не обязана равняться одному дата-центру</td>\n</tr>\n<tr>\n<td>Edge location</td>\n<td>Точка присутствия ближе к пользователям</td>\n<td>CloudFront, доставка с низкой latency</td>\n</tr>\n</tbody></table>\n<p><strong>VPC</strong> относится к одному Region и может охватывать несколько AZ. <strong>Subnet</strong> относится к одной AZ. <strong>IAM и Route 53</strong> рассматриваются в курсе как глобальные сервисы, <strong>EC2 и Lambda</strong> — региональные.</p>\n<p>Репликация между регионами требует выбора и настройки подходящего механизма. Создание ресурса в одном регионе само по себе не гарантирует его копию в другом.</p>\n",
       "academy": null
     },
     {
@@ -33,7 +33,7 @@ window.CLOUD_CONTENT = {
       "terms": "Shared responsibility · IAM · CloudTrail · Config",
       "number": 4,
       "course": "Foundations",
-      "html": "<p><strong>AWS отвечает за security OF the cloud</strong>: физические здания, оборудование, инфраструктуру сети и виртуализацию. <strong>Клиент отвечает за security IN the cloud</strong>: данные, разрешения, приложения и доступные ему настройки.</p>\n<p>В EC2 клиент обновляет guest OS и свои приложения. В managed services AWS берёт на себя больше обслуживания платформы. При этом клиент по-прежнему выбирает, кто имеет доступ к его данным. Нельзя отвечать «AWS делает всю безопасность», увидев слово managed.</p>\n<table>\n<thead>\n<tr>\n<th>Понятие</th>\n<th>Что означает</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Principal</td>\n<td>Сущность, которая делает запрос: например пользователь или role session</td>\n</tr>\n<tr>\n<td>Authentication</td>\n<td>Кто ты? Проверка личности/credentials</td>\n</tr>\n<tr>\n<td>Authorization</td>\n<td>Что тебе разрешено делать? Проверка permissions</td>\n</tr>\n<tr>\n<td>IAM user</td>\n<td>Identity в аккаунте для пользователя или workload в традиционной модели IAM</td>\n</tr>\n<tr>\n<td>IAM group</td>\n<td>Набор пользователей для совместного назначения permissions</td>\n</tr>\n<tr>\n<td>IAM role</td>\n<td>Роль, которую принимает доверенная сущность, получая временные credentials</td>\n</tr>\n<tr>\n<td>IAM policy</td>\n<td>JSON-документ с правилами разрешения или запрета</td>\n</tr>\n</tbody></table>\n<p>Группы содержат IAM users. Пользователь может состоять в нескольких группах. Роль не является обычным членом IAM group. Роль может использовать приложение, AWS service или человек, которому доверено её принимать.</p>\n<p><strong>Console credentials</strong>: имя пользователя и пароль, возможно MFA. <strong>Programmatic credentials</strong>: access key ID и secret access key. У временных credentials также есть <strong>session token</strong>. Для приложения на EC2 предпочтительна IAM role с необходимыми permissions: SDK может получить временные credentials, без ключей в исходном коде или AMI.</p>\n<p><strong>Least privilege</strong>: разрешить только нужные actions на нужных resources. <strong>MFA</strong> добавляет фактор проверки личности, но сама по себе не выдаёт дополнительные permissions.</p>\n<h3>Защита аккаунта и данных</h3>\n<p><strong>Защита аккаунта</strong>: защитить root с MFA, не использовать root для повседневной работы, выдавать минимальные права, применять временные credentials, вести аудит. Credentials profiles позволяют выбирать конфигурацию, например <code>boto3.Session(profile_name=&#39;prod&#39;)</code>. Сам credentials file не превращает постоянный ключ во временный.</p>\n<table>\n<thead>\n<tr>\n<th>Сервис</th>\n<th>Запомнить</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>AWS CloudTrail</td>\n<td>Аудит: кто вызвал API, какую операцию и когда</td>\n</tr>\n<tr>\n<td>AWS Config</td>\n<td>Конфигурации ресурсов и оценка соответствия правилам</td>\n</tr>\n<tr>\n<td>AWS Artifact</td>\n<td>Отчёты и документы AWS по compliance</td>\n</tr>\n<tr>\n<td>AWS KMS</td>\n<td>Управление ключами шифрования</td>\n</tr>\n<tr>\n<td>AWS Shield</td>\n<td>Защита от DDoS</td>\n</tr>\n<tr>\n<td>AWS WAF</td>\n<td>Правила для HTTP(S), например защита от SQL injection и XSS</td>\n</tr>\n</tbody></table>\n<p><strong>Encryption in transit</strong>: TLS/HTTPS защищает данные при передаче. <strong>Encryption at rest</strong>: шифрование сохранённых данных. Permissions и encryption решают разные задачи: зашифрованный объект всё равно требует правильно настроенного доступа.</p>\n",
+      "html": "<h3>Что проверить перед тестом</h3>\n<ul>\n<li><strong>Security of the cloud</strong> — физические площадки, оборудование и глобальная инфраструктура AWS. <strong>Security in the cloud</strong> — настройки клиента, например security groups, IAM и защита данных.</li>\n<li><strong>Доступ и защита входа.</strong> IAM user может пользоваться консолью или программными интерфейсами. Выдавай только необходимые права, используй MFA и отключай неиспользуемые credentials. Root access keys для обычной работы не нужны.</li>\n<li><strong>AWS Config и KMS.</strong> Config фиксирует и оценивает конфигурации ресурсов. KMS управляет ключами шифрования. AWS Organizations централизует управление аккаунтами.</li>\n<li><strong>Изменение Support plan.</strong> В вопросе курса это пример задачи уровня аккаунта. Сейчас её может выполнить root или пользователь с подходящими разрешениями. <a href=\"https://docs.aws.amazon.com/awssupport/latest/user/changing-support-plans.html\">Документация AWS Support</a></li>\n</ul>\n<h3>Конспект лекции</h3>\n<p><strong>AWS отвечает за security OF the cloud</strong>: физические здания, оборудование, инфраструктуру сети и виртуализацию. <strong>Клиент отвечает за security IN the cloud</strong>: данные, разрешения, приложения и доступные ему настройки.</p>\n<p>В EC2 клиент обновляет guest OS и свои приложения. В managed services AWS берёт на себя больше обслуживания платформы. При этом клиент по-прежнему выбирает, кто имеет доступ к его данным. Нельзя отвечать «AWS делает всю безопасность», увидев слово managed.</p>\n<table>\n<thead>\n<tr>\n<th>Понятие</th>\n<th>Что означает</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Principal</td>\n<td>Сущность, которая делает запрос: например пользователь или role session</td>\n</tr>\n<tr>\n<td>Authentication</td>\n<td>Кто ты? Проверка личности/credentials</td>\n</tr>\n<tr>\n<td>Authorization</td>\n<td>Что тебе разрешено делать? Проверка permissions</td>\n</tr>\n<tr>\n<td>IAM user</td>\n<td>Identity в аккаунте для пользователя или workload в традиционной модели IAM</td>\n</tr>\n<tr>\n<td>IAM group</td>\n<td>Набор пользователей для совместного назначения permissions</td>\n</tr>\n<tr>\n<td>IAM role</td>\n<td>Роль, которую принимает доверенная сущность, получая временные credentials</td>\n</tr>\n<tr>\n<td>IAM policy</td>\n<td>JSON-документ с правилами разрешения или запрета</td>\n</tr>\n</tbody></table>\n<p>Группы содержат IAM users. Пользователь может состоять в нескольких группах. Роль не является обычным членом IAM group. Роль может использовать приложение, AWS service или человек, которому доверено её принимать.</p>\n<p><strong>Console credentials</strong>: имя пользователя и пароль, возможно MFA. <strong>Programmatic credentials</strong>: access key ID и secret access key. У временных credentials также есть <strong>session token</strong>. Для приложения на EC2 предпочтительна IAM role с необходимыми permissions: SDK может получить временные credentials, без ключей в исходном коде или AMI.</p>\n<p><strong>Least privilege</strong>: разрешить только нужные actions на нужных resources. <strong>MFA</strong> добавляет фактор проверки личности, но сама по себе не выдаёт дополнительные permissions.</p>\n<h3>Защита аккаунта и данных</h3>\n<p><strong>Защита аккаунта</strong>: защитить root с MFA, не использовать root для повседневной работы, выдавать минимальные права, применять временные credentials, вести аудит. Credentials profiles позволяют выбирать конфигурацию, например <code>boto3.Session(profile_name=&#39;prod&#39;)</code>. Сам credentials file не превращает постоянный ключ во временный.</p>\n<table>\n<thead>\n<tr>\n<th>Сервис</th>\n<th>Запомнить</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>AWS CloudTrail</td>\n<td>Аудит: кто вызвал API, какую операцию и когда</td>\n</tr>\n<tr>\n<td>AWS Config</td>\n<td>Конфигурации ресурсов и оценка соответствия правилам</td>\n</tr>\n<tr>\n<td>AWS Artifact</td>\n<td>Отчёты и документы AWS по compliance</td>\n</tr>\n<tr>\n<td>AWS KMS</td>\n<td>Управление ключами шифрования</td>\n</tr>\n<tr>\n<td>AWS Shield</td>\n<td>Защита от DDoS</td>\n</tr>\n<tr>\n<td>AWS WAF</td>\n<td>Правила для HTTP(S), например защита от SQL injection и XSS</td>\n</tr>\n</tbody></table>\n<p><strong>Encryption in transit</strong>: TLS/HTTPS защищает данные при передаче. <strong>Encryption at rest</strong>: шифрование сохранённых данных. Permissions и encryption решают разные задачи: зашифрованный объект всё равно требует правильно настроенного доступа.</p>\n",
       "academy": null
     },
     {
@@ -42,7 +42,7 @@ window.CLOUD_CONTENT = {
       "terms": "VPC · subnet · NAT · Security Groups · CloudFront",
       "number": 5,
       "course": "Foundations",
-      "html": "<p><strong>VPC</strong> — логически изолированная сеть. <strong>CIDR</strong> задаёт диапазон адресов. IPv4 имеет 32 бита, IPv6 — 128. Для IPv4 количество адресов в <code>/n</code> равно <code>2^(32-n)</code>.</p>\n<p>В обычной AWS IPv4 subnet резервируются пять адресов. Поэтому <code>/24</code>: 256 всего, <strong>251 доступен</strong>; <code>/28</code>: 16 всего, <strong>11 доступны</strong>. Чем больше число после <code>/</code>, тем меньше диапазон. <code>0.0.0.0/0</code> — любой IPv4 destination/source, <code>/32</code> — один IPv4 адрес.</p>\n<p><strong>Public subnet</strong> имеет маршрут к internet gateway. Для прямого IPv4 доступа EC2 в интернет нужны также public IPv4/Elastic IP и разрешающие правила безопасности. Название subnet или один лишь публичный IP без маршрута не решают задачу.</p>\n<table>\n<thead>\n<tr>\n<th>Компонент</th>\n<th>Назначение</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Route table</td>\n<td>Направляет трафик по destination и target</td>\n</tr>\n<tr>\n<td>Local route</td>\n<td>Маршрутизация внутри VPC</td>\n</tr>\n<tr>\n<td>Internet gateway, IGW</td>\n<td>Связь VPC с интернетом при подходящей адресации/маршрутах</td>\n</tr>\n<tr>\n<td>Public NAT gateway</td>\n<td>Исходящий IPv4 доступ private subnet в интернет, без произвольного входящего подключения из интернета</td>\n</tr>\n<tr>\n<td>VPC endpoint</td>\n<td>Доступ к поддерживаемому AWS service через частную связность</td>\n</tr>\n<tr>\n<td>Gateway endpoint</td>\n<td>В рамках курса: S3 и DynamoDB</td>\n</tr>\n<tr>\n<td>Interface endpoint</td>\n<td>ENI с частными IP, использует AWS PrivateLink</td>\n</tr>\n<tr>\n<td>VPC peering</td>\n<td>Прямое соединение двух VPC, без транзитивности</td>\n</tr>\n<tr>\n<td>Transit Gateway</td>\n<td>Центральный узел связи нескольких сетей</td>\n</tr>\n<tr>\n<td>Site-to-Site VPN</td>\n<td>Зашифрованный туннель между сетями через интернет</td>\n</tr>\n<tr>\n<td>Direct Connect</td>\n<td>Выделенное соединение с AWS</td>\n</tr>\n<tr>\n<td>ENI</td>\n<td>Виртуальный сетевой интерфейс</td>\n</tr>\n</tbody></table>\n<p>Типовой путь исходящего трафика: <strong>private EC2 → private route table → public NAT gateway в public subnet → IGW → internet</strong>. Ответный трафик проходит обратно. Для S3/DynamoDB можно использовать подходящий gateway endpoint вместо пути через NAT.</p>\n<h3>Security group и NACL</h3>\n<table>\n<thead>\n<tr>\n<th>Свойство</th>\n<th>Security group</th>\n<th>Network ACL</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Уровень в курсе</td>\n<td>Instance, точнее сетевой интерфейс</td>\n<td>Subnet</td>\n</tr>\n<tr>\n<td>Состояние</td>\n<td>Stateful</td>\n<td>Stateless</td>\n</tr>\n<tr>\n<td>Правила</td>\n<td>Только Allow</td>\n<td>Allow и Deny</td>\n</tr>\n<tr>\n<td>Порядок</td>\n<td>Проверяется набор применимых allow rules</td>\n<td>По возрастанию номера, первое совпадение решает</td>\n</tr>\n<tr>\n<td>Ответ на разрешённый запрос</td>\n<td>Автоматически разрешён с точки зрения SG</td>\n<td>Нужны подходящие правила обратного направления</td>\n</tr>\n</tbody></table>\n<p>У новой custom SG нет разрешающих inbound rules. Default SG имеет особое inbound правило для трафика от интерфейсов с той же SG. В F5 слайд 34 текст «default denies all inbound» не учитывает это правило, которое видно в таблице самого слайда. См. <a href=\"https://docs.aws.amazon.com/vpc/latest/userguide/default-security-group.html\">AWS default security groups</a>. Default NACL разрешает трафик; новая custom NACL запрещает его, пока не добавлены allow rules.</p>\n<p><strong>Route 53</strong>: DNS, перевод имён в адреса, health checks и маршрутизация. Simple — простой ответ; weighted — доли по весам; latency — по задержке; geolocation — по местоположению пользователя; geoproximity — по географической близости ресурсов с настройкой bias; failover — primary/secondary; multivalue answer — несколько здоровых записей.</p>\n<p><strong>CloudFront</strong>: CDN, доставка и кэширование контента ближе к пользователю через edge locations. <strong>Origin</strong> — источник, например S3 или HTTP server. Route 53 отвечает, куда обратиться, CloudFront помогает доставить ответ с низкой latency.</p>\n<p>OSI для базового повторения: L3 — IP и routing; L4 — TCP/UDP; L7 — HTTP/HTTPS. Удобные порты: SSH 22, HTTP 80, HTTPS 443, RDP 3389.</p>\n",
+      "html": "<h3>Что проверить перед тестом</h3>\n<ul>\n<li><strong>IPv4 CIDR.</strong> Самый большой одиночный блок VPC — <code>/16</code>, минимальная подсеть — <code>/28</code>. Для <code>/24</code> доступно 251 из 256 адресов, поскольку AWS резервирует пять.</li>\n<li><strong>Маршруты.</strong> При создании VPC появляется main route table. Public subnet имеет маршрут к internet gateway. Для исходящего IPv4-доступа из private subnet можно направить маршрут через public NAT gateway.</li>\n<li><strong>Где действует фильтр.</strong> Network ACL применяется к подсети и проверяет вход и выход отдельно. Security group действует на интерфейсе и отслеживает состояние соединений. CloudFront доставляет контент через edge locations.</li>\n</ul>\n<h3>Конспект лекции</h3>\n<p><strong>VPC</strong> — логически изолированная сеть. <strong>CIDR</strong> задаёт диапазон адресов. IPv4 имеет 32 бита, IPv6 — 128. Для IPv4 количество адресов в <code>/n</code> равно <code>2^(32-n)</code>.</p>\n<p>В обычной AWS IPv4 subnet резервируются пять адресов. Поэтому <code>/24</code>: 256 всего, <strong>251 доступен</strong>; <code>/28</code>: 16 всего, <strong>11 доступны</strong>. Чем больше число после <code>/</code>, тем меньше диапазон. <code>0.0.0.0/0</code> — любой IPv4 destination/source, <code>/32</code> — один IPv4 адрес.</p>\n<p><strong>Public subnet</strong> имеет маршрут к internet gateway. Для прямого IPv4 доступа EC2 в интернет нужны также public IPv4/Elastic IP и разрешающие правила безопасности. Название subnet или один лишь публичный IP без маршрута не решают задачу.</p>\n<table>\n<thead>\n<tr>\n<th>Компонент</th>\n<th>Назначение</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Route table</td>\n<td>Направляет трафик по destination и target</td>\n</tr>\n<tr>\n<td>Local route</td>\n<td>Маршрутизация внутри VPC</td>\n</tr>\n<tr>\n<td>Internet gateway, IGW</td>\n<td>Связь VPC с интернетом при подходящей адресации/маршрутах</td>\n</tr>\n<tr>\n<td>Public NAT gateway</td>\n<td>Исходящий IPv4 доступ private subnet в интернет, без произвольного входящего подключения из интернета</td>\n</tr>\n<tr>\n<td>VPC endpoint</td>\n<td>Доступ к поддерживаемому AWS service через частную связность</td>\n</tr>\n<tr>\n<td>Gateway endpoint</td>\n<td>В рамках курса: S3 и DynamoDB</td>\n</tr>\n<tr>\n<td>Interface endpoint</td>\n<td>ENI с частными IP, использует AWS PrivateLink</td>\n</tr>\n<tr>\n<td>VPC peering</td>\n<td>Прямое соединение двух VPC, без транзитивности</td>\n</tr>\n<tr>\n<td>Transit Gateway</td>\n<td>Центральный узел связи нескольких сетей</td>\n</tr>\n<tr>\n<td>Site-to-Site VPN</td>\n<td>Зашифрованный туннель между сетями через интернет</td>\n</tr>\n<tr>\n<td>Direct Connect</td>\n<td>Выделенное соединение с AWS</td>\n</tr>\n<tr>\n<td>ENI</td>\n<td>Виртуальный сетевой интерфейс</td>\n</tr>\n</tbody></table>\n<p>Типовой путь исходящего трафика: <strong>private EC2 → private route table → public NAT gateway в public subnet → IGW → internet</strong>. Ответный трафик проходит обратно. Для S3/DynamoDB можно использовать подходящий gateway endpoint вместо пути через NAT.</p>\n<h3>Security group и NACL</h3>\n<table>\n<thead>\n<tr>\n<th>Свойство</th>\n<th>Security group</th>\n<th>Network ACL</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Уровень в курсе</td>\n<td>Instance, точнее сетевой интерфейс</td>\n<td>Subnet</td>\n</tr>\n<tr>\n<td>Состояние</td>\n<td>Stateful</td>\n<td>Stateless</td>\n</tr>\n<tr>\n<td>Правила</td>\n<td>Только Allow</td>\n<td>Allow и Deny</td>\n</tr>\n<tr>\n<td>Порядок</td>\n<td>Проверяется набор применимых allow rules</td>\n<td>По возрастанию номера, первое совпадение решает</td>\n</tr>\n<tr>\n<td>Ответ на разрешённый запрос</td>\n<td>Автоматически разрешён с точки зрения SG</td>\n<td>Нужны подходящие правила обратного направления</td>\n</tr>\n</tbody></table>\n<p>У новой custom SG нет разрешающих inbound rules. Default SG имеет особое inbound правило для трафика от интерфейсов с той же SG. В F5 слайд 34 текст «default denies all inbound» не учитывает это правило, которое видно в таблице самого слайда. См. <a href=\"https://docs.aws.amazon.com/vpc/latest/userguide/default-security-group.html\">AWS default security groups</a>. Default NACL разрешает трафик; новая custom NACL запрещает его, пока не добавлены allow rules.</p>\n<p><strong>Route 53</strong>: DNS, перевод имён в адреса, health checks и маршрутизация. Simple — простой ответ; weighted — доли по весам; latency — по задержке; geolocation — по местоположению пользователя; geoproximity — по географической близости ресурсов с настройкой bias; failover — primary/secondary; multivalue answer — несколько здоровых записей.</p>\n<p><strong>CloudFront</strong>: CDN, доставка и кэширование контента ближе к пользователю через edge locations. <strong>Origin</strong> — источник, например S3 или HTTP server. Route 53 отвечает, куда обратиться, CloudFront помогает доставить ответ с низкой latency.</p>\n<p>OSI для базового повторения: L3 — IP и routing; L4 — TCP/UDP; L7 — HTTP/HTTPS. Удобные порты: SSH 22, HTTP 80, HTTPS 443, RDP 3389.</p>\n",
       "academy": null
     },
     {
@@ -51,7 +51,7 @@ window.CLOUD_CONTENT = {
       "terms": "EC2 · цены · контейнеры · Lambda · Elastic Beanstalk",
       "number": 6,
       "course": "Foundations",
-      "html": "<p><strong>EC2</strong> — виртуальные серверы. <strong>AMI</strong> — образ/шаблон для запуска instance. <strong>Instance type</strong> определяет сочетание CPU, RAM, storage и network. <strong>User data</strong> обычно используется для первоначальной настройки при запуске. <strong>Key pair</strong> используется для аутентификации при подключении, а SG определяет, разрешён ли сетевой трафик.</p>\n<p>Категории instance types: general purpose, compute optimized, memory optimized, storage optimized, accelerated computing. Выбирай по ограничивающему ресурсу workload.</p>\n<table>\n<thead>\n<tr>\n<th>Вариант</th>\n<th>Когда выбирать</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>On-Demand</td>\n<td>Краткосрочная или непредсказуемая потребность без обязательства на срок</td>\n</tr>\n<tr>\n<td>Reserved Instances в модели курса</td>\n<td>Предсказуемая длительная нагрузка, скидка при обязательстве на 1/3 года</td>\n</tr>\n<tr>\n<td>Spot</td>\n<td>Задача терпит прерывание и повторный запуск, например batch processing</td>\n</tr>\n<tr>\n<td>Dedicated Hosts</td>\n<td>Нужен выделенный физический сервер, контроль размещения/BYOL</td>\n</tr>\n<tr>\n<td>Dedicated Instances</td>\n<td>Instance работает на выделенном для клиента оборудовании</td>\n</tr>\n</tbody></table>\n<p>Не выбирай Spot для единственного компонента, который не должен прерываться. Остановка EBS-backed instance не означает прекращения всех затрат: сохранённые ресурсы могут продолжать тарифицироваться.</p>\n<p><strong>EBS-backed storage</strong> сохраняет данные при остановке instance. <strong>Instance store</strong> — временное хранилище, данные могут пропасть при stop/termination или отказе host. Перезагрузка и остановка — разные события.</p>\n<table>\n<thead>\n<tr>\n<th>Сервис/понятие</th>\n<th>Роль</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Docker container</td>\n<td>Упаковка приложения с зависимостями</td>\n</tr>\n<tr>\n<td>ECS</td>\n<td>Оркестрация контейнеров</td>\n</tr>\n<tr>\n<td>EKS</td>\n<td>Managed Kubernetes</td>\n</tr>\n<tr>\n<td>ECR</td>\n<td>Registry для container images</td>\n</tr>\n<tr>\n<td>Fargate</td>\n<td>Запуск контейнеров без управления EC2 hosts</td>\n</tr>\n<tr>\n<td>Lambda</td>\n<td>Выполнение функций по событиям без управления серверами</td>\n</tr>\n<tr>\n<td>Elastic Beanstalk</td>\n<td>Развёртывание приложения с управлением инфраструктурой окружения</td>\n</tr>\n</tbody></table>\n<p>Serverless означает, что клиент не управляет серверами, а не отсутствие физических серверов. В Foundations для Lambda указан максимум выполнения <strong>15 минут</strong>. Вопрос «быстро развернуть web app, загрузив код, и меньше управлять инфраструктурой» часто указывает на <strong>Elastic Beanstalk</strong>. Вопрос «выполнить функцию при событии» — на <strong>Lambda</strong>.</p>\n<p>Четыре направления cost optimization в F6: <strong>right size, increase elasticity, optimal pricing model, optimize storage choices</strong>. Это не четыре pillars Well-Architected.</p>\n",
+      "html": "<h3>Что проверить перед тестом</h3>\n<ul>\n<li><strong>Выбор модели оплаты.</strong> Для предсказуемой постоянной нагрузки курс предлагает Reserved Instances, для кратковременного пика — On-Demand. Spot подходит, когда работу можно прервать и продолжить. Dedicated Instances дают изоляцию на физическом оборудовании.</li>\n<li><strong>AMI и instance type.</strong> AMI определяет образ, разрешения запуска и block device mapping. Instance type задаёт вычислительные характеристики. Instance ID выдаёт EC2 при запуске.</li>\n<li><strong>Способ запуска кода.</strong> Lambda выполняет функции без самостоятельного управления серверами. Elastic Beanstalk развёртывает код в управляемом окружении. Контейнеры обычно используют ядро хоста.</li>\n<li><strong>Исторический вариант.</strong> Scheduled Reserved Instances из курса резервировали ёмкость на повторяющиеся интервалы. Покупка больше недоступна. <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_PurchaseScheduledInstances.html\">Документация Amazon EC2</a></li>\n</ul>\n<h3>Конспект лекции</h3>\n<p><strong>EC2</strong> — виртуальные серверы. <strong>AMI</strong> — образ/шаблон для запуска instance. <strong>Instance type</strong> определяет сочетание CPU, RAM, storage и network. <strong>User data</strong> обычно используется для первоначальной настройки при запуске. <strong>Key pair</strong> используется для аутентификации при подключении, а SG определяет, разрешён ли сетевой трафик.</p>\n<p>Категории instance types: general purpose, compute optimized, memory optimized, storage optimized, accelerated computing. Выбирай по ограничивающему ресурсу workload.</p>\n<table>\n<thead>\n<tr>\n<th>Вариант</th>\n<th>Когда выбирать</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>On-Demand</td>\n<td>Краткосрочная или непредсказуемая потребность без обязательства на срок</td>\n</tr>\n<tr>\n<td>Reserved Instances в модели курса</td>\n<td>Предсказуемая длительная нагрузка, скидка при обязательстве на 1/3 года</td>\n</tr>\n<tr>\n<td>Spot</td>\n<td>Задача терпит прерывание и повторный запуск, например batch processing</td>\n</tr>\n<tr>\n<td>Dedicated Hosts</td>\n<td>Нужен выделенный физический сервер, контроль размещения/BYOL</td>\n</tr>\n<tr>\n<td>Dedicated Instances</td>\n<td>Instance работает на выделенном для клиента оборудовании</td>\n</tr>\n</tbody></table>\n<p>Не выбирай Spot для единственного компонента, который не должен прерываться. Остановка EBS-backed instance не означает прекращения всех затрат: сохранённые ресурсы могут продолжать тарифицироваться.</p>\n<p><strong>EBS-backed storage</strong> сохраняет данные при остановке instance. <strong>Instance store</strong> — временное хранилище, данные могут пропасть при stop/termination или отказе host. Перезагрузка и остановка — разные события.</p>\n<table>\n<thead>\n<tr>\n<th>Сервис/понятие</th>\n<th>Роль</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Docker container</td>\n<td>Упаковка приложения с зависимостями</td>\n</tr>\n<tr>\n<td>ECS</td>\n<td>Оркестрация контейнеров</td>\n</tr>\n<tr>\n<td>EKS</td>\n<td>Managed Kubernetes</td>\n</tr>\n<tr>\n<td>ECR</td>\n<td>Registry для container images</td>\n</tr>\n<tr>\n<td>Fargate</td>\n<td>Запуск контейнеров без управления EC2 hosts</td>\n</tr>\n<tr>\n<td>Lambda</td>\n<td>Выполнение функций по событиям без управления серверами</td>\n</tr>\n<tr>\n<td>Elastic Beanstalk</td>\n<td>Развёртывание приложения с управлением инфраструктурой окружения</td>\n</tr>\n</tbody></table>\n<p>Serverless означает, что клиент не управляет серверами, а не отсутствие физических серверов. В Foundations для Lambda указан максимум выполнения <strong>15 минут</strong>. Вопрос «быстро развернуть web app, загрузив код, и меньше управлять инфраструктурой» часто указывает на <strong>Elastic Beanstalk</strong>. Вопрос «выполнить функцию при событии» — на <strong>Lambda</strong>.</p>\n<p>Четыре направления cost optimization в F6: <strong>right size, increase elasticity, optimal pricing model, optimize storage choices</strong>. Это не четыре pillars Well-Architected.</p>\n",
       "academy": null
     },
     {
@@ -60,7 +60,7 @@ window.CLOUD_CONTENT = {
       "terms": "EBS · S3 · EFS · Glacier · durability",
       "number": 7,
       "course": "Foundations",
-      "html": "<table>\n<thead>\n<tr>\n<th>Сервис</th>\n<th>Тип</th>\n<th>Типовая задача</th>\n<th>Область/особенность</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>EBS</td>\n<td>Block</td>\n<td>Диск EC2, ОС или приложение с блочным доступом</td>\n<td>Volume находится в AZ, backup через snapshots</td>\n</tr>\n<tr>\n<td>S3</td>\n<td>Object</td>\n<td>Файлы, изображения, backup, static website</td>\n<td>Bucket в Region, объект по key</td>\n</tr>\n<tr>\n<td>EFS</td>\n<td>File</td>\n<td>Общая файловая система для нескольких Linux instances</td>\n<td>Сетевой доступ, NFS</td>\n</tr>\n<tr>\n<td>S3 Glacier storage classes</td>\n<td>Object archive</td>\n<td>Долговременный архив с подходящим временем retrieval</td>\n<td>Цена и скорость зависят от класса</td>\n</tr>\n</tbody></table>\n<p>EBS реплицирует данные внутри AZ. Это не замена backup. EFS предоставляет файловый интерфейс и возможность совместного доступа. S3 предназначен для операций с объектами через API, а не для обычного блочного диска ОС.</p>\n<p><strong>Durability</strong> — вероятность сохранить данные. <strong>Availability</strong> — доступность сервиса/данных в нужный момент. «11 nines durability» не означает «11 nines uptime».</p>\n",
+      "html": "<h3>Что проверить перед тестом</h3>\n<ul>\n<li><strong>S3, EFS и EBS.</strong> S3 Standard хранит объекты в нескольких AZ одного Region. EFS даёт общую файловую систему нескольким клиентам. EBS даёт постоянный блочный том, реплицированный внутри AZ, с поддержкой шифрования.</li>\n<li><strong>S3 Lifecycle.</strong> Типовая схема — загружать объекты в Standard, переводить старые в Standard-IA, а архивные в Glacier Flexible Retrieval. Vault — контейнер архивов в исходном API Glacier. Архивные классы S3 хранят объекты в бакетах.</li>\n<li><strong>Бакеты.</strong> Для общего глобального пространства имён S3 имя уникально внутри partition. Бакет размещается в выбранном Region. Публичность требуют настраивать отдельно. <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html\">S3 Lifecycle</a> · <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/gpbucketnamespaces.html\">Пространства имён S3</a></li>\n</ul>\n<h3>Конспект лекции</h3>\n<table>\n<thead>\n<tr>\n<th>Сервис</th>\n<th>Тип</th>\n<th>Типовая задача</th>\n<th>Область/особенность</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>EBS</td>\n<td>Block</td>\n<td>Диск EC2, ОС или приложение с блочным доступом</td>\n<td>Volume находится в AZ, backup через snapshots</td>\n</tr>\n<tr>\n<td>S3</td>\n<td>Object</td>\n<td>Файлы, изображения, backup, static website</td>\n<td>Bucket в Region, объект по key</td>\n</tr>\n<tr>\n<td>EFS</td>\n<td>File</td>\n<td>Общая файловая система для нескольких Linux instances</td>\n<td>Сетевой доступ, NFS</td>\n</tr>\n<tr>\n<td>S3 Glacier storage classes</td>\n<td>Object archive</td>\n<td>Долговременный архив с подходящим временем retrieval</td>\n<td>Цена и скорость зависят от класса</td>\n</tr>\n</tbody></table>\n<p>EBS реплицирует данные внутри AZ. Это не замена backup. EFS предоставляет файловый интерфейс и возможность совместного доступа. S3 предназначен для операций с объектами через API, а не для обычного блочного диска ОС.</p>\n<p><strong>Durability</strong> — вероятность сохранить данные. <strong>Availability</strong> — доступность сервиса/данных в нужный момент. «11 nines durability» не означает «11 nines uptime».</p>\n",
       "academy": null
     },
     {
@@ -69,7 +69,7 @@ window.CLOUD_CONTENT = {
       "terms": "RDS · Aurora · DynamoDB · Redshift",
       "number": 8,
       "course": "Foundations",
-      "html": "<table>\n<thead>\n<tr>\n<th>Сервис</th>\n<th>Тип / назначение</th>\n<th>Подсказка</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>RDS</td>\n<td>Managed relational databases</td>\n<td>SQL, связи, заданная схема</td>\n</tr>\n<tr>\n<td>Aurora</td>\n<td>Relational, совместимость с MySQL/PostgreSQL</td>\n<td>AWS-managed relational engine</td>\n</tr>\n<tr>\n<td>DynamoDB</td>\n<td>Managed NoSQL key-value/document</td>\n<td>Гибкие items, масштабирование, быстрый доступ по ключам</td>\n</tr>\n<tr>\n<td>Redshift</td>\n<td>Data warehouse</td>\n<td>Аналитика больших наборов данных, OLAP</td>\n</tr>\n</tbody></table>\n<p>У RDS AWS управляет значительной частью обслуживания, backup и инфраструктуры. Клиент управляет данными, разрешениями и схемой приложения. RDS не устраняет необходимость понимать запросы и работу базы.</p>\n<p><strong>RDS Multi-AZ</strong> в классической модели primary/standby из лекции: синхронная репликация, standby для failover и availability. <strong>Read replica</strong>: асинхронная репликация, разгрузка чтения. Не выбирай standby как обычную read replica. У новых вариантов RDS бывают другие возможности: вопрос нужно читать в контексте описанной архитектуры.</p>\n<p>Реляционная модель — таблицы/строки/столбцы и schema. NoSQL в D5 — разные модели и гибкое представление данных. Утверждения лекции про vertical SQL и horizontal NoSQL — учебное упрощение, а не запрет на горизонтальное масштабирование реляционных систем.</p>\n",
+      "html": "<h3>Что проверить перед тестом</h3>\n<ul>\n<li><strong>Выбор базы.</strong> DynamoDB подходит для масштабируемых сессий и обращений по ключу, RDS — для реляционных транзакций, Redshift — для аналитики SQL и BI. Проверяй объём данных, шаблоны запросов и требования к доступности.</li>\n<li><strong>Доступ к DynamoDB.</strong> Таблица содержит items, каждый item состоит из attributes. Query требует partition key таблицы или индекса и может ограничить sort key. Scan просматривает таблицу или индекс и фильтрует результаты.</li>\n<li><strong>Миграция с MySQL.</strong> RDS for MySQL сохраняет движок и поддерживает Multi-AZ и автоматические копии. Aurora MySQL — другой совместимый движок. Для восстановления на момент времени в RDS нужны включённые автоматические копии.</li>\n</ul>\n<h3>Конспект лекции</h3>\n<table>\n<thead>\n<tr>\n<th>Сервис</th>\n<th>Тип / назначение</th>\n<th>Подсказка</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>RDS</td>\n<td>Managed relational databases</td>\n<td>SQL, связи, заданная схема</td>\n</tr>\n<tr>\n<td>Aurora</td>\n<td>Relational, совместимость с MySQL/PostgreSQL</td>\n<td>AWS-managed relational engine</td>\n</tr>\n<tr>\n<td>DynamoDB</td>\n<td>Managed NoSQL key-value/document</td>\n<td>Гибкие items, масштабирование, быстрый доступ по ключам</td>\n</tr>\n<tr>\n<td>Redshift</td>\n<td>Data warehouse</td>\n<td>Аналитика больших наборов данных, OLAP</td>\n</tr>\n</tbody></table>\n<p>У RDS AWS управляет значительной частью обслуживания, backup и инфраструктуры. Клиент управляет данными, разрешениями и схемой приложения. RDS не устраняет необходимость понимать запросы и работу базы.</p>\n<p><strong>RDS Multi-AZ</strong> в классической модели primary/standby из лекции: синхронная репликация, standby для failover и availability. <strong>Read replica</strong>: асинхронная репликация, разгрузка чтения. Не выбирай standby как обычную read replica. У новых вариантов RDS бывают другие возможности: вопрос нужно читать в контексте описанной архитектуры.</p>\n<p>Реляционная модель — таблицы/строки/столбцы и schema. NoSQL в D5 — разные модели и гибкое представление данных. Утверждения лекции про vertical SQL и horizontal NoSQL — учебное упрощение, а не запрет на горизонтальное масштабирование реляционных систем.</p>\n",
       "academy": null
     },
     {
@@ -78,7 +78,7 @@ window.CLOUD_CONTENT = {
       "terms": "Well-Architected · availability · Trusted Advisor",
       "number": 9,
       "course": "Foundations",
-      "html": "<p><strong>Well-Architected Framework</strong> — рекомендации для оценки архитектуры. Шесть pillars: <strong>Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization, Sustainability</strong>. В F9 objectives указывают шесть, основной подробный разбор сильнее сосредоточен на первых пяти. Полный перечень подтверждён в <a href=\"https://docs.aws.amazon.com/wellarchitected/latest/framework/the-pillars-of-the-framework.html\">AWS Well-Architected</a>.</p>\n<table>\n<thead>\n<tr>\n<th>Pillar</th>\n<th>Как распознать в вопросе</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Operational Excellence</td>\n<td>Эксплуатация, мониторинг, улучшение процессов, small reversible changes</td>\n</tr>\n<tr>\n<td>Security</td>\n<td>Identity, защита данных, traceability, реагирование на security events</td>\n</tr>\n<tr>\n<td>Reliability</td>\n<td>Восстановление, выдерживание отказов, повторяемые изменения</td>\n</tr>\n<tr>\n<td>Performance Efficiency</td>\n<td>Подходящие ресурсы и эффективное выполнение требований</td>\n</tr>\n<tr>\n<td>Cost Optimization</td>\n<td>Устранение лишних затрат, соответствие capacity нагрузке</td>\n</tr>\n<tr>\n<td>Sustainability</td>\n<td>Снижение экологического воздействия и лишнего потребления ресурсов</td>\n</tr>\n</tbody></table>\n<p><strong>Availability = normal operation time / total time × 100%.</strong> Например, 99.9% доступности за 30 дней допускает 43.2 минуты недоступности. <strong>High availability</strong> минимизирует простой. <strong>Fault tolerance</strong> позволяет продолжить работу при отказе компонента. <strong>Recoverability</strong> — способность восстановить сервис после сбоя. Надёжность и доступность связаны, но не одинаковы.</p>\n<p><strong>Trusted Advisor</strong> предлагает рекомендации по AWS best practices. В версии F9 перечислены пять categories: <strong>Cost Optimization, Performance, Security, Fault Tolerance, Service Limits</strong>. Это перечень лекции, не проверенное утверждение о текущем полном наборе проверок продукта. <strong>Well-Architected</strong> — framework оценки архитектуры, <strong>Trusted Advisor</strong> — инструмент рекомендаций по среде.</p>\n",
+      "html": "<h3>Что проверить перед тестом</h3>\n<ul>\n<li><strong>Well-Architected.</strong> В версии курса Performance Efficiency включает Selection, Review, Monitoring и Tradeoffs. Use serverless и Democratize advanced technologies относятся к этому pillar, а Enable traceability — к Security.</li>\n<li><strong>Три разных вопроса о надёжности.</strong> Reliability показывает, выполняет ли система нужную функцию. Availability отражает, какую долю времени она доступна. Fault tolerance показывает, продолжит ли она работу при отказе отдельных компонентов.</li>\n<li><strong>Trusted Advisor</strong> выявляет отклонения от рекомендуемых практик. В лекции перечислены стоимость, производительность, безопасность, отказоустойчивость и лимиты. В действующей классификации есть также Operational Excellence. <a href=\"https://docs.aws.amazon.com/pdfs/trustedadvisor/latest/APIReference/ta-api.pdf\">AWS Trusted Advisor API</a></li>\n</ul>\n<h3>Конспект лекции</h3>\n<p><strong>Well-Architected Framework</strong> — рекомендации для оценки архитектуры. Шесть pillars: <strong>Operational Excellence, Security, Reliability, Performance Efficiency, Cost Optimization, Sustainability</strong>. В F9 objectives указывают шесть, основной подробный разбор сильнее сосредоточен на первых пяти. Полный перечень подтверждён в <a href=\"https://docs.aws.amazon.com/wellarchitected/latest/framework/the-pillars-of-the-framework.html\">AWS Well-Architected</a>.</p>\n<table>\n<thead>\n<tr>\n<th>Pillar</th>\n<th>Как распознать в вопросе</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Operational Excellence</td>\n<td>Эксплуатация, мониторинг, улучшение процессов, small reversible changes</td>\n</tr>\n<tr>\n<td>Security</td>\n<td>Identity, защита данных, traceability, реагирование на security events</td>\n</tr>\n<tr>\n<td>Reliability</td>\n<td>Восстановление, выдерживание отказов, повторяемые изменения</td>\n</tr>\n<tr>\n<td>Performance Efficiency</td>\n<td>Подходящие ресурсы и эффективное выполнение требований</td>\n</tr>\n<tr>\n<td>Cost Optimization</td>\n<td>Устранение лишних затрат, соответствие capacity нагрузке</td>\n</tr>\n<tr>\n<td>Sustainability</td>\n<td>Снижение экологического воздействия и лишнего потребления ресурсов</td>\n</tr>\n</tbody></table>\n<p><strong>Availability = normal operation time / total time × 100%.</strong> Например, 99.9% доступности за 30 дней допускает 43.2 минуты недоступности. <strong>High availability</strong> минимизирует простой. <strong>Fault tolerance</strong> позволяет продолжить работу при отказе компонента. <strong>Recoverability</strong> — способность восстановить сервис после сбоя. Надёжность и доступность связаны, но не одинаковы.</p>\n<p><strong>Trusted Advisor</strong> предлагает рекомендации по AWS best practices. В версии F9 перечислены пять categories: <strong>Cost Optimization, Performance, Security, Fault Tolerance, Service Limits</strong>. Это перечень лекции, не проверенное утверждение о текущем полном наборе проверок продукта. <strong>Well-Architected</strong> — framework оценки архитектуры, <strong>Trusted Advisor</strong> — инструмент рекомендаций по среде.</p>\n",
       "academy": null
     },
     {
@@ -87,7 +87,7 @@ window.CLOUD_CONTENT = {
       "terms": "ELB · CloudWatch · EC2 Auto Scaling · SNS",
       "number": 10,
       "course": "Foundations",
-      "html": "<h3>ELB, CloudWatch, Auto Scaling</h3>\n<table>\n<thead>\n<tr>\n<th>Компонент</th>\n<th>Его работа</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Elastic Load Balancing</td>\n<td>Распределить трафик между healthy targets</td>\n</tr>\n<tr>\n<td>CloudWatch</td>\n<td>Собрать metrics/logs и оценить alarm condition</td>\n</tr>\n<tr>\n<td>EC2 Auto Scaling</td>\n<td>Добавить/удалить/заменить EC2 instances</td>\n</tr>\n<tr>\n<td>SNS</td>\n<td>Отправить уведомление подписчикам</td>\n</tr>\n</tbody></table>\n<p><strong>ALB, Application Load Balancer</strong> — L7, HTTP(S), маршрутизация по path/host, удобно для web applications. <strong>NLB, Network Load Balancer</strong> — L4, TCP/UDP/TLS, высокая производительность, static IP scenarios. <strong>Classic Load Balancer</strong> — прежний тип, рассматриваемый в лекции. Три типа в слайдах не означают, что других типов не существует.</p>\n<p><strong>Listener</strong> принимает подключения на заданном protocol/port. <strong>Target group</strong> объединяет targets. <strong>Health check</strong> помогает исключать нездоровые targets из распределения трафика.</p>\n<p><strong>Auto Scaling group</strong> имеет minimum size, desired capacity и maximum size. <strong>Scale out/in</strong> — увеличить/уменьшить число instances. <strong>Scale up/down</strong> — изменить мощность отдельного instance. Scheduled scaling — известное время изменений, dynamic — реакция на metrics, predictive — прогноз.</p>\n<p>Пример: CPU держится выше порога → CloudWatch alarm → scaling policy → ASG запускает instances → после health checks load balancer направляет на них трафик. ELB сам по себе не заменяет ASG.</p>\n<p>В старых слайдах используется <strong>launch configuration</strong>. Его функция — шаблон запуска instances. При разборе актуальной практики AWS встречается <strong>launch template</strong>. Для вопроса по слайду распознавай назначение шаблона, не смешивай его с running instance или AMI.</p>\n",
+      "html": "<h3>Что проверить перед тестом</h3>\n<ul>\n<li><strong>Что запускается, где запускается, сколько работает.</strong> AMI, тип инстанса и EBS настраивают в шаблоне запуска. Подсети и балансировщик связывают с группой. Размер группы задают min, desired и max.</li>\n<li><strong>Listener и health checks.</strong> Listener принимает трафик на порту и протоколе. Балансировщик направляет его к здоровым целям и снова включает восстановившуюся цель. Для уведомлений нужны отдельно настроенные правила.</li>\n<li><strong>Метрики, уведомления и аудит.</strong> CloudWatch собирает метрики и создаёт alarms, SNS уведомляет подписчиков, CloudTrail записывает действия и вызовы API.</li>\n<li><strong>Версия курса.</strong> В тесте перечислены Application, Network и Classic Load Balancer. Сейчас также есть Gateway Load Balancer, а Classic — предыдущее поколение. <a href=\"https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/what-is-load-balancing.html\">Документация Elastic Load Balancing</a></li>\n</ul>\n<h3>Конспект лекции</h3>\n<h3>ELB, CloudWatch, Auto Scaling</h3>\n<table>\n<thead>\n<tr>\n<th>Компонент</th>\n<th>Его работа</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Elastic Load Balancing</td>\n<td>Распределить трафик между healthy targets</td>\n</tr>\n<tr>\n<td>CloudWatch</td>\n<td>Собрать metrics/logs и оценить alarm condition</td>\n</tr>\n<tr>\n<td>EC2 Auto Scaling</td>\n<td>Добавить/удалить/заменить EC2 instances</td>\n</tr>\n<tr>\n<td>SNS</td>\n<td>Отправить уведомление подписчикам</td>\n</tr>\n</tbody></table>\n<p><strong>ALB, Application Load Balancer</strong> — L7, HTTP(S), маршрутизация по path/host, удобно для web applications. <strong>NLB, Network Load Balancer</strong> — L4, TCP/UDP/TLS, высокая производительность, static IP scenarios. <strong>Classic Load Balancer</strong> — прежний тип, рассматриваемый в лекции. Три типа в слайдах не означают, что других типов не существует.</p>\n<p><strong>Listener</strong> принимает подключения на заданном protocol/port. <strong>Target group</strong> объединяет targets. <strong>Health check</strong> помогает исключать нездоровые targets из распределения трафика.</p>\n<p><strong>Auto Scaling group</strong> имеет minimum size, desired capacity и maximum size. <strong>Scale out/in</strong> — увеличить/уменьшить число instances. <strong>Scale up/down</strong> — изменить мощность отдельного instance. Scheduled scaling — известное время изменений, dynamic — реакция на metrics, predictive — прогноз.</p>\n<p>Пример: CPU держится выше порога → CloudWatch alarm → scaling policy → ASG запускает instances → после health checks load balancer направляет на них трафик. ELB сам по себе не заменяет ASG.</p>\n<p>В старых слайдах используется <strong>launch configuration</strong>. Его функция — шаблон запуска instances. При разборе актуальной практики AWS встречается <strong>launch template</strong>. Для вопроса по слайду распознавай назначение шаблона, не смешивай его с running instance или AMI.</p>\n",
       "academy": null
     },
     {
@@ -105,7 +105,7 @@ window.CLOUD_CONTENT = {
       "terms": "SDLC · SDK · Boto3 · CLI · CloudShell",
       "number": 2,
       "course": "Developing",
-      "html": "<p>Основные software development phases из D2: <strong>Develop → Build → Test → Deploy → Maintain</strong>. Develop — код и review, Build — сборка и unit tests, Test — интеграционные/load/UI/security tests, Deploy — размещение, Maintain — эксплуатация и мониторинг. Unit tests могут запускаться при сборке: не связывай слово test только с одной фазой.</p>\n<table>\n<thead>\n<tr>\n<th>Инструмент</th>\n<th>Что даёт</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Console</td>\n<td>Графический web-интерфейс</td>\n</tr>\n<tr>\n<td>AWS CLI</td>\n<td>Команды из shell</td>\n</tr>\n<tr>\n<td>SDK</td>\n<td>Доступ к AWS services из кода на выбранном языке</td>\n</tr>\n<tr>\n<td>Service API</td>\n<td>Контракт операций сервиса</td>\n</tr>\n<tr>\n<td>IDE</td>\n<td>Среда редактирования, запуска и отладки кода</td>\n</tr>\n<tr>\n<td>AWS Toolkit</td>\n<td>Интеграция IDE с AWS</td>\n</tr>\n<tr>\n<td>CloudShell</td>\n<td>Shell в браузере, предаутентифицированный в console, инструменты уже установлены</td>\n</tr>\n<tr>\n<td>Amazon Q Developer</td>\n<td>Помощь с кодом, объяснением, тестированием, поиском уязвимостей и troubleshooting</td>\n</tr>\n</tbody></table>\n<p>Форма CLI: <code>aws &lt;service&gt; &lt;operation&gt; &lt;parameters&gt;</code>, например <code>aws s3 ls</code>. <strong>Endpoint</strong> — адрес входа в service API. <strong>Region</strong> и credentials/profile — разные настройки.</p>\n<p><strong>Boto3</strong> — AWS SDK for Python. <code>boto3.client(&#39;s3&#39;)</code> даёт низкоуровневые методы операций сервиса и ответы-структуры. <code>boto3.resource(&#39;s3&#39;)</code> даёт объектную абстракцию ресурсов, например Bucket. Не у всех сервисов есть resource API.</p>\n<pre><code class=\"language-python\">import boto3\n\ns3 = boto3.client(&#39;s3&#39;, region_name=&#39;eu-west-1&#39;)\ns3.upload_file(&#39;menu.json&#39;, &#39;exam-bucket&#39;, &#39;data/menu.json&#39;)\n</code></pre>\n<p>Здесь local filename — <code>menu.json</code>, bucket — <code>exam-bucket</code>, key — <code>data/menu.json</code>. Credentials в этом фрагменте не прописаны: SDK использует настроенный механизм получения credentials.</p>\n<p><strong>4xx</strong> обычно указывает на проблему запроса/доступа: проверь параметры, resource и permissions. <strong>5xx</strong> обычно указывает на server error: может понадобиться retry. В D2 это базовое правило. Отдельные 4xx, например throttling, тоже могут требовать retry. Для transient errors используют ограниченные retries с backoff, а не бесконечное немедленное повторение.</p>\n",
+      "html": "<h3>Что проверить перед тестом</h3>\n<ul>\n<li><strong>SDLC в модели курса:</strong> plan → define → design → develop → deploy → maintain. Написание кода, сборка и тестирование входят в работу по разработке. Deploy вводит готовую систему в эксплуатацию.</li>\n<li><strong>Инструменты.</strong> CloudShell открывается с аутентификацией консоли. AWS Tools for PowerShell даёт команды для скриптов. Amazon Q Developer помогает с кодом. IAM управляет пользователями, группами и политиками.</li>\n<li><strong>Работа из Boto3.</strong> Client ближе к операциям сервиса, Resource API даёт высокоуровневые классы и коллекции. <code>region_name</code> выбирает регион для клиента. Отсутствующий бакет обычно даёт <code>NoSuchBucket</code> и HTTP 404.</li>\n</ul>\n<h3>Конспект лекции</h3>\n<p>Основные software development phases из D2: <strong>Develop → Build → Test → Deploy → Maintain</strong>. Develop — код и review, Build — сборка и unit tests, Test — интеграционные/load/UI/security tests, Deploy — размещение, Maintain — эксплуатация и мониторинг. Unit tests могут запускаться при сборке: не связывай слово test только с одной фазой.</p>\n<table>\n<thead>\n<tr>\n<th>Инструмент</th>\n<th>Что даёт</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Console</td>\n<td>Графический web-интерфейс</td>\n</tr>\n<tr>\n<td>AWS CLI</td>\n<td>Команды из shell</td>\n</tr>\n<tr>\n<td>SDK</td>\n<td>Доступ к AWS services из кода на выбранном языке</td>\n</tr>\n<tr>\n<td>Service API</td>\n<td>Контракт операций сервиса</td>\n</tr>\n<tr>\n<td>IDE</td>\n<td>Среда редактирования, запуска и отладки кода</td>\n</tr>\n<tr>\n<td>AWS Toolkit</td>\n<td>Интеграция IDE с AWS</td>\n</tr>\n<tr>\n<td>CloudShell</td>\n<td>Shell в браузере, предаутентифицированный в console, инструменты уже установлены</td>\n</tr>\n<tr>\n<td>Amazon Q Developer</td>\n<td>Помощь с кодом, объяснением, тестированием, поиском уязвимостей и troubleshooting</td>\n</tr>\n</tbody></table>\n<p>Форма CLI: <code>aws &lt;service&gt; &lt;operation&gt; &lt;parameters&gt;</code>, например <code>aws s3 ls</code>. <strong>Endpoint</strong> — адрес входа в service API. <strong>Region</strong> и credentials/profile — разные настройки.</p>\n<p><strong>Boto3</strong> — AWS SDK for Python. <code>boto3.client(&#39;s3&#39;)</code> даёт низкоуровневые методы операций сервиса и ответы-структуры. <code>boto3.resource(&#39;s3&#39;)</code> даёт объектную абстракцию ресурсов, например Bucket. Не у всех сервисов есть resource API.</p>\n<pre><code class=\"language-python\">import boto3\n\ns3 = boto3.client(&#39;s3&#39;, region_name=&#39;eu-west-1&#39;)\ns3.upload_file(&#39;menu.json&#39;, &#39;exam-bucket&#39;, &#39;data/menu.json&#39;)\n</code></pre>\n<p>Здесь local filename — <code>menu.json</code>, bucket — <code>exam-bucket</code>, key — <code>data/menu.json</code>. Credentials в этом фрагменте не прописаны: SDK использует настроенный механизм получения credentials.</p>\n<p><strong>4xx</strong> обычно указывает на проблему запроса/доступа: проверь параметры, resource и permissions. <strong>5xx</strong> обычно указывает на server error: может понадобиться retry. В D2 это базовое правило. Отдельные 4xx, например throttling, тоже могут требовать retry. Для transient errors используют ограниченные retries с backoff, а не бесконечное немедленное повторение.</p>\n",
       "academy": null
     },
     {
@@ -114,7 +114,7 @@ window.CLOUD_CONTENT = {
       "terms": "Buckets и keys · versioning · presigned URLs · CORS",
       "number": 3,
       "course": "Developing",
-      "html": "<h3>Модель S3</h3>\n<ul>\n<li><strong>Bucket</strong> — контейнер объектов. Для обычных general purpose buckets в модели курса имя глобально уникально в AWS partition, bucket создаётся в выбранном Region.</li>\n<li><strong>Object</strong> — содержимое плюс metadata.</li>\n<li><strong>Key</strong> — полное имя объекта внутри bucket, например <code>photos/2026/cat.jpg</code>.</li>\n<li><strong>Prefix</strong> — начало key, позволяющее группировать объекты. В обычной модели S3 «папки» представлены prefixes.</li>\n<li><strong>Version ID</strong> — идентификатор версии при включённом versioning.</li>\n<li><strong>Metadata</strong> — system-defined или user-defined пары key-value. Для пользовательских HTTP metadata используется префикс <code>x-amz-meta-</code>.</li>\n</ul>\n<p>Пример URL: <code>https://exam-bucket.s3.eu-west-1.amazonaws.com/photos/cat.jpg</code>. Bucket — <code>exam-bucket</code>, Region — <code>eu-west-1</code>, object key — <code>photos/cat.jpg</code>. Наличие URL само по себе не даёт разрешения читать private object.</p>\n<p><strong>PUT</strong> загружает/заменяет объект, <strong>GET</strong> получает объект или диапазон bytes, <strong>DELETE</strong> удаляет объект/создаёт delete marker при соответствующих условиях versioning. Сервис также имеет другие API, например LIST и HEAD: фраза слайда «three operations» обозначает рассматриваемые основные действия.</p>\n<p><strong>Versioning</strong> сохраняет версии при перезаписи и помогает восстановить случайно удалённый объект. Обычный DELETE без version ID в versioned bucket обычно создаёт delete marker. После включения versioning можно suspend, но нельзя вернуть bucket в исходное unversioned состояние. Versioning не делает невозможным явное удаление конкретной версии.</p>\n<p><strong>Multipart upload</strong> разбивает загрузку на части, позволяет параллельную загрузку и повтор неудачной части. В лекции D3: recommended от 100 MB, required свыше 5 GB, максимальный объект 5 TB. Это численные значения учебного материала; если вопрос явно спрашивает текущие лимиты AWS, нужна отдельная проверка актуальной документации.</p>\n<p>Storage classes из лекции: Standard — частый доступ; Standard-IA — редкий доступ с быстрым retrieval; One Zone-IA — редкий доступ с размещением в одной AZ; Intelligent-Tiering — меняющийся/неизвестный pattern; Glacier и Deep Archive — архив. Не выбирай архив только по словам «редкий доступ», если одновременно требуется немедленное чтение: учитывай конкретный класс и время восстановления.</p>\n<p><strong>Lifecycle policy</strong> переводит объекты между подходящими storage classes и/или удаляет по заданным условиям. Versioning отвечает за версии, lifecycle — за управление их жизненным циклом.</p>\n<h3>S3 protection и access</h3>\n<p><strong>Identity policy</strong> прикрепляется к identity. <strong>Bucket policy</strong> — resource-based, задаёт доступ к bucket/objects. <strong>ACL</strong> — более старый механизм доступа, рассматриваемый в лекции. <strong>Block Public Access</strong> помогает ограничить публичность.</p>\n<p><strong>Presigned URL</strong> — временная подписанная ссылка на конкретную операцию с объектом. Использует разрешения подписавшего principal, не открывает весь bucket и не выдаёт получателю AWS secret key. Ссылка может стать недействительной раньше заданного срока, например при истечении временных credentials.</p>\n<p><strong>SSE-S3</strong> использует ключи S3, <strong>SSE-KMS</strong> — AWS KMS, <strong>SSE-C</strong> в модели лекции — ключи, предоставляемые клиентом. <strong>Client-side encryption</strong> шифрует данные до отправки. Новые загрузки S3 автоматически шифруются at rest по умолчанию. Это уточнение проверено по <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingServerSideEncryption.html\">AWS S3 documentation</a>.</p>\n<p><strong>CORS</strong> позволяет браузеру прочитать разрешённый ответ с другого origin. Он не выдаёт IAM permissions и не заменяет authentication/authorization. Origin включает scheme, hostname и port.</p>\n",
+      "html": "<h3>Что проверить перед тестом</h3>\n<ul>\n<li><strong>Бакеты и сайты.</strong> S3 подходит для data lake. В общем namespace занятое имя бакета требует другого имени. Для статического сайта в <code>us-east-1</code> используйте <code>http://&lt;bucket&gt;.s3-website-us-east-1.amazonaws.com</code>. Нативный website endpoint не поддерживает HTTPS.</li>\n<li><strong>Загрузка и версии.</strong> Для одного <code>PUT</code> предел — 5 GB. Multipart upload загружает объект частями и имеет другой предел. После включения версионирование можно приостановить, а прошлые версии останутся.</li>\n<li><strong>Доступ и защита.</strong> Bucket policy применяется к бакету. Presigned URL даёт временный доступ к конкретной операции. TLS защищает данные при передаче, SSE — при хранении. Если браузер блокирует междоменный <code>fetch</code>, проверяй CORS на бакете с ресурсами.</li>\n<li><a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteEndpoints.html\">S3 website endpoints</a> · <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/upload-objects.html\">Загрузка объектов</a></li>\n</ul>\n<h3>Конспект лекции</h3>\n<h3>Модель S3</h3>\n<ul>\n<li><strong>Bucket</strong> — контейнер объектов. Для обычных general purpose buckets в модели курса имя глобально уникально в AWS partition, bucket создаётся в выбранном Region.</li>\n<li><strong>Object</strong> — содержимое плюс metadata.</li>\n<li><strong>Key</strong> — полное имя объекта внутри bucket, например <code>photos/2026/cat.jpg</code>.</li>\n<li><strong>Prefix</strong> — начало key, позволяющее группировать объекты. В обычной модели S3 «папки» представлены prefixes.</li>\n<li><strong>Version ID</strong> — идентификатор версии при включённом versioning.</li>\n<li><strong>Metadata</strong> — system-defined или user-defined пары key-value. Для пользовательских HTTP metadata используется префикс <code>x-amz-meta-</code>.</li>\n</ul>\n<p>Пример URL: <code>https://exam-bucket.s3.eu-west-1.amazonaws.com/photos/cat.jpg</code>. Bucket — <code>exam-bucket</code>, Region — <code>eu-west-1</code>, object key — <code>photos/cat.jpg</code>. Наличие URL само по себе не даёт разрешения читать private object.</p>\n<p><strong>PUT</strong> загружает/заменяет объект, <strong>GET</strong> получает объект или диапазон bytes, <strong>DELETE</strong> удаляет объект/создаёт delete marker при соответствующих условиях versioning. Сервис также имеет другие API, например LIST и HEAD: фраза слайда «three operations» обозначает рассматриваемые основные действия.</p>\n<p><strong>Versioning</strong> сохраняет версии при перезаписи и помогает восстановить случайно удалённый объект. Обычный DELETE без version ID в versioned bucket обычно создаёт delete marker. После включения versioning можно suspend, но нельзя вернуть bucket в исходное unversioned состояние. Versioning не делает невозможным явное удаление конкретной версии.</p>\n<p><strong>Multipart upload</strong> разбивает загрузку на части, позволяет отправлять их параллельно и повторять неудачные части. Курс рекомендует рассматривать его от 100 MB. Один <code>PUT</code> принимает объект до 5 GB. Указанный в лекции предел 5 TB для multipart устарел. Действующая документация AWS указывает до 50 TB (48.8 TiB) при загрузке частями. <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/upload-objects.html\">Пределы загрузки S3</a></p>\n<p>Storage classes из лекции: Standard — частый доступ; Standard-IA — редкий доступ с быстрым retrieval; One Zone-IA — редкий доступ с размещением в одной AZ; Intelligent-Tiering — меняющийся/неизвестный pattern; Glacier и Deep Archive — архив. Не выбирай архив только по словам «редкий доступ», если одновременно требуется немедленное чтение: учитывай конкретный класс и время восстановления.</p>\n<p><strong>Lifecycle policy</strong> переводит объекты между подходящими storage classes и/или удаляет по заданным условиям. Versioning отвечает за версии, lifecycle — за управление их жизненным циклом.</p>\n<h3>S3 protection и access</h3>\n<p><strong>Identity policy</strong> прикрепляется к identity. <strong>Bucket policy</strong> — resource-based, задаёт доступ к bucket/objects. <strong>ACL</strong> — более старый механизм доступа, рассматриваемый в лекции. <strong>Block Public Access</strong> помогает ограничить публичность.</p>\n<p><strong>Presigned URL</strong> — временная подписанная ссылка на конкретную операцию с объектом. Использует разрешения подписавшего principal, не открывает весь bucket и не выдаёт получателю AWS secret key. Ссылка может стать недействительной раньше заданного срока, например при истечении временных credentials.</p>\n<p><strong>SSE-S3</strong> использует ключи S3, <strong>SSE-KMS</strong> — AWS KMS, <strong>SSE-C</strong> в модели лекции — ключи, предоставляемые клиентом. <strong>Client-side encryption</strong> шифрует данные до отправки. Новые загрузки S3 автоматически шифруются at rest по умолчанию. Это уточнение проверено по <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingServerSideEncryption.html\">AWS S3 documentation</a>.</p>\n<p><strong>CORS</strong> позволяет браузеру прочитать разрешённый ответ с другого origin. Он не выдаёт IAM permissions и не заменяет authentication/authorization. Origin включает scheme, hostname и port.</p>\n",
       "academy": null
     },
     {
@@ -123,7 +123,7 @@ window.CLOUD_CONTENT = {
       "terms": "IAM policies · роли · временные credentials · least privilege",
       "number": 4,
       "course": "Developing",
-      "html": "<p><strong>AWS отвечает за security OF the cloud</strong>: физические здания, оборудование, инфраструктуру сети и виртуализацию. <strong>Клиент отвечает за security IN the cloud</strong>: данные, разрешения, приложения и доступные ему настройки.</p>\n<p>В EC2 клиент обновляет guest OS и свои приложения. В managed services AWS берёт на себя больше обслуживания платформы. При этом клиент по-прежнему выбирает, кто имеет доступ к его данным. Нельзя отвечать «AWS делает всю безопасность», увидев слово managed.</p>\n<table>\n<thead>\n<tr>\n<th>Понятие</th>\n<th>Что означает</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Principal</td>\n<td>Сущность, которая делает запрос: например пользователь или role session</td>\n</tr>\n<tr>\n<td>Authentication</td>\n<td>Кто ты? Проверка личности/credentials</td>\n</tr>\n<tr>\n<td>Authorization</td>\n<td>Что тебе разрешено делать? Проверка permissions</td>\n</tr>\n<tr>\n<td>IAM user</td>\n<td>Identity в аккаунте для пользователя или workload в традиционной модели IAM</td>\n</tr>\n<tr>\n<td>IAM group</td>\n<td>Набор пользователей для совместного назначения permissions</td>\n</tr>\n<tr>\n<td>IAM role</td>\n<td>Роль, которую принимает доверенная сущность, получая временные credentials</td>\n</tr>\n<tr>\n<td>IAM policy</td>\n<td>JSON-документ с правилами разрешения или запрета</td>\n</tr>\n</tbody></table>\n<p>Группы содержат IAM users. Пользователь может состоять в нескольких группах. Роль не является обычным членом IAM group. Роль может использовать приложение, AWS service или человек, которому доверено её принимать.</p>\n<p><strong>Console credentials</strong>: имя пользователя и пароль, возможно MFA. <strong>Programmatic credentials</strong>: access key ID и secret access key. У временных credentials также есть <strong>session token</strong>. Для приложения на EC2 предпочтительна IAM role с необходимыми permissions: SDK может получить временные credentials, без ключей в исходном коде или AMI.</p>\n<p><strong>Least privilege</strong>: разрешить только нужные actions на нужных resources. <strong>MFA</strong> добавляет фактор проверки личности, но сама по себе не выдаёт дополнительные permissions.</p>\n<h3>Как читать IAM policy</h3>\n<pre><code class=\"language-json\">{\n  &quot;Version&quot;: &quot;2012-10-17&quot;,\n  &quot;Statement&quot;: [{\n    &quot;Effect&quot;: &quot;Allow&quot;,\n    &quot;Action&quot;: &quot;s3:GetObject&quot;,\n    &quot;Resource&quot;: &quot;arn:aws:s3:::exam-bucket/*&quot;\n  }]\n}\n</code></pre>\n<p>Этот statement разрешает получать объекты в <code>exam-bucket</code>. Он не разрешает удалять объекты и не равнозначен разрешению <code>s3:ListBucket</code>.</p>\n<ul>\n<li><strong>Effect</strong>: Allow или Deny.</li>\n<li><strong>Action</strong>: операция, например <code>s3:GetObject</code>.</li>\n<li><strong>Resource</strong>: ARN ресурса, к которому относится действие.</li>\n<li><strong>Principal</strong>: кому разрешается действие в resource-based policy.</li>\n<li><strong>Condition</strong>: дополнительные условия, если они указаны.</li>\n<li><strong>Version</strong>: версия языка policy. Это не дата создания текущей политики.</li>\n</ul>\n<p>Упрощённое правило для типовых задач курса: сначала <strong>implicit deny</strong>, затем ищем применимые Allow, затем учитываем ограничения. <strong>Explicit Deny перекрывает Allow</strong>. В реальной оценке также действуют SCP, permissions boundaries и другие ограничения, поэтому наличия одного Allow не всегда достаточно.</p>\n<table>\n<thead>\n<tr>\n<th>Классификация</th>\n<th>Различие</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Identity-based / resource-based</td>\n<td>Политика прикреплена к identity или к ресурсу</td>\n</tr>\n<tr>\n<td>Managed / inline</td>\n<td>Политика существует отдельно и переиспользуется или встроена в конкретную identity</td>\n</tr>\n<tr>\n<td>AWS managed / customer managed</td>\n<td>Отдельную managed policy поддерживает AWS или сам клиент</td>\n</tr>\n</tbody></table>\n<p>Это две разные классификации. <strong>Inline policy у IAM user/group/role является identity-based</strong>. В D4, слайд 32, есть ошибочная подпись resource-based. Проверено по <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html\">AWS IAM documentation</a>.</p>\n",
+      "html": "<h3>Что проверить перед тестом</h3>\n<ul>\n<li><strong>Проверка личности и полномочий.</strong> Authentication устанавливает личность, authorization проверяет право на действие. IAM user может использовать вход в консоль или AWS credentials для программного доступа.</li>\n<li><strong>Роль на EC2.</strong> Приложению назначают роль через instance profile. Она выдаёт временные credentials. JSON-политики на пользователе, группе или роли являются identity-based. Политика на бакете S3 — пример resource-based policy.</li>\n<li><strong>Разбор <code>Deny</code> + <code>NotResource</code>.</strong> Сначала определи действия из <code>Action</code>, затем исключи перечисленные ARN. На остальные подходящие ресурсы действует запрет. Для ресурсов из исключений всё ещё нужно разрешение. <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notresource.html\">IAM NotResource</a></li>\n</ul>\n<h3>Конспект лекции</h3>\n<p><strong>AWS отвечает за security OF the cloud</strong>: физические здания, оборудование, инфраструктуру сети и виртуализацию. <strong>Клиент отвечает за security IN the cloud</strong>: данные, разрешения, приложения и доступные ему настройки.</p>\n<p>В EC2 клиент обновляет guest OS и свои приложения. В managed services AWS берёт на себя больше обслуживания платформы. При этом клиент по-прежнему выбирает, кто имеет доступ к его данным. Нельзя отвечать «AWS делает всю безопасность», увидев слово managed.</p>\n<table>\n<thead>\n<tr>\n<th>Понятие</th>\n<th>Что означает</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Principal</td>\n<td>Сущность, которая делает запрос: например пользователь или role session</td>\n</tr>\n<tr>\n<td>Authentication</td>\n<td>Кто ты? Проверка личности/credentials</td>\n</tr>\n<tr>\n<td>Authorization</td>\n<td>Что тебе разрешено делать? Проверка permissions</td>\n</tr>\n<tr>\n<td>IAM user</td>\n<td>Identity в аккаунте для пользователя или workload в традиционной модели IAM</td>\n</tr>\n<tr>\n<td>IAM group</td>\n<td>Набор пользователей для совместного назначения permissions</td>\n</tr>\n<tr>\n<td>IAM role</td>\n<td>Роль, которую принимает доверенная сущность, получая временные credentials</td>\n</tr>\n<tr>\n<td>IAM policy</td>\n<td>JSON-документ с правилами разрешения или запрета</td>\n</tr>\n</tbody></table>\n<p>Группы содержат IAM users. Пользователь может состоять в нескольких группах. Роль не является обычным членом IAM group. Роль может использовать приложение, AWS service или человек, которому доверено её принимать.</p>\n<p><strong>Console credentials</strong>: имя пользователя и пароль, возможно MFA. <strong>Programmatic credentials</strong>: access key ID и secret access key. У временных credentials также есть <strong>session token</strong>. Для приложения на EC2 предпочтительна IAM role с необходимыми permissions: SDK может получить временные credentials, без ключей в исходном коде или AMI.</p>\n<p><strong>Least privilege</strong>: разрешить только нужные actions на нужных resources. <strong>MFA</strong> добавляет фактор проверки личности, но сама по себе не выдаёт дополнительные permissions.</p>\n<h3>Как читать IAM policy</h3>\n<pre><code class=\"language-json\">{\n  &quot;Version&quot;: &quot;2012-10-17&quot;,\n  &quot;Statement&quot;: [{\n    &quot;Effect&quot;: &quot;Allow&quot;,\n    &quot;Action&quot;: &quot;s3:GetObject&quot;,\n    &quot;Resource&quot;: &quot;arn:aws:s3:::exam-bucket/*&quot;\n  }]\n}\n</code></pre>\n<p>Этот statement разрешает получать объекты в <code>exam-bucket</code>. Он не разрешает удалять объекты и не равнозначен разрешению <code>s3:ListBucket</code>.</p>\n<ul>\n<li><strong>Effect</strong>: Allow или Deny.</li>\n<li><strong>Action</strong>: операция, например <code>s3:GetObject</code>.</li>\n<li><strong>Resource</strong>: ARN ресурса, к которому относится действие.</li>\n<li><strong>Principal</strong>: кому разрешается действие в resource-based policy.</li>\n<li><strong>Condition</strong>: дополнительные условия, если они указаны.</li>\n<li><strong>Version</strong>: версия языка policy. Это не дата создания текущей политики.</li>\n</ul>\n<p>Упрощённое правило для типовых задач курса: сначала <strong>implicit deny</strong>, затем ищем применимые Allow, затем учитываем ограничения. <strong>Explicit Deny перекрывает Allow</strong>. В реальной оценке также действуют SCP, permissions boundaries и другие ограничения, поэтому наличия одного Allow не всегда достаточно.</p>\n<table>\n<thead>\n<tr>\n<th>Классификация</th>\n<th>Различие</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Identity-based / resource-based</td>\n<td>Политика прикреплена к identity или к ресурсу</td>\n</tr>\n<tr>\n<td>Managed / inline</td>\n<td>Политика существует отдельно и переиспользуется или встроена в конкретную identity</td>\n</tr>\n<tr>\n<td>AWS managed / customer managed</td>\n<td>Отдельную managed policy поддерживает AWS или сам клиент</td>\n</tr>\n</tbody></table>\n<p>Это две разные классификации. <strong>Inline policy у IAM user/group/role является identity-based</strong>. В D4, слайд 32, есть ошибочная подпись resource-based. Проверено по <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html\">AWS IAM documentation</a>.</p>\n",
       "academy": null
     },
     {
@@ -132,7 +132,7 @@ window.CLOUD_CONTENT = {
       "terms": "Keys · GSI/LSI · Query/Scan · RCU/WCU · Streams",
       "number": 5,
       "course": "Developing",
-      "html": "<p><strong>Table → items → attributes</strong>. Item соответствует отдельной записи, attribute — её полю. Не все items должны иметь одинаковые non-key attributes. При этом key schema таблицы задана.</p>\n<table>\n<thead>\n<tr>\n<th>Primary key</th>\n<th>Правило уникальности</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Simple: partition key</td>\n<td>Значение partition key уникально для item</td>\n</tr>\n<tr>\n<td>Composite: partition key + sort key</td>\n<td>Уникальна комбинация двух значений, partition key может повторяться</td>\n</tr>\n</tbody></table>\n<p>Например, <code>CustomerId</code> + <code>OrderDate</code>: у одного клиента несколько заказов, различаются sort key. Partition key проходит через hash function для распределения данных. Items с одним partition key упорядочены по sort key. Плохое распределение обращений может создать <strong>hot partition</strong>, поэтому важны равномерно используемые ключи.</p>\n<h3>Secondary indexes</h3>\n<table>\n<thead>\n<tr>\n<th>Свойство</th>\n<th>GSI</th>\n<th>LSI</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Partition key</td>\n<td>Может отличаться от base table</td>\n<td>Тот же, что у base table</td>\n</tr>\n<tr>\n<td>Sort key</td>\n<td>Может отличаться, необязателен при simple key</td>\n<td>Другой sort key</td>\n</tr>\n<tr>\n<td>Создание</td>\n<td>Можно при создании и добавить позже</td>\n<td>При создании таблицы</td>\n</tr>\n<tr>\n<td>Consistency чтения</td>\n<td>Eventually consistent</td>\n<td>Eventual или strong</td>\n</tr>\n<tr>\n<td>Provisioned throughput</td>\n<td>Собственные настройки</td>\n<td>Использует capacity таблицы</td>\n</tr>\n</tbody></table>\n<p>GSI позволяет другой access pattern по другому ключу. LSI позволяет иначе сортировать items для того же partition key. <strong>Global в GSI не означает multi-Region</strong>. Multi-Region replication — это <strong>global tables</strong>. Уточнения по индексам: <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SecondaryIndexes.html\">AWS secondary indexes</a>.</p>\n<h3>Operations</h3>\n<table>\n<thead>\n<tr>\n<th>Операция</th>\n<th>Что делает</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>CreateTable</td>\n<td>Создаёт таблицу</td>\n</tr>\n<tr>\n<td>PutItem</td>\n<td>Создаёт item или полностью заменяет item с тем же primary key</td>\n</tr>\n<tr>\n<td>UpdateItem</td>\n<td>Меняет указанные attributes</td>\n</tr>\n<tr>\n<td>GetItem</td>\n<td>Получает один item по полному primary key</td>\n</tr>\n<tr>\n<td>DeleteItem</td>\n<td>Удаляет item по primary key</td>\n</tr>\n<tr>\n<td>Query</td>\n<td>Ищет по равенству partition key, возможно условие по sort key</td>\n</tr>\n<tr>\n<td>Scan</td>\n<td>Читает items таблицы/индекса, затем может применять filter</td>\n</tr>\n<tr>\n<td>Batch operations</td>\n<td>Группируют чтение/запись нескольких items</td>\n</tr>\n<tr>\n<td>Transaction operations</td>\n<td>Обеспечивают согласованное all-or-nothing выполнение</td>\n</tr>\n</tbody></table>\n<p>Для composite key при <code>GetItem</code> нужны оба key attributes. <code>Query</code> по индексу использует ключи индекса. FilterExpression не превращает Scan в эффективный поиск по ключу и не устраняет стоимость прочитанных, затем отфильтрованных данных. У Batch нет общей гарантии all-or-nothing только потому, что операции объединены.</p>\n<h3>Read consistency и throughput</h3>\n<p><strong>Eventually consistent</strong> может вернуть данные без самого последнего успешного изменения, стоит меньше capacity. <strong>Strongly consistent</strong> отражает ранее успешно завершившиеся записи при чтении. По умолчанию чтение eventual. Для таблиц/LSI можно указать <code>ConsistentRead=True</code>; для GSI strong read не поддерживается. <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html\">AWS read consistency</a>.</p>\n<p><strong>Provisioned</strong>: задаёшь RCU/WCU. <strong>On-demand</strong>: платишь за запросы, удобно при неизвестной/неровной нагрузке. On-demand не означает отсутствие quotas.</p>\n<p>Для обычных независимых операций чтения/записи одинаковых items в задачах курса:</p>\n<pre><code class=\"language-text\">Strong RCU = reads_per_second × ceil(item_size_KB / 4)\nEventual RCU = reads_per_second × ceil(item_size_KB / 4) / 2\nWCU = writes_per_second × ceil(item_size_KB / 1)\n</code></pre>\n<p><code>ceil</code> округляет вверх. Размер округляй для item, а минуты сначала переводишь в секунды. Это не универсальная формула для всех особенностей Query/Scan/batch. Transactional operations требуют удвоенной capacity относительно соответствующих обычных strong reads/writes. Единицы и правила проверены по <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Constraints.html\">AWS capacity documentation</a>.</p>\n<p><strong>Пример со слайдов D5 36–37</strong>: 20 items/с, по 11 KB, eventual read. <code>ceil(11/4)=3</code>, <code>20×3/2 = 30 RCU</code>. При strong read получится 60 RCU.</p>\n<p><strong>Пример со слайдов D5 38–39</strong>: 120 items/мин, по 7 KB. <code>120/60=2 writes/с</code>, <code>2×7 = 14 WCU</code>.</p>\n<p>Ещё для самопроверки: 10 strong reads/с по 5 KB = <strong>20 RCU</strong>; 10 eventual reads/с по 5 KB = <strong>10 RCU</strong>; 5 writes/с по 1.2 KB = <strong>10 WCU</strong>.</p>\n<h3>Streams, global tables, backup</h3>\n<p><strong>DynamoDB Streams</strong> содержит записи изменений items, организованные в shards. Может запускать обработку через Lambda. <strong>Global tables</strong> реплицируют таблицу между выбранными Regions. <strong>Backup/PITR</strong> нужны для восстановления данных после нежелательных изменений. Репликация и backup не взаимозаменяемы: ошибка приложения может реплицироваться.</p>\n<p>Для модели курса запомни eventual replication global tables. В актуальном DynamoDB есть и варианты multi-Region strong consistency, поэтому не учи утверждение «все global tables при любых настройках только eventual» как вечное правило. <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html\">AWS documentation</a>.</p>\n",
+      "html": "<h3>Что проверить перед тестом</h3>\n<ul>\n<li><strong>Ключи и индексы.</strong> DynamoDB хеширует partition key для размещения данных. При составном ключе уникальна пара partition key + sort key. GSI позволяет задать альтернативный partition key, а LSI сохраняет исходный.</li>\n<li><strong>Три разных механизма.</strong> Transactions выполняют набор операций атомарно. Streams выдают события изменений для обработчиков. Global tables реплицируют данные между регионами.</li>\n<li><strong>Control plane и восстановление.</strong> Создание таблицы и изменение её настроек относятся к control plane. Операции над items относятся к data plane. PITR даёт настраиваемое окно до 35 дней. <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Point-in-time-recovery.html\">Документация DynamoDB PITR</a></li>\n</ul>\n<h3>Конспект лекции</h3>\n<p><strong>Table → items → attributes</strong>. Item соответствует отдельной записи, attribute — её полю. Не все items должны иметь одинаковые non-key attributes. При этом key schema таблицы задана.</p>\n<table>\n<thead>\n<tr>\n<th>Primary key</th>\n<th>Правило уникальности</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Simple: partition key</td>\n<td>Значение partition key уникально для item</td>\n</tr>\n<tr>\n<td>Composite: partition key + sort key</td>\n<td>Уникальна комбинация двух значений, partition key может повторяться</td>\n</tr>\n</tbody></table>\n<p>Например, <code>CustomerId</code> + <code>OrderDate</code>: у одного клиента несколько заказов, различаются sort key. Partition key проходит через hash function для распределения данных. Items с одним partition key упорядочены по sort key. Плохое распределение обращений может создать <strong>hot partition</strong>, поэтому важны равномерно используемые ключи.</p>\n<h3>Secondary indexes</h3>\n<table>\n<thead>\n<tr>\n<th>Свойство</th>\n<th>GSI</th>\n<th>LSI</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Partition key</td>\n<td>Может отличаться от base table</td>\n<td>Тот же, что у base table</td>\n</tr>\n<tr>\n<td>Sort key</td>\n<td>Может отличаться, необязателен при simple key</td>\n<td>Другой sort key</td>\n</tr>\n<tr>\n<td>Создание</td>\n<td>Можно при создании и добавить позже</td>\n<td>При создании таблицы</td>\n</tr>\n<tr>\n<td>Consistency чтения</td>\n<td>Eventually consistent</td>\n<td>Eventual или strong</td>\n</tr>\n<tr>\n<td>Provisioned throughput</td>\n<td>Собственные настройки</td>\n<td>Использует capacity таблицы</td>\n</tr>\n</tbody></table>\n<p>GSI позволяет другой access pattern по другому ключу. LSI позволяет иначе сортировать items для того же partition key. <strong>Global в GSI не означает multi-Region</strong>. Multi-Region replication — это <strong>global tables</strong>. Уточнения по индексам: <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SecondaryIndexes.html\">AWS secondary indexes</a>.</p>\n<h3>Operations</h3>\n<table>\n<thead>\n<tr>\n<th>Операция</th>\n<th>Что делает</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>CreateTable</td>\n<td>Создаёт таблицу</td>\n</tr>\n<tr>\n<td>PutItem</td>\n<td>Создаёт item или полностью заменяет item с тем же primary key</td>\n</tr>\n<tr>\n<td>UpdateItem</td>\n<td>Меняет указанные attributes</td>\n</tr>\n<tr>\n<td>GetItem</td>\n<td>Получает один item по полному primary key</td>\n</tr>\n<tr>\n<td>DeleteItem</td>\n<td>Удаляет item по primary key</td>\n</tr>\n<tr>\n<td>Query</td>\n<td>Ищет по равенству partition key, возможно условие по sort key</td>\n</tr>\n<tr>\n<td>Scan</td>\n<td>Читает items таблицы/индекса, затем может применять filter</td>\n</tr>\n<tr>\n<td>Batch operations</td>\n<td>Группируют чтение/запись нескольких items</td>\n</tr>\n<tr>\n<td>Transaction operations</td>\n<td>Обеспечивают согласованное all-or-nothing выполнение</td>\n</tr>\n</tbody></table>\n<p>Для composite key при <code>GetItem</code> нужны оба key attributes. <code>Query</code> по индексу использует ключи индекса. FilterExpression не превращает Scan в эффективный поиск по ключу и не устраняет стоимость прочитанных, затем отфильтрованных данных. У Batch нет общей гарантии all-or-nothing только потому, что операции объединены.</p>\n<h3>Read consistency и throughput</h3>\n<p><strong>Eventually consistent</strong> может вернуть данные без самого последнего успешного изменения, стоит меньше capacity. <strong>Strongly consistent</strong> отражает ранее успешно завершившиеся записи при чтении. По умолчанию чтение eventual. Для таблиц/LSI можно указать <code>ConsistentRead=True</code>; для GSI strong read не поддерживается. <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html\">AWS read consistency</a>.</p>\n<p><strong>Provisioned</strong>: задаёшь RCU/WCU. <strong>On-demand</strong>: платишь за запросы, удобно при неизвестной/неровной нагрузке. On-demand не означает отсутствие quotas.</p>\n<p>Для обычных независимых операций чтения/записи одинаковых items в задачах курса:</p>\n<pre><code class=\"language-text\">Strong RCU = reads_per_second × ceil(item_size_KB / 4)\nEventual RCU = reads_per_second × ceil(item_size_KB / 4) / 2\nWCU = writes_per_second × ceil(item_size_KB / 1)\n</code></pre>\n<p><code>ceil</code> округляет вверх. Размер округляй для item, а минуты сначала переводишь в секунды. Это не универсальная формула для всех особенностей Query/Scan/batch. Transactional operations требуют удвоенной capacity относительно соответствующих обычных strong reads/writes. Единицы и правила проверены по <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Constraints.html\">AWS capacity documentation</a>.</p>\n<p><strong>Пример со слайдов D5 36–37</strong>: 20 items/с, по 11 KB, eventual read. <code>ceil(11/4)=3</code>, <code>20×3/2 = 30 RCU</code>. При strong read получится 60 RCU.</p>\n<p><strong>Пример со слайдов D5 38–39</strong>: 120 items/мин, по 7 KB. <code>120/60=2 writes/с</code>, <code>2×7 = 14 WCU</code>.</p>\n<p>Ещё для самопроверки: 10 strong reads/с по 5 KB = <strong>20 RCU</strong>; 10 eventual reads/с по 5 KB = <strong>10 RCU</strong>; 5 writes/с по 1.2 KB = <strong>10 WCU</strong>.</p>\n<h3>Streams, global tables, backup</h3>\n<p><strong>DynamoDB Streams</strong> содержит записи изменений items, организованные в shards. Может запускать обработку через Lambda. <strong>Global tables</strong> реплицируют таблицу между выбранными Regions. <strong>Backup/PITR</strong> нужны для восстановления данных после нежелательных изменений. Репликация и backup не взаимозаменяемы: ошибка приложения может реплицироваться.</p>\n<p>Для модели курса запомни eventual replication global tables. В актуальном DynamoDB есть и варианты multi-Region strong consistency, поэтому не учи утверждение «все global tables при любых настройках только eventual» как вечное правило. <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html\">AWS documentation</a>.</p>\n",
       "academy": null
     },
     {
@@ -141,7 +141,7 @@ window.CLOUD_CONTENT = {
       "terms": "Интеграции · stages · authorizers · throttling",
       "number": 6,
       "course": "Developing",
-      "html": "<p><strong>API</strong> — контракт взаимодействия приложений, скрывающий детали реализации. <strong>API Gateway</strong> — managed сервис, который принимает запросы, маршрутизирует их к backend, может проверять доступ, ограничивать частоту и собирать monitoring.</p>\n<p><strong>RESTful request/response</strong> обычно stateless: серверу не требуется хранить контекст сессии предыдущих запросов, чтобы понять текущий. <strong>WebSocket</strong> — длительное двустороннее соединение, удобно для chat/realtime updates.</p>\n<p>В API Gateway есть <strong>REST APIs</strong>, <strong>HTTP APIs</strong> и <strong>WebSocket APIs</strong>. REST и HTTP APIs оба подходят для RESTful сценариев. REST API в лекции имеет больше возможностей управления, HTTP API ориентирован на простой proxy с меньшей стоимостью/latency. Не переноси feature одного типа API на все остальные.</p>\n<h3>Resource, method, integration</h3>\n<p><code>GET /products/34</code>: <code>/products/34</code> — путь к ресурсу, <code>GET</code> — method, <code>34</code> может быть path parameter. <code>?category=coffee</code> — query parameter. Body — payload запроса. Headers — дополнительные сведения, например authorization/content type.</p>\n<table>\n<thead>\n<tr>\n<th>HTTP method</th>\n<th>Типовое намерение</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>GET</td>\n<td>Получить данные</td>\n</tr>\n<tr>\n<td>POST</td>\n<td>Создать/запустить действие</td>\n</tr>\n<tr>\n<td>PUT</td>\n<td>Создать или полностью заменить ресурс по заданному адресу</td>\n</tr>\n<tr>\n<td>PATCH</td>\n<td>Частично обновить</td>\n</tr>\n<tr>\n<td>DELETE</td>\n<td>Удалить</td>\n</tr>\n<tr>\n<td>OPTIONS</td>\n<td>Информация о разрешённых взаимодействиях, в том числе CORS preflight</td>\n</tr>\n</tbody></table>\n<p>Создать REST API можно через console, CLI/SDK или импорт OpenAPI definition. <strong>OpenAPI</strong> описывает контракт API в JSON/YAML.</p>\n<p>Поток non-proxy REST integration: <strong>method request → integration request → backend → integration response → method response</strong>. Method request обращён к клиенту, integration request — к backend.</p>\n<table>\n<thead>\n<tr>\n<th>Integration</th>\n<th>Как понимать</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Lambda proxy</td>\n<td>Gateway передаёт сведения запроса в Lambda; функция формирует ответ в ожидаемом proxy формате</td>\n</tr>\n<tr>\n<td>Lambda non-proxy/custom</td>\n<td>Можно явно настроить преобразование request/response</td>\n</tr>\n<tr>\n<td>HTTP proxy</td>\n<td>Передача запроса HTTP backend</td>\n</tr>\n<tr>\n<td>AWS service integration</td>\n<td>Вызов поддерживаемого AWS service без промежуточного собственного кода</td>\n</tr>\n<tr>\n<td>Mock</td>\n<td>Ответ для тестирования без реального backend</td>\n</tr>\n<tr>\n<td>Private integration</td>\n<td>Доступ к private backend через подходящий VPC link</td>\n</tr>\n</tbody></table>\n<p><strong>Mapping template</strong> преобразует payload в custom integration. В обычном REST Lambda proxy ответ включает <code>statusCode</code>, headers и строковое <code>body</code>. Не считай любой произвольный JSON автоматически корректным proxy response.</p>\n<p>Endpoint types REST API в лекции: <strong>edge-optimized</strong> — через управляемый CloudFront; <strong>Regional</strong> — endpoint региона; <strong>private</strong> — доступ через VPC interface endpoint. Private API endpoint и private backend integration — разные понятия.</p>\n<h3>Deployment, stage, canary</h3>\n<p><strong>Deployment</strong> — snapshot конфигурации API. <strong>Stage</strong> — именованная ссылка на deployment плюс настройки окружения, например <code>dev</code>, <code>test</code>, <code>prod</code>. Упрощение «stage = snapshot» в D6 слайд 60 неточно. <a href=\"https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-stages.html\">AWS stages</a>.</p>\n<p><strong>Stage variables</strong> позволяют выбирать настройки/разные backend, например Lambda aliases dev/prod. Для одной API и двух aliases из sample question D6 подходят две stages со своими stage variables.</p>\n<p><strong>Canary deployment</strong> отправляет часть трафика на новую версию для проверки. Отдельные environments и распределение небольшой доли трафика на экспериментальную версию решают разные задачи.</p>\n<h3>Access, CORS, throttling</h3>\n<table>\n<thead>\n<tr>\n<th>Механизм</th>\n<th>Задача</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>IAM authorization</td>\n<td>Доступ по IAM credentials/permissions, signed requests</td>\n</tr>\n<tr>\n<td>Cognito authorizer для REST API</td>\n<td>Проверка пользовательских токенов</td>\n</tr>\n<tr>\n<td>JWT authorizer для HTTP API</td>\n<td>Проверка JWT от настроенного issuer</td>\n</tr>\n<tr>\n<td>Lambda authorizer</td>\n<td>Собственная логика проверки token/request</td>\n</tr>\n<tr>\n<td>Resource policy</td>\n<td>Ограничения на доступ к API, например по principal/network context</td>\n</tr>\n<tr>\n<td>WAF</td>\n<td>Фильтрация нежелательных HTTP(S) запросов</td>\n</tr>\n<tr>\n<td>CORS</td>\n<td>Разрешение браузеру прочитать cross-origin response</td>\n</tr>\n<tr>\n<td>Usage plans + API keys</td>\n<td>Идентификация клиентов для usage/quota/throttling</td>\n</tr>\n</tbody></table>\n<p><strong>API key не заменяет authentication/authorization.</strong> Для ограничения доступа AWS предлагает IAM, Lambda authorizer или Cognito. Quotas/throttling usage plan применяются best effort, это не абсолютная гарантия запрета превышения. <a href=\"https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html\">AWS API keys and usage plans</a>.</p>\n<p><strong>Throttling</strong> ограничивает частоту запросов. При превышении может вернуться <strong>429 Too Many Requests</strong>. В лекции настройки идут от более конкретных client/method к stage/method и account-level ограничениям. Не заучивай общий quota как одинаковый для всех Regions и аккаунтов.</p>\n<p><strong>CORS preflight</strong>: браузер может сначала отправить OPTIONS. Ответ сообщает допустимые origins/methods/headers. CORS не защищает endpoint от прямых запросов произвольного клиента, например из CLI, и не выдаёт доступ к private S3 объекту.</p>\n<h3>Monitoring и optimization</h3>\n<table>\n<thead>\n<tr>\n<th>Метрика/сервис</th>\n<th>Что означает</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Count</td>\n<td>Количество API calls</td>\n</tr>\n<tr>\n<td>Latency</td>\n<td>Полное время от получения запроса Gateway до отправки ответа</td>\n</tr>\n<tr>\n<td>IntegrationLatency</td>\n<td>Время взаимодействия с backend</td>\n</tr>\n<tr>\n<td>4XXError / 5XXError</td>\n<td>Client/server errors</td>\n</tr>\n<tr>\n<td>CacheHitCount</td>\n<td>Запрос обслужен из cache</td>\n</tr>\n<tr>\n<td>CacheMissCount</td>\n<td>Понадобилось обращение к backend</td>\n</tr>\n<tr>\n<td>CloudWatch</td>\n<td>Metrics, alarms, logs</td>\n</tr>\n<tr>\n<td>CloudTrail</td>\n<td>Аудит операций с API Gateway</td>\n</tr>\n<tr>\n<td>X-Ray</td>\n<td>Трассировка пути запроса и поиск задержек</td>\n</tr>\n</tbody></table>\n<p>Кэш REST API снижает повторные обращения к backend. Cache key должен различать запросы, ответы на которые различаются. <strong>TTL</strong> задаёт время жизни записи. <strong>Compression</strong> уменьшает размер передаваемого payload, но добавляет работу по сжатию/распаковке.</p>\n",
+      "html": "<h3>Что проверить перед тестом</h3>\n<ul>\n<li><strong>Тип API.</strong> REST — архитектурный стиль. В API Gateway HTTP API подходит для простого Lambda proxy, REST API даёт mapping templates, mock integrations и usage plans, а WebSocket API подходит для двустороннего чата.</li>\n<li><strong>Запрос и развёртывание.</strong> Route key <code>GET /products/{product_id}</code> задаёт метод и путь. Default invoke URL REST API включает ID API, регион и stage. Stage variables позволяют окружениям использовать разные backend.</li>\n<li><strong>Доступ и диагностика.</strong> AWS WAF фильтрует распространённые веб-атаки для поддерживаемых ресурсов, включая API Gateway REST APIs. IntegrationLatency измеряет ожидание backend. Latency включает и обработку внутри API Gateway. <a href=\"https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-metrics.html\">Метрики API Gateway</a></li>\n</ul>\n<h3>Конспект лекции</h3>\n<p><strong>API</strong> — контракт взаимодействия приложений, скрывающий детали реализации. <strong>API Gateway</strong> — managed сервис, который принимает запросы, маршрутизирует их к backend, может проверять доступ, ограничивать частоту и собирать monitoring.</p>\n<p><strong>RESTful request/response</strong> обычно stateless: серверу не требуется хранить контекст сессии предыдущих запросов, чтобы понять текущий. <strong>WebSocket</strong> — длительное двустороннее соединение, удобно для chat/realtime updates.</p>\n<p>В API Gateway есть <strong>REST APIs</strong>, <strong>HTTP APIs</strong> и <strong>WebSocket APIs</strong>. REST и HTTP APIs оба подходят для RESTful сценариев. REST API в лекции имеет больше возможностей управления, HTTP API ориентирован на простой proxy с меньшей стоимостью/latency. Не переноси feature одного типа API на все остальные.</p>\n<h3>Resource, method, integration</h3>\n<p><code>GET /products/34</code>: <code>/products/34</code> — путь к ресурсу, <code>GET</code> — method, <code>34</code> может быть path parameter. <code>?category=coffee</code> — query parameter. Body — payload запроса. Headers — дополнительные сведения, например authorization/content type.</p>\n<table>\n<thead>\n<tr>\n<th>HTTP method</th>\n<th>Типовое намерение</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>GET</td>\n<td>Получить данные</td>\n</tr>\n<tr>\n<td>POST</td>\n<td>Создать/запустить действие</td>\n</tr>\n<tr>\n<td>PUT</td>\n<td>Создать или полностью заменить ресурс по заданному адресу</td>\n</tr>\n<tr>\n<td>PATCH</td>\n<td>Частично обновить</td>\n</tr>\n<tr>\n<td>DELETE</td>\n<td>Удалить</td>\n</tr>\n<tr>\n<td>OPTIONS</td>\n<td>Информация о разрешённых взаимодействиях, в том числе CORS preflight</td>\n</tr>\n</tbody></table>\n<p>Создать REST API можно через console, CLI/SDK или импорт OpenAPI definition. <strong>OpenAPI</strong> описывает контракт API в JSON/YAML.</p>\n<p>Поток non-proxy REST integration: <strong>method request → integration request → backend → integration response → method response</strong>. Method request обращён к клиенту, integration request — к backend.</p>\n<table>\n<thead>\n<tr>\n<th>Integration</th>\n<th>Как понимать</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Lambda proxy</td>\n<td>Gateway передаёт сведения запроса в Lambda; функция формирует ответ в ожидаемом proxy формате</td>\n</tr>\n<tr>\n<td>Lambda non-proxy/custom</td>\n<td>Можно явно настроить преобразование request/response</td>\n</tr>\n<tr>\n<td>HTTP proxy</td>\n<td>Передача запроса HTTP backend</td>\n</tr>\n<tr>\n<td>AWS service integration</td>\n<td>Вызов поддерживаемого AWS service без промежуточного собственного кода</td>\n</tr>\n<tr>\n<td>Mock</td>\n<td>Ответ для тестирования без реального backend</td>\n</tr>\n<tr>\n<td>Private integration</td>\n<td>Доступ к private backend через подходящий VPC link</td>\n</tr>\n</tbody></table>\n<p><strong>Mapping template</strong> преобразует payload в custom integration. В обычном REST Lambda proxy ответ включает <code>statusCode</code>, headers и строковое <code>body</code>. Не считай любой произвольный JSON автоматически корректным proxy response.</p>\n<p>Endpoint types REST API в лекции: <strong>edge-optimized</strong> — через управляемый CloudFront; <strong>Regional</strong> — endpoint региона; <strong>private</strong> — доступ через VPC interface endpoint. Private API endpoint и private backend integration — разные понятия.</p>\n<h3>Deployment, stage, canary</h3>\n<p><strong>Deployment</strong> — snapshot конфигурации API. <strong>Stage</strong> — именованная ссылка на deployment плюс настройки окружения, например <code>dev</code>, <code>test</code>, <code>prod</code>. Упрощение «stage = snapshot» в D6 слайд 60 неточно. <a href=\"https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-stages.html\">AWS stages</a>.</p>\n<p><strong>Stage variables</strong> позволяют выбирать настройки/разные backend, например Lambda aliases dev/prod. Для одной API и двух aliases из sample question D6 подходят две stages со своими stage variables.</p>\n<p><strong>Canary deployment</strong> отправляет часть трафика на новую версию для проверки. Отдельные environments и распределение небольшой доли трафика на экспериментальную версию решают разные задачи.</p>\n<h3>Access, CORS, throttling</h3>\n<table>\n<thead>\n<tr>\n<th>Механизм</th>\n<th>Задача</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>IAM authorization</td>\n<td>Доступ по IAM credentials/permissions, signed requests</td>\n</tr>\n<tr>\n<td>Cognito authorizer для REST API</td>\n<td>Проверка пользовательских токенов</td>\n</tr>\n<tr>\n<td>JWT authorizer для HTTP API</td>\n<td>Проверка JWT от настроенного issuer</td>\n</tr>\n<tr>\n<td>Lambda authorizer</td>\n<td>Собственная логика проверки token/request</td>\n</tr>\n<tr>\n<td>Resource policy</td>\n<td>Ограничения на доступ к API, например по principal/network context</td>\n</tr>\n<tr>\n<td>WAF</td>\n<td>Фильтрация нежелательных HTTP(S) запросов</td>\n</tr>\n<tr>\n<td>CORS</td>\n<td>Разрешение браузеру прочитать cross-origin response</td>\n</tr>\n<tr>\n<td>Usage plans + API keys</td>\n<td>Идентификация клиентов для usage/quota/throttling</td>\n</tr>\n</tbody></table>\n<p><strong>API key не заменяет authentication/authorization.</strong> Для ограничения доступа AWS предлагает IAM, Lambda authorizer или Cognito. Quotas/throttling usage plan применяются best effort, это не абсолютная гарантия запрета превышения. <a href=\"https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html\">AWS API keys and usage plans</a>.</p>\n<p><strong>Throttling</strong> ограничивает частоту запросов. При превышении может вернуться <strong>429 Too Many Requests</strong>. В лекции настройки идут от более конкретных client/method к stage/method и account-level ограничениям. Не заучивай общий quota как одинаковый для всех Regions и аккаунтов.</p>\n<p><strong>CORS preflight</strong>: браузер может сначала отправить OPTIONS. Ответ сообщает допустимые origins/methods/headers. CORS не защищает endpoint от прямых запросов произвольного клиента, например из CLI, и не выдаёт доступ к private S3 объекту.</p>\n<h3>Monitoring и optimization</h3>\n<table>\n<thead>\n<tr>\n<th>Метрика/сервис</th>\n<th>Что означает</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Count</td>\n<td>Количество API calls</td>\n</tr>\n<tr>\n<td>Latency</td>\n<td>Полное время от получения запроса Gateway до отправки ответа</td>\n</tr>\n<tr>\n<td>IntegrationLatency</td>\n<td>Время взаимодействия с backend</td>\n</tr>\n<tr>\n<td>4XXError / 5XXError</td>\n<td>Client/server errors</td>\n</tr>\n<tr>\n<td>CacheHitCount</td>\n<td>Запрос обслужен из cache</td>\n</tr>\n<tr>\n<td>CacheMissCount</td>\n<td>Понадобилось обращение к backend</td>\n</tr>\n<tr>\n<td>CloudWatch</td>\n<td>Metrics, alarms, logs</td>\n</tr>\n<tr>\n<td>CloudTrail</td>\n<td>Аудит операций с API Gateway</td>\n</tr>\n<tr>\n<td>X-Ray</td>\n<td>Трассировка пути запроса и поиск задержек</td>\n</tr>\n</tbody></table>\n<p>Кэш REST API снижает повторные обращения к backend. Cache key должен различать запросы, ответы на которые различаются. <strong>TTL</strong> задаёт время жизни записи. <strong>Compression</strong> уменьшает размер передаваемого payload, но добавляет работу по сжатию/распаковке.</p>\n",
       "academy": null
     }
   ],
@@ -1472,6 +1472,2096 @@ window.CLOUD_CONTENT = {
       "module": "F1",
       "kind": "knowledge-check",
       "source": "F1 Knowledge Check · 10"
+    },
+    {
+      "question": "Which three payment options does the course associate with Reserved Instances? Choose three.",
+      "options": [
+        "All Upfront (AURI)",
+        "Monthly Upfront (MURI)",
+        "No Upfront (NURI)",
+        "Partial Upfront (PURI)",
+        "Deferred Upfront (DURI)"
+      ],
+      "answer": "ACD",
+      "explanation": "All, Partial и No Upfront описывают размер первоначального платежа. Обязательство на срок сохраняется и при No Upfront.",
+      "id": "knowledge-check-f2-1",
+      "module": "F2",
+      "kind": "knowledge-check",
+      "source": "F2 Knowledge Check · 1"
+    },
+    {
+      "question": "Where should you look to examine EC2 spending from three months ago?",
+      "options": [
+        "EC2 dashboard",
+        "AWS Cost Explorer",
+        "AWS Trusted Advisor",
+        "CloudTrail logs in S3"
+      ],
+      "answer": "B",
+      "explanation": "Cost Explorer показывает расходы за прошлые периоды и позволяет фильтровать их по сервису.",
+      "id": "knowledge-check-f2-2",
+      "module": "F2",
+      "kind": "knowledge-check",
+      "source": "F2 Knowledge Check · 2"
+    },
+    {
+      "question": "True or false? A full upfront payment is required to receive a Reserved Instance discount.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "B",
+      "explanation": "В модели курса доступны варианты Partial Upfront и No Upfront. Предоплата всей суммы необязательна.",
+      "id": "knowledge-check-f2-3",
+      "module": "F2",
+      "kind": "knowledge-check",
+      "source": "F2 Knowledge Check · 3"
+    },
+    {
+      "question": "Which statement describes a typical AWS storage charge?",
+      "options": [
+        "Most incoming data transfers are charged per GB",
+        "Storage is commonly metered by GB stored over time",
+        "Compute is always billed as a flat monthly fee",
+        "All outgoing transfer is free under one universal quota"
+      ],
+      "answer": "B",
+      "explanation": "Объём хранения обычно измеряют в GB за период, например GB-month. Запросы и передача данных могут тарифицироваться отдельно.",
+      "id": "knowledge-check-f2-4",
+      "module": "F2",
+      "kind": "knowledge-check",
+      "source": "F2 Knowledge Check · 4"
+    },
+    {
+      "question": "Which four AWS Support plans are listed in the course materials?",
+      "options": [
+        "Basic, Developer, Business, Enterprise",
+        "Basic, Startup, Business, Enterprise",
+        "Free, Bronze, Silver, Gold",
+        "One free plan for all customers"
+      ],
+      "answer": "A",
+      "explanation": "Это перечень из материала курса. Актуальные названия и условия планов AWS Support могут отличаться.",
+      "id": "knowledge-check-f2-5",
+      "module": "F2",
+      "kind": "knowledge-check",
+      "source": "F2 Knowledge Check · 5"
+    },
+    {
+      "question": "Which tool estimates the cost of a workload before you deploy it?",
+      "options": [
+        "AWS Pricing Calculator",
+        "AWS Budgets",
+        "AWS Cost and Usage Report",
+        "AWS Billing Dashboard"
+      ],
+      "answer": "A",
+      "explanation": "Pricing Calculator оценивает будущую конфигурацию. Budgets следит за порогами, а отчёты показывают использование и расходы.",
+      "id": "knowledge-check-f2-6",
+      "module": "F2",
+      "kind": "knowledge-check",
+      "source": "F2 Knowledge Check · 6"
+    },
+    {
+      "question": "As a provider serves more customers, its cost per unit can fall. What is this effect called?",
+      "options": [
+        "Expenditure awareness",
+        "Economies of scale",
+        "Matching supply and demand",
+        "EC2 right sizing"
+      ],
+      "answer": "B",
+      "explanation": "При росте общего объёма использования провайдер распределяет затраты между большим числом клиентов.",
+      "id": "knowledge-check-f2-7",
+      "module": "F2",
+      "kind": "knowledge-check",
+      "source": "F2 Knowledge Check · 7"
+    },
+    {
+      "question": "True or false? A service such as Elastic Beanstalk can have no separate service fee while the EC2 resources it runs still incur charges.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "A",
+      "explanation": "Отсутствие отдельной платы за управляющий сервис не отменяет плату за ресурсы, которые он создаёт.",
+      "id": "knowledge-check-f2-8",
+      "module": "F2",
+      "kind": "knowledge-check",
+      "source": "F2 Knowledge Check · 8"
+    },
+    {
+      "question": "Which two functions does AWS Organizations provide? Choose two.",
+      "options": [
+        "Replace IAM permissions with SCPs",
+        "Group AWS accounts and apply policies to the group",
+        "Create an unlimited hierarchy of organizational units",
+        "Automate account creation and management through APIs",
+        "Make every root user exempt from all controls"
+      ],
+      "answer": "BD",
+      "explanation": "Organizations даёт OUs и API управления аккаунтами. SCP ограничивают допустимые разрешения, а IAM policies задают сами разрешения.",
+      "id": "knowledge-check-f2-9",
+      "module": "F2",
+      "kind": "knowledge-check",
+      "source": "F2 Knowledge Check · 9"
+    },
+    {
+      "question": "True or false? AWS Free Tier provides unlimited usage of AWS services to every new customer.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "B",
+      "explanation": "Бесплатное использование ограничено условиями программы, сроками и допустимыми объёмами. Детали зависят от типа аккаунта и предложения.",
+      "id": "knowledge-check-f2-10",
+      "module": "F2",
+      "kind": "knowledge-check",
+      "source": "F2 Knowledge Check · 10"
+    },
+    {
+      "question": "Which part of AWS infrastructure lets CloudFront serve content close to viewers?",
+      "options": [
+        "AWS Regions",
+        "AWS edge locations",
+        "Availability Zones",
+        "Virtual private clouds"
+      ],
+      "answer": "B",
+      "explanation": "CloudFront доставляет контент через edge locations, расположенные ближе к конечным пользователям.",
+      "id": "knowledge-check-f3-1",
+      "module": "F3",
+      "kind": "knowledge-check",
+      "source": "F3 Knowledge Check · 1"
+    },
+    {
+      "question": "Moving a workload into a Region closer to its users generally does what to network latency?",
+      "options": [
+        "Increases it",
+        "Decreases it"
+      ],
+      "answer": "B",
+      "explanation": "Более короткий сетевой маршрут обычно сокращает задержку. Конкретный результат зависит от маршрутизации и нагрузки.",
+      "id": "knowledge-check-f3-2",
+      "module": "F3",
+      "kind": "knowledge-check",
+      "source": "F3 Knowledge Check · 2"
+    },
+    {
+      "question": "True or false? AWS offers services in categories such as compute, storage, networking, and databases.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "A",
+      "explanation": "EC2 относится к compute, S3 к storage, VPC к networking, а RDS к databases.",
+      "id": "knowledge-check-f3-3",
+      "module": "F3",
+      "kind": "knowledge-check",
+      "source": "F3 Knowledge Check · 3"
+    },
+    {
+      "question": "What is the AWS term for a geographic area that contains multiple Availability Zones?",
+      "options": [
+        "An origin",
+        "An AWS Region",
+        "A compute zone",
+        "An edge location"
+      ],
+      "answer": "B",
+      "explanation": "Region — отдельная географическая область. Она содержит несколько изолированных Availability Zones.",
+      "id": "knowledge-check-f3-4",
+      "module": "F3",
+      "kind": "knowledge-check",
+      "source": "F3 Knowledge Check · 4"
+    },
+    {
+      "question": "Which pair describes built-in redundancy first and dynamic adjustment of capacity second?",
+      "options": [
+        "No human intervention, then fault tolerance",
+        "Elasticity and scalability, then no human intervention",
+        "Fault tolerance, then elasticity and scalability",
+        "Fault tolerance, then no human intervention",
+        "Elasticity and scalability, then fault tolerance"
+      ],
+      "answer": "C",
+      "explanation": "Резервирование компонентов помогает пережить отказ. Эластичность позволяет увеличивать и уменьшать ёмкость вслед за нагрузкой.",
+      "id": "knowledge-check-f3-5",
+      "module": "F3",
+      "kind": "knowledge-check",
+      "source": "F3 Knowledge Check · 5"
+    },
+    {
+      "question": "True or false? Availability Zones in the same AWS Region are connected by low-latency links.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "A",
+      "explanation": "Зоны изолированы по отказам и соединены быстрыми приватными сетями с низкой задержкой.",
+      "id": "knowledge-check-f3-6",
+      "module": "F3",
+      "kind": "knowledge-check",
+      "source": "F3 Knowledge Check · 6"
+    },
+    {
+      "question": "Which statement about Availability Zones is incorrect?",
+      "options": [
+        "They are designed for fault isolation",
+        "An AZ can contain more than one data center",
+        "A single data center can belong to multiple AZs",
+        "AZs in a Region are connected by high-speed private networking"
+      ],
+      "answer": "C",
+      "explanation": "Дата-центр принадлежит своей зоне. Разделение площадок уменьшает риск общего отказа нескольких AZ.",
+      "id": "knowledge-check-f3-7",
+      "module": "F3",
+      "kind": "knowledge-check",
+      "source": "F3 Knowledge Check · 7"
+    },
+    {
+      "question": "Which two facts describe AWS Regions? Choose two.",
+      "options": [
+        "They are defined by where individual customers live",
+        "A Region contains multiple Availability Zones",
+        "Every Region shares one geographic area",
+        "Different Regions correspond to distinct geographic areas"
+      ],
+      "answer": "BD",
+      "explanation": "Region объединяет несколько AZ в одной географической области. Другой Region относится к другой области.",
+      "id": "knowledge-check-f3-8",
+      "module": "F3",
+      "kind": "knowledge-check",
+      "source": "F3 Knowledge Check · 8"
+    },
+    {
+      "question": "How should compute resources be distributed to tolerate the loss of one Availability Zone?",
+      "options": [
+        "Use one Availability Zone",
+        "Use multiple Availability Zones",
+        "Use every Availability Zone worldwide",
+        "Avoid Availability Zones altogether"
+      ],
+      "answer": "B",
+      "explanation": "Размещение в нескольких AZ позволяет приложению продолжить работу при сбое одной зоны.",
+      "id": "knowledge-check-f3-9",
+      "module": "F3",
+      "kind": "knowledge-check",
+      "source": "F3 Knowledge Check · 9"
+    },
+    {
+      "question": "True or false? CloudFront edge locations only exist in the same geographic areas as AWS Regions.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "B",
+      "explanation": "Сеть edge locations охватывает города и территории, где может не быть отдельного AWS Region.",
+      "id": "knowledge-check-f3-10",
+      "module": "F3",
+      "kind": "knowledge-check",
+      "source": "F3 Knowledge Check · 10"
+    },
+    {
+      "question": "What is AWS responsible for protecting under the shared responsibility model?",
+      "options": [
+        "Security of the cloud",
+        "Security to the cloud",
+        "Security for the cloud",
+        "Security in the cloud"
+      ],
+      "answer": "A",
+      "explanation": "Security of the cloud охватывает физическую и базовую инфраструктуру AWS. Клиент отвечает за настройки и данные в пределах выбранного сервиса.",
+      "id": "knowledge-check-f4-1",
+      "module": "F4",
+      "kind": "knowledge-check",
+      "source": "F4 Knowledge Check · 1"
+    },
+    {
+      "question": "Which two tasks are direct examples of a customer's security in the cloud? Choose two.",
+      "options": [
+        "Certifying AWS-operated physical infrastructure",
+        "Protecting AWS data center facilities",
+        "Configuring workload security groups",
+        "Protecting customer data with encryption at rest and in transit",
+        "Securing the AWS global network"
+      ],
+      "answer": "CD",
+      "explanation": "Клиент управляет правилами security groups и выбирает меры защиты своих данных. Безопасность площадок и глобальной инфраструктуры обеспечивает AWS.",
+      "id": "knowledge-check-f4-2",
+      "module": "F4",
+      "kind": "knowledge-check",
+      "source": "F4 Knowledge Check · 2"
+    },
+    {
+      "question": "Which responsibility stays with AWS for a workload on EC2?",
+      "options": [
+        "Configuring the customer's third-party application",
+        "Maintaining the physical servers",
+        "Managing application access and user data",
+        "Maintaining the customer's custom AMIs"
+      ],
+      "answer": "B",
+      "explanation": "AWS обслуживает физические серверы. Клиент настраивает приложение, доступ к данным и собственные образы.",
+      "id": "knowledge-check-f4-3",
+      "module": "F4",
+      "kind": "knowledge-check",
+      "source": "F4 Knowledge Check · 3"
+    },
+    {
+      "question": "Which two ways can an IAM user interact with AWS resources? Choose two.",
+      "options": [
+        "Institutional access",
+        "Generic authorized access as a separate login method",
+        "Programmatic access",
+        "AWS Management Console access",
+        "AWS account root access"
+      ],
+      "answer": "CD",
+      "explanation": "У IAM user возможны вход в консоль и программные запросы. Политики определяют разрешённые действия при любом способе работы.",
+      "id": "knowledge-check-f4-4",
+      "module": "F4",
+      "kind": "knowledge-check",
+      "source": "F4 Knowledge Check · 4"
+    },
+    {
+      "question": "True or false? AWS Organizations lets you group multiple AWS accounts for centralized management.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "A",
+      "explanation": "Organizations объединяет отдельные аккаунты под общей структурой и позволяет управлять политиками на уровне организации.",
+      "id": "knowledge-check-f4-5",
+      "module": "F4",
+      "kind": "knowledge-check",
+      "source": "F4 Knowledge Check · 5"
+    },
+    {
+      "question": "Which two practices help secure an account with IAM? Choose two.",
+      "options": [
+        "Make every new user an administrator",
+        "Keep credentials that nobody uses",
+        "Manage access to AWS resources",
+        "Avoid groups even when users need identical permissions",
+        "Define permissions for specific actions and resources"
+      ],
+      "answer": "CE",
+      "explanation": "IAM позволяет ограничить действия и ресурсы конкретной рабочей задачей. Группы помогают назначать одинаковые права, а неиспользуемые учётные данные стоит удалять.",
+      "id": "knowledge-check-f4-6",
+      "module": "F4",
+      "kind": "knowledge-check",
+      "source": "F4 Knowledge Check · 6"
+    },
+    {
+      "question": "Which action is treated as an account-level task in the course's example of root user responsibilities?",
+      "options": [
+        "Give an application access to its resources",
+        "Connect one AWS service to another",
+        "Adjust fine-grained workload permissions",
+        "Change the AWS Support plan"
+      ],
+      "answer": "D",
+      "explanation": "В примере курса ответ — изменение плана поддержки. В действующей документации AWS это также может выполнить пользователь с подходящими IAM-разрешениями.",
+      "id": "knowledge-check-f4-7",
+      "module": "F4",
+      "kind": "knowledge-check",
+      "source": "F4 Knowledge Check · 7"
+    },
+    {
+      "question": "Which practice reduces risk for root access keys after initial account setup?",
+      "options": [
+        "Delete the root identity",
+        "Remove all root permissions",
+        "Attach a regular IAM user policy to restrict root",
+        "Delete any existing root access keys"
+      ],
+      "answer": "D",
+      "explanation": "Для повседневных задач используют отдельный управляемый доступ. Если ключи root были созданы, AWS рекомендует их удалить и защитить вход с помощью MFA.",
+      "id": "knowledge-check-f4-8",
+      "module": "F4",
+      "kind": "knowledge-check",
+      "source": "F4 Knowledge Check · 8"
+    },
+    {
+      "question": "How can an administrator add a second layer of sign-in protection to the AWS console?",
+      "options": [
+        "Create an Amazon Cloud Directory",
+        "Inspect IAM roles",
+        "Enable multi-factor authentication",
+        "Turn on CloudTrail"
+      ],
+      "answer": "C",
+      "explanation": "MFA требует дополнительное подтверждение личности при входе. CloudTrail помогает расследовать действия после входа.",
+      "id": "knowledge-check-f4-9",
+      "module": "F4",
+      "kind": "knowledge-check",
+      "source": "F4 Knowledge Check · 9"
+    },
+    {
+      "question": "True or false? AWS KMS assesses and audits the configuration of your AWS resources.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "B",
+      "explanation": "Конфигурации ресурсов оценивает AWS Config. AWS KMS управляет криптографическими ключами.",
+      "id": "knowledge-check-f4-10",
+      "module": "F4",
+      "kind": "knowledge-check",
+      "source": "F4 Knowledge Check · 10"
+    },
+    {
+      "question": "What is the smallest supported IPv4 subnet block in an Amazon VPC?",
+      "options": [
+        "/24",
+        "/30",
+        "/28",
+        "/26"
+      ],
+      "answer": "C",
+      "explanation": "Для обычной IPv4-подсети минимальный блок /28 содержит 16 адресов. У /30 адресов меньше, но AWS такой размер не поддерживает.",
+      "id": "knowledge-check-f5-1",
+      "module": "F5",
+      "kind": "knowledge-check",
+      "source": "F5 Knowledge Check · 1"
+    },
+    {
+      "question": "What is the largest single IPv4 CIDR block you can associate with a VPC?",
+      "options": [
+        "/16",
+        "/28",
+        "/24",
+        "/30"
+      ],
+      "answer": "A",
+      "explanation": "Размер одного IPv4 CIDR-блока VPC может достигать /16. Чем короче префикс, тем больше диапазон.",
+      "id": "knowledge-check-f5-2",
+      "module": "F5",
+      "kind": "knowledge-check",
+      "source": "F5 Knowledge Check · 2"
+    },
+    {
+      "question": "Which managed component gives instances in a private subnet outbound IPv4 internet access without exposing them to unsolicited inbound connections?",
+      "options": [
+        "A route table by itself",
+        "A security group",
+        "A public NAT gateway",
+        "A network ACL"
+      ],
+      "answer": "C",
+      "explanation": "При правильных маршрутах public NAT gateway передаёт исходящий трафик приватной подсети через internet gateway.",
+      "id": "knowledge-check-f5-3",
+      "module": "F5",
+      "kind": "knowledge-check",
+      "source": "F5 Knowledge Check · 3"
+    },
+    {
+      "question": "Which AWS service lets you define an isolated virtual network for your resources?",
+      "options": [
+        "Amazon Route 53",
+        "Amazon VPC",
+        "AWS Direct Connect",
+        "AWS Config"
+      ],
+      "answer": "B",
+      "explanation": "VPC задаёт границы виртуальной сети, диапазоны IP, подсети и маршрутизацию.",
+      "id": "knowledge-check-f5-4",
+      "module": "F5",
+      "kind": "knowledge-check",
+      "source": "F5 Knowledge Check · 4"
+    },
+    {
+      "question": "True or false? A private subnet has a direct route to an internet gateway.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "B",
+      "explanation": "Прямая маршрутизация через internet gateway характерна для публичной подсети. Приватная может выходить наружу через NAT.",
+      "id": "knowledge-check-f5-5",
+      "module": "F5",
+      "kind": "knowledge-check",
+      "source": "F5 Knowledge Check · 5"
+    },
+    {
+      "question": "Which infrastructure component helps CloudFront reduce latency for viewers?",
+      "options": [
+        "AWS edge locations",
+        "Availability Zones",
+        "AWS Regions",
+        "Amazon VPCs"
+      ],
+      "answer": "A",
+      "explanation": "Edge locations обслуживают пользователей поблизости и кэшируют контент CloudFront.",
+      "id": "knowledge-check-f5-6",
+      "module": "F5",
+      "kind": "knowledge-check",
+      "source": "F5 Knowledge Check · 6"
+    },
+    {
+      "question": "Which VPC control applies allow and deny rules at the subnet boundary?",
+      "options": [
+        "An EC2 host firewall",
+        "A security group",
+        "A network ACL",
+        "An AWS WAF web ACL"
+      ],
+      "answer": "C",
+      "explanation": "Network ACL — stateless-фильтр на уровне подсети. Security group применяет stateful-правила к сетевым интерфейсам.",
+      "id": "knowledge-check-f5-7",
+      "module": "F5",
+      "kind": "knowledge-check",
+      "source": "F5 Knowledge Check · 7"
+    },
+    {
+      "question": "What is created automatically when you create a VPC without selecting extra components?",
+      "options": [
+        "An internet gateway",
+        "A main route table",
+        "One subnet in each of three AZs",
+        "Three subnets in one AZ"
+      ],
+      "answer": "B",
+      "explanation": "Для VPC автоматически появляется основная таблица маршрутов. Дополнительные подсети и интернет-шлюз зависят от выбранных настроек.",
+      "id": "knowledge-check-f5-8",
+      "module": "F5",
+      "kind": "knowledge-check",
+      "source": "F5 Knowledge Check · 8"
+    },
+    {
+      "question": "Which control acts as a virtual firewall for an EC2 instance?",
+      "options": [
+        "An AMI",
+        "An internet gateway",
+        "A security group",
+        "All three options"
+      ],
+      "answer": "C",
+      "explanation": "Security group управляет входящим и исходящим трафиком на сетевом интерфейсе инстанса.",
+      "id": "knowledge-check-f5-9",
+      "module": "F5",
+      "kind": "knowledge-check",
+      "source": "F5 Knowledge Check · 9"
+    },
+    {
+      "question": "An IPv4 AWS subnet uses 10.0.1.0/24. How many of its 256 addresses can you assign to resources?",
+      "options": [
+        "251",
+        "250",
+        "256",
+        "246"
+      ],
+      "answer": "A",
+      "explanation": "AWS резервирует первые четыре и последний адрес IPv4-подсети. Остаётся 256 − 5 = 251.",
+      "id": "knowledge-check-f5-10",
+      "module": "F5",
+      "kind": "knowledge-check",
+      "source": "F5 Knowledge Check · 10"
+    },
+    {
+      "question": "Why can EC2 cost less than a fixed-size data center when a workload varies over time?",
+      "options": [
+        "Every instance has a flat monthly charge",
+        "Administrator access lowers compute rates",
+        "Peak capacity must run all the time",
+        "Instances can be launched as demand rises and removed as it falls"
+      ],
+      "answer": "D",
+      "explanation": "Рабочую ёмкость можно приблизить к реальной нагрузке. Не нужно держать максимальное число серверов постоянно.",
+      "id": "knowledge-check-f6-1",
+      "module": "F6",
+      "kind": "knowledge-check",
+      "source": "F6 Knowledge Check · 1"
+    },
+    {
+      "question": "In the course's historical EC2 model, which option reserved compute capacity for recurring windows, such as a fixed monthly reporting schedule?",
+      "options": [
+        "Spot Instances",
+        "Scheduled Reserved Instances",
+        "Dedicated Hosts",
+        "On-Demand Instances"
+      ],
+      "answer": "B",
+      "explanation": "Scheduled Reserved Instances предназначались для повторяющихся окон работы. Это термин из курса: AWS больше не продаёт эту опцию.",
+      "id": "knowledge-check-f6-2",
+      "module": "F6",
+      "kind": "knowledge-check",
+      "source": "F6 Knowledge Check · 2"
+    },
+    {
+      "question": "Which elements can be part of an Amazon Machine Image (AMI) definition?",
+      "options": [
+        "A template of the root volume",
+        "Launch permissions for AWS accounts",
+        "A block device mapping for launch",
+        "All three of these"
+      ],
+      "answer": "D",
+      "explanation": "AMI описывает, из чего запускается инстанс, кто может запустить его из образа и какие диски подключаются.",
+      "id": "knowledge-check-f6-3",
+      "module": "F6",
+      "kind": "knowledge-check",
+      "source": "F6 Knowledge Check · 3"
+    },
+    {
+      "question": "Which EC2 option in this list isolates instance tenancy from other AWS customers' physical instances?",
+      "options": [
+        "Amazon VPC",
+        "Placement groups",
+        "Dedicated Instances",
+        "Reserved Instances"
+      ],
+      "answer": "C",
+      "explanation": "Dedicated Instances работают на оборудовании с выделенной tenancy. VPC изолирует сеть, а Reserved Instances обычно дают ценовые преимущества при обязательстве.",
+      "id": "knowledge-check-f6-4",
+      "module": "F6",
+      "kind": "knowledge-check",
+      "source": "F6 Knowledge Check · 4"
+    },
+    {
+      "question": "Which service executes code without requiring you to provision or manage servers?",
+      "options": [
+        "AWS Config",
+        "AWS Lambda",
+        "AWS OpsWorks",
+        "Amazon EC2"
+      ],
+      "answer": "B",
+      "explanation": "Lambda запускает функции по событиям или вызовам. AWS управляет инфраструктурой запуска.",
+      "id": "knowledge-check-f6-5",
+      "module": "F6",
+      "kind": "knowledge-check",
+      "source": "F6 Knowledge Check · 5"
+    },
+    {
+      "question": "Which service can deploy application code and provision a managed environment for the deployment?",
+      "options": [
+        "Amazon ECS",
+        "AWS Elastic Beanstalk",
+        "AWS OpsWorks",
+        "AWS CloudFormation"
+      ],
+      "answer": "B",
+      "explanation": "Elastic Beanstalk принимает код приложения и управляет типовым окружением. CloudFormation создаёт инфраструктуру по шаблону.",
+      "id": "knowledge-check-f6-6",
+      "module": "F6",
+      "kind": "knowledge-check",
+      "source": "F6 Knowledge Check · 6"
+    },
+    {
+      "question": "Four instances run continuously and a predictable one-day monthly peak requires twelve. Which of these plans covers baseline and peak cost-effectively in the course model?",
+      "options": [
+        "Reserve capacity for all twelve continuously",
+        "Keep four On-Demand and add eight On-Demand for each peak",
+        "Apply Reserved Instance pricing to four baseline instances and add eight On-Demand for each peak",
+        "Keep four On-Demand and reserve the eight peak instances"
+      ],
+      "answer": "C",
+      "explanation": "Резервирование выгодно для стабильной части нагрузки. Краткий пик лучше покрыть временными On-Demand инстансами.",
+      "id": "knowledge-check-f6-7",
+      "module": "F6",
+      "kind": "knowledge-check",
+      "source": "F6 Knowledge Check · 7"
+    },
+    {
+      "question": "True or false? A typical container includes its own entire operating system with a separate kernel.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "B",
+      "explanation": "Контейнер упаковывает приложение и его пользовательские зависимости, обычно разделяя ядро ОС с хостом.",
+      "id": "knowledge-check-f6-8",
+      "module": "F6",
+      "kind": "knowledge-check",
+      "source": "F6 Knowledge Check · 8"
+    },
+    {
+      "question": "Which option is designed to reduce cost for predictable, long-term EC2 usage?",
+      "options": [
+        "Spot Instances",
+        "On-Demand Instances",
+        "Reserved Instances"
+      ],
+      "answer": "C",
+      "explanation": "Reserved Instances дают скидку за обязательство на срок. Spot подходит для прерываемых нагрузок, On-Demand — когда заранее трудно оценить использование.",
+      "id": "knowledge-check-f6-9",
+      "module": "F6",
+      "kind": "knowledge-check",
+      "source": "F6 Knowledge Check · 9"
+    },
+    {
+      "question": "Which two settings define the image and compute capacity for a new Windows EC2 instance? Choose two.",
+      "options": [
+        "Amazon Machine Image (AMI)",
+        "Administrator password",
+        "The ID of the new instance",
+        "EC2 instance type"
+      ],
+      "answer": "AD",
+      "explanation": "AMI определяет исходный образ, а instance type — параметры вычислений. Идентификатор присваивает EC2 при запуске.",
+      "id": "knowledge-check-f6-10",
+      "module": "F6",
+      "kind": "knowledge-check",
+      "source": "F6 Knowledge Check · 10"
+    },
+    {
+      "question": "True or false? Amazon S3 can store photos and documents as objects.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "A",
+      "explanation": "Amazon S3 — объектное хранилище. Каждый файл хранится как объект с ключом и метаданными.",
+      "id": "knowledge-check-f7-1",
+      "module": "F7",
+      "kind": "knowledge-check",
+      "source": "F7 Knowledge Check · 1"
+    },
+    {
+      "question": "How does S3 Standard store object data for resilience?",
+      "options": [
+        "Across several disks within a single AZ only",
+        "Across multiple Availability Zones in the same Region",
+        "In multiple Regions automatically",
+        "In multiple buckets automatically"
+      ],
+      "answer": "B",
+      "explanation": "S3 Standard размещает данные в нескольких AZ выбранного региона. Это свойство класса, а межрегиональная репликация настраивается отдельно.",
+      "id": "knowledge-check-f7-2",
+      "module": "F7",
+      "kind": "knowledge-check",
+      "source": "F7 Knowledge Check · 2"
+    },
+    {
+      "question": "Which three classes fit the lesson's S3 Lifecycle example for frequent access, less frequent access, and archival storage? Choose three.",
+      "options": [
+        "S3 Standard",
+        "AWS Storage Gateway",
+        "S3 Standard-Infrequent Access",
+        "S3 Glacier Flexible Retrieval",
+        "S3 Reduced Redundancy Storage",
+        "Amazon DynamoDB"
+      ],
+      "answer": "ACD",
+      "explanation": "Пример начинается с S3 Standard и переводит объекты по мере их старения в Standard-IA и архивный класс Glacier. Storage Gateway и DynamoDB — отдельные сервисы.",
+      "id": "knowledge-check-f7-3",
+      "module": "F7",
+      "kind": "knowledge-check",
+      "source": "F7 Knowledge Check · 3"
+    },
+    {
+      "question": "Where must a general purpose S3 bucket name in the shared global namespace be unique?",
+      "options": [
+        "Across accounts and Regions within the same AWS partition",
+        "Within only one Region",
+        "Across only the bucket owner's AWS accounts",
+        "Within only the bucket owner's account"
+      ],
+      "answer": "A",
+      "explanation": "Для общего глобального namespace имя уникально внутри AWS partition. Регион размещения бакета выбирается отдельно.",
+      "id": "knowledge-check-f7-4",
+      "module": "F7",
+      "kind": "knowledge-check",
+      "source": "F7 Knowledge Check · 4"
+    },
+    {
+      "question": "Which workload is a good fit for Amazon EFS?",
+      "options": [
+        "Providing file access exclusively from AWS with no on-premises connectivity",
+        "Sharing one file system among several EC2 instances concurrently",
+        "Distributing static and streaming content through a CDN",
+        "Generating personalized content"
+      ],
+      "answer": "B",
+      "explanation": "EFS предоставляет разделяемую файловую систему. Её можно смонтировать на нескольких клиентах одновременно.",
+      "id": "knowledge-check-f7-5",
+      "module": "F7",
+      "kind": "knowledge-check",
+      "source": "F7 Knowledge Check · 5"
+    },
+    {
+      "question": "Which two requirements are compatible with using EBS for an EC2 workload? Choose two.",
+      "options": [
+        "Access via an object storage API",
+        "Fast access with persistent storage",
+        "Encryption of the attached volume",
+        "A volume attached from a different AZ than the instance"
+      ],
+      "answer": "BC",
+      "explanation": "EBS предоставляет постоянное блочное хранилище и поддерживает шифрование. Том и инстанс для подключения должны находиться в одной AZ.",
+      "id": "knowledge-check-f7-6",
+      "module": "F7",
+      "kind": "knowledge-check",
+      "source": "F7 Knowledge Check · 6"
+    },
+    {
+      "question": "True or false? Objects uploaded to a new S3 bucket are publicly readable by default.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "B",
+      "explanation": "S3 не делает загруженные объекты общедоступными автоматически. Публичный доступ требует явной настройки.",
+      "id": "knowledge-check-f7-7",
+      "module": "F7",
+      "kind": "knowledge-check",
+      "source": "F7 Knowledge Check · 7"
+    },
+    {
+      "question": "In the original Amazon S3 Glacier vault-based service, what is a vault?",
+      "options": [
+        "The rules governing archive access",
+        "An individual archived file",
+        "A container holding archives",
+        "An IAM access policy"
+      ],
+      "answer": "C",
+      "explanation": "В исходном API Glacier архивы хранятся внутри vault. В S3 Glacier storage classes объекты остаются в S3 bucket.",
+      "id": "knowledge-check-f7-8",
+      "module": "F7",
+      "kind": "knowledge-check",
+      "source": "F7 Knowledge Check · 8"
+    },
+    {
+      "question": "True or false? A general purpose S3 bucket is created in a particular AWS Region.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "A",
+      "explanation": "При создании обычного бакета выбирают Region. Правило уникальности имени не меняет региональность размещения.",
+      "id": "knowledge-check-f7-9",
+      "module": "F7",
+      "kind": "knowledge-check",
+      "source": "F7 Knowledge Check · 9"
+    },
+    {
+      "question": "Which two statements describe Amazon EBS volumes? Choose two.",
+      "options": [
+        "Volume data is replicated within its Availability Zone",
+        "Volume data disappears whenever the instance is stopped",
+        "Volume encryption can be transparent to the workload",
+        "Volume data is automatically written to tape"
+      ],
+      "answer": "AC",
+      "explanation": "EBS реплицирует данные внутри AZ и поддерживает прозрачное шифрование. Остановка EC2 сама по себе не удаляет данные EBS.",
+      "id": "knowledge-check-f7-10",
+      "module": "F7",
+      "kind": "knowledge-check",
+      "source": "F7 Knowledge Check · 10"
+    },
+    {
+      "question": "An online store needs low-latency access to session state for hundreds of thousands of users. Which service fits best?",
+      "options": [
+        "Amazon RDS",
+        "Amazon DynamoDB",
+        "Amazon Redshift",
+        "Amazon S3"
+      ],
+      "answer": "B",
+      "explanation": "DynamoDB подходит для масштабируемых запросов по ключу, например чтения состояния по ID сессии.",
+      "id": "knowledge-check-f8-1",
+      "module": "F8",
+      "kind": "knowledge-check",
+      "source": "F8 Knowledge Check · 1"
+    },
+    {
+      "question": "You must find records by a non-key attribute and no index covers that attribute. Which DynamoDB operation can read and filter the table?",
+      "options": [
+        "PutItem",
+        "Scan",
+        "Query",
+        "GetItem"
+      ],
+      "answer": "B",
+      "explanation": "Scan может прочитать таблицу и отфильтровать записи по обычному атрибуту. Для эффективного поиска по альтернативному ключу используют индекс с Query.",
+      "id": "knowledge-check-f8-2",
+      "module": "F8",
+      "kind": "knowledge-check",
+      "source": "F8 Knowledge Check · 2"
+    },
+    {
+      "question": "Which statement describes what a DynamoDB Query can do?",
+      "options": [
+        "Find items by partition key with an optional sort-key condition",
+        "Read matching items from an existing secondary index using its keys",
+        "Efficiently retrieve matching items from a keyed table or index",
+        "All three of these"
+      ],
+      "answer": "D",
+      "explanation": "Query требует точного значения partition key и допускает условие по sort key. Используются ключи выбранной таблицы или индекса.",
+      "id": "knowledge-check-f8-3",
+      "module": "F8",
+      "kind": "knowledge-check",
+      "source": "F8 Knowledge Check · 3"
+    },
+    {
+      "question": "Which service is designed for analytical SQL queries and integration with business intelligence tools?",
+      "options": [
+        "Amazon RDS",
+        "Amazon S3 Glacier",
+        "Amazon DynamoDB",
+        "Amazon Redshift"
+      ],
+      "answer": "D",
+      "explanation": "Redshift — хранилище данных для аналитики. RDS подходит для управляемых реляционных баз, например для транзакционной нагрузки.",
+      "id": "knowledge-check-f8-4",
+      "module": "F8",
+      "kind": "knowledge-check",
+      "source": "F8 Knowledge Check · 4"
+    },
+    {
+      "question": "What does an attribute represent in a DynamoDB data model?",
+      "options": [
+        "A single named data field",
+        "A collection of items",
+        "A collection of attributes"
+      ],
+      "answer": "A",
+      "explanation": "Таблица содержит items. Item содержит attributes, например поле email со значением.",
+      "id": "knowledge-check-f8-5",
+      "module": "F8",
+      "kind": "knowledge-check",
+      "source": "F8 Knowledge Check · 5"
+    },
+    {
+      "question": "Which durable database fits fast key-based access, rapid scaling, and flexible non-key attributes?",
+      "options": [
+        "Amazon RDS",
+        "Amazon ElastiCache",
+        "Amazon DynamoDB",
+        "Amazon Redshift"
+      ],
+      "answer": "C",
+      "explanation": "DynamoDB предлагает гибкую модель items и масштабируемый доступ по ключу. ElastiCache обычно используют как кэш.",
+      "id": "knowledge-check-f8-6",
+      "module": "F8",
+      "kind": "knowledge-check",
+      "source": "F8 Knowledge Check · 6"
+    },
+    {
+      "question": "Which example is a strong fit for Amazon RDS?",
+      "options": [
+        "Massive traffic made up only of key-value reads and writes",
+        "Object storage accessed through simple GET and PUT requests",
+        "Complex relational transactions",
+        "All three examples"
+      ],
+      "answer": "C",
+      "explanation": "RDS предоставляет управляемые реляционные движки для SQL и сложных транзакций.",
+      "id": "knowledge-check-f8-7",
+      "module": "F8",
+      "kind": "knowledge-check",
+      "source": "F8 Knowledge Check · 7"
+    },
+    {
+      "question": "A .NET application needs to keep the MySQL engine while gaining managed backups and high availability. Which option directly offers this setup?",
+      "options": [
+        "Switch to the Aurora database engine",
+        "Amazon RDS for MySQL with Multi-AZ",
+        "Amazon Redshift",
+        "Amazon DynamoDB"
+      ],
+      "answer": "B",
+      "explanation": "RDS for MySQL сохраняет сам движок MySQL, поддерживает резервные копии и Multi-AZ. Aurora — отдельный совместимый движок.",
+      "id": "knowledge-check-f8-8",
+      "module": "F8",
+      "kind": "knowledge-check",
+      "source": "F8 Knowledge Check · 8"
+    },
+    {
+      "question": "True or false? Amazon RDS manages database maintenance and supports point-in-time recovery when automated backups are enabled.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "A",
+      "explanation": "RDS управляет операциями обслуживания. Настроенные автоматические бэкапы позволяют восстановиться на момент внутри периода хранения.",
+      "id": "knowledge-check-f8-9",
+      "module": "F8",
+      "kind": "knowledge-check",
+      "source": "F8 Knowledge Check · 9"
+    },
+    {
+      "question": "What should you assess when selecting a database for a workload?",
+      "options": [
+        "Data volume",
+        "How long data must remain accessible",
+        "Query frequency and access patterns",
+        "Availability requirements",
+        "All four factors"
+      ],
+      "answer": "E",
+      "explanation": "Выбор базы зависит от объёма, срока доступа, характера запросов и требований к доступности.",
+      "id": "knowledge-check-f8-10",
+      "module": "F8",
+      "kind": "knowledge-check",
+      "source": "F8 Knowledge Check · 10"
+    },
+    {
+      "question": "Which option does not belong to the four Performance Efficiency areas presented in the course?",
+      "options": [
+        "Tradeoffs",
+        "Selection",
+        "Traceability",
+        "Monitoring"
+      ],
+      "answer": "C",
+      "explanation": "В версии курса области Performance Efficiency — Selection, Review, Monitoring и Tradeoffs. Enable traceability относится к Security.",
+      "id": "knowledge-check-f9-1",
+      "module": "F9",
+      "kind": "knowledge-check",
+      "source": "F9 Knowledge Check · 1"
+    },
+    {
+      "question": "Which design habit helps build a resilient cloud workload?",
+      "options": [
+        "Make every component tightly dependent on the others",
+        "Bundle changes into infrequent large releases",
+        "Plan for component failures",
+        "Use as many cloud services as possible"
+      ],
+      "answer": "C",
+      "explanation": "Отказы отдельных компонентов предсказуемы как класс событий. Изоляция, резервирование и восстановление уменьшают их влияние.",
+      "id": "knowledge-check-f9-2",
+      "module": "F9",
+      "kind": "knowledge-check",
+      "source": "F9 Knowledge Check · 2"
+    },
+    {
+      "question": "Which three options are AWS Well-Architected pillars? Choose three.",
+      "options": [
+        "Security",
+        "Persistence",
+        "Operational Excellence",
+        "Cost Optimization"
+      ],
+      "answer": "ACD",
+      "explanation": "Security, Operational Excellence и Cost Optimization входят в Framework. Другие три — Reliability, Performance Efficiency и Sustainability.",
+      "id": "knowledge-check-f9-3",
+      "module": "F9",
+      "kind": "knowledge-check",
+      "source": "F9 Knowledge Check · 3"
+    },
+    {
+      "question": "Which two design principles are associated with Performance Efficiency in the course? Choose two.",
+      "options": [
+        "Use serverless architectures",
+        "Enable traceability",
+        "Match resource supply with demand as a cost practice",
+        "Make advanced technologies easier to adopt",
+        "Analyze and attribute expenditure"
+      ],
+      "answer": "AD",
+      "explanation": "Performance Efficiency включает serverless и более доступное использование передовых технологий. Traceability относится к Security, а учёт расходов — к Cost Optimization.",
+      "id": "knowledge-check-f9-4",
+      "module": "F9",
+      "kind": "knowledge-check",
+      "source": "F9 Knowledge Check · 4"
+    },
+    {
+      "question": "Which set lists the five Trusted Advisor categories taught in this module?",
+      "options": [
+        "Performance, cost optimization, access control, connectivity, security",
+        "Security, fault tolerance, high availability, connectivity, service limits",
+        "Performance, cost optimization, security, fault tolerance, service limits",
+        "Security, access control, high availability, performance, service limits"
+      ],
+      "answer": "C",
+      "explanation": "В учебном перечне пять категорий. Актуальная классификация Trusted Advisor также включает Operational Excellence.",
+      "id": "knowledge-check-f9-5",
+      "module": "F9",
+      "kind": "knowledge-check",
+      "source": "F9 Knowledge Check · 5"
+    },
+    {
+      "question": "What is the primary goal of the Sustainability pillar?",
+      "options": [
+        "Recover quickly after an outage",
+        "Reduce the environmental impact of cloud workloads",
+        "Eliminate unnecessary financial expenditure",
+        "Automate routine software updates"
+      ],
+      "answer": "B",
+      "explanation": "Sustainability фокусируется на экологическом воздействии, например на сокращении расхода ресурсов на единицу полезной работы.",
+      "id": "knowledge-check-f9-6",
+      "module": "F9",
+      "kind": "knowledge-check",
+      "source": "F9 Knowledge Check · 6"
+    },
+    {
+      "question": "Which tool evaluates AWS resources against recommended practices and flags potential security improvements?",
+      "options": [
+        "Amazon Kinesis",
+        "AWS Support Center",
+        "AWS Trusted Advisor",
+        "Amazon CloudWatch"
+      ],
+      "answer": "C",
+      "explanation": "Trusted Advisor даёт рекомендации по настройкам и другим практикам. Наличие рекомендаций само по себе не подтверждает соответствие требованиям.",
+      "id": "knowledge-check-f9-7",
+      "module": "F9",
+      "kind": "knowledge-check",
+      "source": "F9 Knowledge Check · 7"
+    },
+    {
+      "question": "In the course, which concept means the ability to provide the intended functionality correctly and consistently when needed?",
+      "options": [
+        "Availability",
+        "Fault tolerance",
+        "Reliability",
+        "Performance efficiency"
+      ],
+      "answer": "C",
+      "explanation": "Reliability описывает способность выполнять нужную функцию. Availability отражает долю времени, когда система доступна.",
+      "id": "knowledge-check-f9-8",
+      "module": "F9",
+      "kind": "knowledge-check",
+      "source": "F9 Knowledge Check · 8"
+    },
+    {
+      "question": "What is the ability to keep operating after one or more individual components fail?",
+      "options": [
+        "Data durability",
+        "Fault tolerance",
+        "High availability",
+        "Elasticity"
+      ],
+      "answer": "B",
+      "explanation": "Fault tolerance означает, что система продолжает обслуживать нагрузку при отдельных отказах. Для этого используют, например, резервные компоненты.",
+      "id": "knowledge-check-f9-9",
+      "module": "F9",
+      "kind": "knowledge-check",
+      "source": "F9 Knowledge Check · 9"
+    },
+    {
+      "question": "Which term best describes a system designed for minimal downtime and quick recovery with little manual intervention?",
+      "options": [
+        "Scalable",
+        "Fault-tolerant",
+        "Elastic",
+        "Highly available"
+      ],
+      "answer": "D",
+      "explanation": "High availability нацелена на минимальный простой. Fault tolerance подчёркивает продолжение работы, пока часть компонентов отказала.",
+      "id": "knowledge-check-f9-10",
+      "module": "F9",
+      "kind": "knowledge-check",
+      "source": "F9 Knowledge Check · 10"
+    },
+    {
+      "question": "Which two AWS capabilities work together to adapt an EC2 application to changing traffic? Choose two.",
+      "options": [
+        "Availability Zones by themselves",
+        "Amazon EC2 Auto Scaling",
+        "AWS CloudFormation",
+        "Elastic Load Balancing",
+        "AWS Config"
+      ],
+      "answer": "BD",
+      "explanation": "Auto Scaling меняет число инстансов. Load Balancing распределяет трафик между доступными целями.",
+      "id": "knowledge-check-f10-1",
+      "module": "F10",
+      "kind": "knowledge-check",
+      "source": "F10 Knowledge Check · 1"
+    },
+    {
+      "question": "Which service can send notifications to subscribers when a CloudWatch alarm changes state?",
+      "options": [
+        "Amazon Simple Notification Service (SNS)",
+        "AWS CloudTrail",
+        "AWS Trusted Advisor",
+        "Amazon Route 53"
+      ],
+      "answer": "A",
+      "explanation": "В действии CloudWatch alarm указывают SNS topic. SNS рассылает уведомление подписчикам.",
+      "id": "knowledge-check-f10-2",
+      "module": "F10",
+      "kind": "knowledge-check",
+      "source": "F10 Knowledge Check · 2"
+    },
+    {
+      "question": "Which three capabilities are part of EC2 Auto Scaling? Choose three.",
+      "options": [
+        "It supports only dynamic scaling",
+        "It can add or terminate instances as conditions change",
+        "It directly delivers mobile push notifications",
+        "It launches instances from the configured AMI",
+        "It works within a configured minimum group size"
+      ],
+      "answer": "BDE",
+      "explanation": "Auto Scaling управляет ёмкостью группы, запускает экземпляры по шаблону и учитывает границы размера группы.",
+      "id": "knowledge-check-f10-3",
+      "module": "F10",
+      "kind": "knowledge-check",
+      "source": "F10 Knowledge Check · 3"
+    },
+    {
+      "question": "What must you configure on a load balancer to accept incoming connections on a protocol and port?",
+      "options": [
+        "A port number by itself",
+        "A network interface by itself",
+        "A listener",
+        "A single EC2 instance"
+      ],
+      "answer": "C",
+      "explanation": "Listener задаёт протокол и порт приёма трафика, а также способ передачи запроса дальше.",
+      "id": "knowledge-check-f10-4",
+      "module": "F10",
+      "kind": "knowledge-check",
+      "source": "F10 Knowledge Check · 4"
+    },
+    {
+      "question": "Which three options belong to the EC2 launch settings in the course's Auto Scaling example? Choose three.",
+      "options": [
+        "Amazon Machine Image",
+        "Load balancer attached to the group",
+        "EC2 instance type",
+        "Subnets selected for the Auto Scaling group",
+        "EBS volume settings"
+      ],
+      "answer": "ACE",
+      "explanation": "Параметры запуска описывают AMI, тип экземпляра и диски. Для новых групп AWS рекомендует launch templates вместо устаревших launch configurations.",
+      "id": "knowledge-check-f10-5",
+      "module": "F10",
+      "kind": "knowledge-check",
+      "source": "F10 Knowledge Check · 5"
+    },
+    {
+      "question": "Which service collects operational metrics from both EC2 and RDS?",
+      "options": [
+        "Amazon CloudFront",
+        "Amazon CloudSearch",
+        "Amazon CloudWatch",
+        "AWS CloudTrail",
+        "EC2 Auto Scaling"
+      ],
+      "answer": "C",
+      "explanation": "CloudWatch собирает метрики ресурсов, например CPU utilization. CloudTrail ведёт журнал действий и вызовов API.",
+      "id": "knowledge-check-f10-6",
+      "module": "F10",
+      "kind": "knowledge-check",
+      "source": "F10 Knowledge Check · 6"
+    },
+    {
+      "question": "Which three values define the capacity settings of an Auto Scaling group? Choose three.",
+      "options": [
+        "Minimum size",
+        "Health check type",
+        "Desired capacity",
+        "Maximum size"
+      ],
+      "answer": "ACD",
+      "explanation": "Группа стремится к desired capacity и держит её в пределах minimum и maximum. Health checks определяют здоровье экземпляров.",
+      "id": "knowledge-check-f10-7",
+      "module": "F10",
+      "kind": "knowledge-check",
+      "source": "F10 Knowledge Check · 7"
+    },
+    {
+      "question": "Which service helps auditors identify who called AWS resource APIs and when?",
+      "options": [
+        "Amazon CloudWatch",
+        "AWS CloudTrail",
+        "Amazon EC2",
+        "Amazon SNS"
+      ],
+      "answer": "B",
+      "explanation": "CloudTrail регистрирует действия и идентификаторы вызывающих. Для некоторых операций, например обращений к объектам S3, отдельно настраивают сбор data events.",
+      "id": "knowledge-check-f10-8",
+      "module": "F10",
+      "kind": "knowledge-check",
+      "source": "F10 Knowledge Check · 8"
+    },
+    {
+      "question": "If healthy targets are still available, which three actions describe typical load balancer behavior after a target becomes unhealthy? Choose three.",
+      "options": [
+        "Stop sending new traffic to the unhealthy target",
+        "Always create a CloudWatch alarm automatically",
+        "Resume routing to that target when it becomes healthy",
+        "Wait for a manual restart before any recovery",
+        "Route traffic to healthy targets"
+      ],
+      "answer": "ACE",
+      "explanation": "Балансировщик использует health checks для исключения нездоровой цели и возвращает её после восстановления. Настройка уведомлений выполняется отдельно.",
+      "id": "knowledge-check-f10-9",
+      "module": "F10",
+      "kind": "knowledge-check",
+      "source": "F10 Knowledge Check · 9"
+    },
+    {
+      "question": "Which three load balancer types are listed in the course's Elastic Load Balancing overview? Choose three.",
+      "options": [
+        "Internet Load Balancer",
+        "Application Load Balancer",
+        "Network Load Balancer",
+        "Compute Load Balancer",
+        "Classic Load Balancer",
+        "Auto Scaling Load Balancer"
+      ],
+      "answer": "BCE",
+      "explanation": "Курс перечисляет ALB, NLB и Classic. В актуальном ELB есть также Gateway Load Balancer, а Classic относится к предыдущему поколению.",
+      "id": "knowledge-check-f10-10",
+      "module": "F10",
+      "kind": "knowledge-check",
+      "source": "F10 Knowledge Check · 10"
+    },
+    {
+      "question": "In the six-phase SDLC used in the lesson, which phases follow plan, define, and design?",
+      "options": [
+        "Test, deploy, maintain",
+        "Code, build, maintain",
+        "Code, build, test",
+        "Develop, deploy, maintain"
+      ],
+      "answer": "D",
+      "explanation": "Общий цикл в модели курса: plan → define → design → develop → deploy → maintain. Code, build и test входят в более детальное описание разработки.",
+      "id": "knowledge-check-d2-1",
+      "module": "D2",
+      "kind": "knowledge-check",
+      "source": "D2 Knowledge Check · 1"
+    },
+    {
+      "question": "Which activity takes place during the develop phase of the SDLC in this module?",
+      "options": [
+        "Roll out the completed system to users",
+        "Identify deficiencies in the current system",
+        "Develop and install new components and programs",
+        "Define the requirements for the new system"
+      ],
+      "answer": "C",
+      "explanation": "На этапе develop воплощают проект: создают и устанавливают компоненты. Ввод готовой системы в эксплуатацию относится к deploy.",
+      "id": "knowledge-check-d2-2",
+      "module": "D2",
+      "kind": "knowledge-check",
+      "source": "D2 Knowledge Check · 2"
+    },
+    {
+      "question": "Which AWS service would an administrator use to add a new developer to a permissions group?",
+      "options": [
+        "Amazon S3",
+        "AWS Identity and Access Management (IAM)",
+        "Amazon EC2",
+        "AWS Resource Access Manager"
+      ],
+      "answer": "B",
+      "explanation": "IAM управляет пользователями, группами и политиками. Участие в группе помогает выдавать пользователям одинаковые права.",
+      "id": "knowledge-check-d2-3",
+      "module": "D2",
+      "kind": "knowledge-check",
+      "source": "D2 Knowledge Check · 3"
+    },
+    {
+      "question": "Why can you usually run AWS commands in CloudShell as soon as you open it from the console?",
+      "options": [
+        "You prepay for reserved shell capacity",
+        "It provides exactly 500 MB per Region",
+        "You manually patch it before using it",
+        "It is pre-authenticated using your console session"
+      ],
+      "answer": "D",
+      "explanation": "CloudShell — управляемая командная среда, использующая аутентификацию текущей сессии консоли.",
+      "id": "knowledge-check-d2-4",
+      "module": "D2",
+      "kind": "knowledge-check",
+      "source": "D2 Knowledge Check · 4"
+    },
+    {
+      "question": "Which three are direct ways to interact with AWS service operations? Choose three.",
+      "options": [
+        "AWS CLI",
+        "AWS CloudTrail",
+        "AWS SDKs",
+        "AWS IAM",
+        "AWS Management Console",
+        "AWS X-Ray"
+      ],
+      "answer": "ACE",
+      "explanation": "Console, CLI и SDK предоставляют интерфейсы выполнения операций. CloudTrail, IAM и X-Ray выполняют функции аудита, доступа и трассировки.",
+      "id": "knowledge-check-d2-5",
+      "module": "D2",
+      "kind": "knowledge-check",
+      "source": "D2 Knowledge Check · 5"
+    },
+    {
+      "question": "Which of these tools lets you automate AWS operations in PowerShell scripts?",
+      "options": [
+        "AWS Tools for PowerShell",
+        "Amazon Q Developer",
+        "AWS X-Ray",
+        "AWS IAM"
+      ],
+      "answer": "A",
+      "explanation": "AWS Tools for PowerShell предоставляет cmdlets. Их можно запускать вручную или включать в сценарии автоматизации.",
+      "id": "knowledge-check-d2-6",
+      "module": "D2",
+      "kind": "knowledge-check",
+      "source": "D2 Knowledge Check · 6"
+    },
+    {
+      "question": "Which description fits Amazon Q Developer?",
+      "options": [
+        "An entire cloud IDE",
+        "A wizard for configuring an IDE",
+        "A command shell running in the browser",
+        "A generative AI assistant for software development"
+      ],
+      "answer": "D",
+      "explanation": "Amazon Q Developer помогает с задачами разработки, включая работу с кодом. Командную среду в браузере предоставляет CloudShell.",
+      "id": "knowledge-check-d2-7",
+      "module": "D2",
+      "kind": "knowledge-check",
+      "source": "D2 Knowledge Check · 7"
+    },
+    {
+      "question": "Which two descriptions fit the Boto3 resource interface? Choose two.",
+      "options": [
+        "It consists primarily of raw request and response structures",
+        "It models AWS resources using classes and objects",
+        "It is lower-level than service clients",
+        "It provides a higher-level abstraction over service operations",
+        "It requires writing raw HTTP requests to access resources"
+      ],
+      "answer": "BD",
+      "explanation": "Resource interface даёт объектно-ориентированную абстракцию над клиентом. Например, бакет и коллекция его объектов доступны как Python-объекты.",
+      "id": "knowledge-check-d2-8",
+      "module": "D2",
+      "kind": "knowledge-check",
+      "source": "D2 Knowledge Check · 8"
+    },
+    {
+      "question": "How can a developer explicitly set the Region for one Boto3 service client?",
+      "options": [
+        "Set AWS_PROFILE to a Region code",
+        "Pass region_name when constructing the client",
+        "Set the Region in the shared credentials file",
+        "A service client cannot use an explicit Region"
+      ],
+      "answer": "B",
+      "explanation": "Параметр region_name задаёт регион при создании клиента. Регион по умолчанию для профиля обычно указывают в ~/.aws/config.",
+      "id": "knowledge-check-d2-9",
+      "module": "D2",
+      "kind": "knowledge-check",
+      "source": "D2 Knowledge Check · 9"
+    },
+    {
+      "question": "A request to read objects targets a bucket that does not exist. Which HTTP response class should the client expect from S3?",
+      "options": [
+        "5xx",
+        "3xx",
+        "2xx",
+        "4xx"
+      ],
+      "answer": "D",
+      "explanation": "Отсутствующий бакет обычно приводит к NoSuchBucket с HTTP 404. Код 4xx обозначает проблему с запросом со стороны клиента.",
+      "id": "knowledge-check-d2-10",
+      "module": "D2",
+      "kind": "knowledge-check",
+      "source": "D2 Knowledge Check · 10"
+    },
+    {
+      "question": "Which use case fits Amazon S3 as an object storage service?",
+      "options": [
+        "Storing datasets in a data lake",
+        "Providing a shared POSIX file system",
+        "Running a live database engine",
+        "Providing a block device for an operating system"
+      ],
+      "answer": "A",
+      "explanation": "Data lake хранит большие наборы данных в виде объектов. Для общего файлового доступа используют EFS, а для блочного — EBS.",
+      "id": "knowledge-check-d3-1",
+      "module": "D3",
+      "kind": "knowledge-check",
+      "source": "D3 Knowledge Check · 1"
+    },
+    {
+      "question": "Which named S3 resource is the top-level container for objects?",
+      "options": [
+        "Group",
+        "Bucket",
+        "Region",
+        "Object prefix"
+      ],
+      "answer": "B",
+      "explanation": "Объекты хранятся в бакете. Псевдопапки являются префиксами ключей объектов внутри бакета.",
+      "id": "knowledge-check-d3-2",
+      "module": "D3",
+      "kind": "knowledge-check",
+      "source": "D3 Knowledge Check · 2"
+    },
+    {
+      "question": "Creating a bucket in the shared global namespace returns BucketAlreadyExists. What should the developer do?",
+      "options": [
+        "Bid for the name",
+        "Ask AWS Support to allow duplicate names",
+        "Try the same name in another Region of the same partition",
+        "Choose another available bucket name"
+      ],
+      "answer": "D",
+      "explanation": "Имя в общем namespace уникально в пределах AWS partition. Смена Region внутри partition не освобождает занятое имя.",
+      "id": "knowledge-check-d3-3",
+      "module": "D3",
+      "kind": "knowledge-check",
+      "source": "D3 Knowledge Check · 3"
+    },
+    {
+      "question": "A bucket named example-cafe hosts a static website in us-east-1. Which is its native virtual-hosted website endpoint?",
+      "options": [
+        "https://example-cafe.s3.us-east-1.amazonaws.com",
+        "http://www.example-cafe.s3-website-us-east-1.amazonaws.com",
+        "http://example-cafe.s3-website-us-east-1.amazonaws.com",
+        "http://s3-website-us-east-1.amazonaws.com/example-cafe"
+      ],
+      "answer": "C",
+      "explanation": "Website endpoint содержит имя бакета в имени хоста и работает по HTTP. Для HTTPS нужен отдельный слой доставки, например CloudFront.",
+      "id": "knowledge-check-d3-4",
+      "module": "D3",
+      "kind": "knowledge-check",
+      "source": "D3 Knowledge Check · 4"
+    },
+    {
+      "question": "True or false? An S3 bucket can go back to the never-versioned state after versioning has been enabled.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "B",
+      "explanation": "Версионирование можно приостановить, переведя в Suspended. Существующие версии при этом сохраняются.",
+      "id": "knowledge-check-d3-5",
+      "module": "D3",
+      "kind": "knowledge-check",
+      "source": "D3 Knowledge Check · 5"
+    },
+    {
+      "question": "What single PUT upload limit does the module teach for Amazon S3?",
+      "options": [
+        "1 GB",
+        "5 GB",
+        "100 MB",
+        "5 TB"
+      ],
+      "answer": "B",
+      "explanation": "В курсе для одного PUT указан предел 5 GB. Для объектов больше лимита используют multipart upload, у которого отдельный предел размера.",
+      "id": "knowledge-check-d3-6",
+      "module": "D3",
+      "kind": "knowledge-check",
+      "source": "D3 Knowledge Check · 6"
+    },
+    {
+      "question": "Which resource policy should a developer attach directly to an S3 bucket to grant a specified IAM principal access?",
+      "options": [
+        "Bucket ACL",
+        "CORS rules",
+        "An identity policy attached to the IAM user",
+        "Bucket policy"
+      ],
+      "answer": "D",
+      "explanation": "Bucket policy описывает principal, разрешённые действия и ресурсы. Identity policy применяется к IAM-идентичности, а CORS управляет междоменными запросами браузера.",
+      "id": "knowledge-check-d3-7",
+      "module": "D3",
+      "kind": "knowledge-check",
+      "source": "D3 Knowledge Check · 7"
+    },
+    {
+      "question": "How can you allow someone without AWS credentials to download a private S3 object for a limited period?",
+      "options": [
+        "Generate a presigned URL for the object",
+        "Give them the root credentials",
+        "Send only a session token with no access key",
+        "Share the plain bucket endpoint"
+      ],
+      "answer": "A",
+      "explanation": "Presigned URL даёт временный доступ к выбранной операции над объектом с полномочиями подписавшей стороны.",
+      "id": "knowledge-check-d3-8",
+      "module": "D3",
+      "kind": "knowledge-check",
+      "source": "D3 Knowledge Check · 8"
+    },
+    {
+      "question": "What protects S3 object data while it is transferred to the service?",
+      "options": [
+        "SSE-S3",
+        "HTTPS with TLS",
+        "SSE-KMS",
+        "SSE-C"
+      ],
+      "answer": "B",
+      "explanation": "TLS защищает данные при передаче. SSE-S3, SSE-KMS и SSE-C относятся к серверному шифрованию хранимых объектов.",
+      "id": "knowledge-check-d3-9",
+      "module": "D3",
+      "kind": "knowledge-check",
+      "source": "D3 Knowledge Check · 9"
+    },
+    {
+      "question": "A website script uses fetch to load assets from a different S3 origin. Access permissions are correct, but the browser shows a cross-origin error. What should you check?",
+      "options": [
+        "Cross-Region Replication",
+        "A security group on the S3 bucket",
+        "Whether S3 forbids references to another bucket",
+        "CORS rules on the bucket serving the assets"
+      ],
+      "answer": "D",
+      "explanation": "Сервер источника ресурсов должен вернуть подходящие CORS-заголовки. Правила ставят на бакет, из которого выполняется fetch.",
+      "id": "knowledge-check-d3-10",
+      "module": "D3",
+      "kind": "knowledge-check",
+      "source": "D3 Knowledge Check · 10"
+    },
+    {
+      "question": "Which two items are the customer's responsibility under the AWS shared responsibility model? Choose two.",
+      "options": [
+        "Configuring security groups",
+        "Maintaining AWS physical servers",
+        "Protecting customer data",
+        "Operating edge-location infrastructure",
+        "Securing the physical Availability Zones"
+      ],
+      "answer": "AC",
+      "explanation": "Клиент отвечает за свои данные и сетевые настройки своих ресурсов. Оборудование и физическую инфраструктуру защищает AWS.",
+      "id": "knowledge-check-d4-1",
+      "module": "D4",
+      "kind": "knowledge-check",
+      "source": "D4 Knowledge Check · 1"
+    },
+    {
+      "question": "Which IAM resource contains statements that explicitly allow or deny actions?",
+      "options": [
+        "IAM roles",
+        "IAM users",
+        "IAM groups",
+        "IAM policies"
+      ],
+      "answer": "D",
+      "explanation": "Политика описывает разрешения через Effect, Action и Resource. Пользователь, группа или роль используют назначенную политику.",
+      "id": "knowledge-check-d4-2",
+      "module": "D4",
+      "kind": "knowledge-check",
+      "source": "D4 Knowledge Check · 2"
+    },
+    {
+      "question": "What is the process of verifying a user's identity called?",
+      "options": [
+        "Endorsement",
+        "Authentication",
+        "Confirmation",
+        "Authorization"
+      ],
+      "answer": "B",
+      "explanation": "Authentication проверяет личность. Authorization определяет, что этой личности разрешено делать.",
+      "id": "knowledge-check-d4-3",
+      "module": "D4",
+      "kind": "knowledge-check",
+      "source": "D4 Knowledge Check · 3"
+    },
+    {
+      "question": "Which two statements describe traditional IAM user authentication? Choose two.",
+      "options": [
+        "AWS service requests use appropriate AWS credentials",
+        "IAM users signing directly into the console use a user name and password",
+        "An EC2 .pem file signs AWS service API requests",
+        "Root credentials are recommended for routine CLI requests",
+        "Only one administrator can exist in an AWS account"
+      ],
+      "answer": "AB",
+      "explanation": "Прямой вход в консоль для IAM user использует имя и пароль, часто с MFA. Программные запросы аутентифицируются подходящими AWS credentials, например временными.",
+      "id": "knowledge-check-d4-4",
+      "module": "D4",
+      "kind": "knowledge-check",
+      "source": "D4 Knowledge Check · 4"
+    },
+    {
+      "question": "How should an application on EC2 obtain AWS permissions without storing long-term credentials?",
+      "options": [
+        "Hard-code an access key into its SDK client",
+        "Store permanent keys on the instance",
+        "Associate an IAM role through the instance profile",
+        "Attach an IAM user directly to the EC2 instance"
+      ],
+      "answer": "C",
+      "explanation": "Роль через instance profile предоставляет временные учётные данные. AWS SDK может получать и обновлять их автоматически.",
+      "id": "knowledge-check-d4-5",
+      "module": "D4",
+      "kind": "knowledge-check",
+      "source": "D4 Knowledge Check · 5"
+    },
+    {
+      "question": "In what format are IAM policy documents written?",
+      "options": [
+        "YAML",
+        "SAML",
+        "CSV",
+        "JSON"
+      ],
+      "answer": "D",
+      "explanation": "IAM принимает политики как JSON-документы. Некоторые инструменты инфраструктуры позволяют описывать их в YAML и преобразуют перед отправкой.",
+      "id": "knowledge-check-d4-6",
+      "module": "D4",
+      "kind": "knowledge-check",
+      "source": "D4 Knowledge Check · 6"
+    },
+    {
+      "question": "A policy is attached to an IAM group and permits its users to read and write objects in S3. What type of policy is it?",
+      "options": [
+        "Identity-based policy",
+        "Resource-based policy",
+        "Cross-account role trust",
+        "AdministratorAccess managed policy"
+      ],
+      "answer": "A",
+      "explanation": "Политика на группе является identity-based. Политика, прикреплённая к бакету, была бы resource-based.",
+      "id": "knowledge-check-d4-7",
+      "module": "D4",
+      "kind": "knowledge-check",
+      "source": "D4 Knowledge Check · 7"
+    },
+    {
+      "question": "What is the recommended approach when granting permissions for a workload?",
+      "options": [
+        "Start with broad access and leave it until somebody asks",
+        "Use root credentials for routine administration",
+        "Grant only the permissions required for the task",
+        "Avoid resource-specific permissions"
+      ],
+      "answer": "C",
+      "explanation": "Принцип least privilege уменьшает влияние ошибок и ограничивает доступ необходимыми действиями и ресурсами.",
+      "id": "knowledge-check-d4-8",
+      "module": "D4",
+      "kind": "knowledge-check",
+      "source": "D4 Knowledge Check · 8"
+    },
+    {
+      "question": "An IAM statement has Effect Deny, Action s3:* and dynamodb:*, and NotResource listing a few specific ARNs. What is its effect?",
+      "options": [
+        "It denies the matching actions on applicable resources outside the exceptions",
+        "It denies writes to the DynamoDB table listed as an exception",
+        "It denies reads from the S3 resources listed as exceptions",
+        "It denies exactly the resources listed in NotResource"
+      ],
+      "answer": "A",
+      "explanation": "NotResource исключает перечисленные ARN из действия этого Deny. Исключение само по себе разрешений не выдаёт.",
+      "id": "knowledge-check-d4-9",
+      "module": "D4",
+      "kind": "knowledge-check",
+      "source": "D4 Knowledge Check · 9"
+    },
+    {
+      "question": "Which two principles apply when AWS evaluates IAM requests? Choose two.",
+      "options": [
+        "An Allow and a Deny cannot appear in the same policy",
+        "An explicit Allow overrides an explicit Deny",
+        "An explicit Deny overrides an explicit Allow",
+        "Requests without an applicable Allow are implicitly denied",
+        "Requests are allowed by default"
+      ],
+      "answer": "CD",
+      "explanation": "По умолчанию действует implicit deny. Применимый explicit deny имеет приоритет над разрешением.",
+      "id": "knowledge-check-d4-10",
+      "module": "D4",
+      "kind": "knowledge-check",
+      "source": "D4 Knowledge Check · 10"
+    },
+    {
+      "question": "Which description best fits Amazon DynamoDB?",
+      "options": [
+        "An in-memory cache for databases",
+        "A graph database for interconnected data",
+        "A relational engine compatible with MySQL and PostgreSQL",
+        "A horizontally scalable key-value and document database"
+      ],
+      "answer": "D",
+      "explanation": "DynamoDB — управляемая NoSQL-база. Она хранит key-value и document items и распределяет данные по разделам.",
+      "id": "knowledge-check-d5-1",
+      "module": "D5",
+      "kind": "knowledge-check",
+      "source": "D5 Knowledge Check · 1"
+    },
+    {
+      "question": "What are the named fields inside a DynamoDB item called?",
+      "options": [
+        "Fixed table schema entries",
+        "SQL queries",
+        "Attributes",
+        "Relational columns"
+      ],
+      "answer": "C",
+      "explanation": "Таблица содержит items, а каждый item содержит attributes. Набор неключевых атрибутов может отличаться у разных записей.",
+      "id": "knowledge-check-d5-2",
+      "module": "D5",
+      "kind": "knowledge-check",
+      "source": "D5 Knowledge Check · 2"
+    },
+    {
+      "question": "A sensor table uses sensor ID as its partition key and timestamp as its sort key. Which uniqueness rule applies?",
+      "options": [
+        "The two attributes form a simple primary key",
+        "Every item must have a distinct sensor ID",
+        "Every item must have a distinct timestamp",
+        "The same sensor ID and timestamp pair cannot identify two different items"
+      ],
+      "answer": "D",
+      "explanation": "В составном ключе уникальна пара partition key и sort key. Каждое значение по отдельности может повторяться.",
+      "id": "knowledge-check-d5-3",
+      "module": "D5",
+      "kind": "knowledge-check",
+      "source": "D5 Knowledge Check · 3"
+    },
+    {
+      "question": "How does DynamoDB place items when a table has only a partition key?",
+      "options": [
+        "It chooses partitions using a range attribute",
+        "It hashes the partition key to place and locate each item",
+        "It sorts items before selecting the physical partition",
+        "It uses a hash function supplied by the developer"
+      ],
+      "answer": "B",
+      "explanation": "DynamoDB сам вычисляет хеш partition key. Sort key помогает организовать элементы с одинаковым partition key.",
+      "id": "knowledge-check-d5-4",
+      "module": "D5",
+      "kind": "knowledge-check",
+      "source": "D5 Knowledge Check · 4"
+    },
+    {
+      "question": "A restaurant table uses name and location as keys. How can it also support efficient queries by cuisine and rating?",
+      "options": [
+        "Add an LSI that replaces the partition key with cuisine",
+        "Add a GSI with cuisine as partition key and rating as sort key",
+        "Change the existing table's primary key in place",
+        "Use Query on those attributes without a matching key or index"
+      ],
+      "answer": "B",
+      "explanation": "GSI может иметь альтернативный partition key. LSI использует тот же partition key, что и исходная таблица.",
+      "id": "knowledge-check-d5-5",
+      "module": "D5",
+      "kind": "knowledge-check",
+      "source": "D5 Knowledge Check · 5"
+    },
+    {
+      "question": "A game purchase updates a balance and an inventory record together. Both writes must succeed or both must fail. What should the application use?",
+      "options": [
+        "DynamoDB Accelerator (DAX)",
+        "DynamoDB global tables",
+        "Independent writes with a custom manual rollback",
+        "DynamoDB transactions"
+      ],
+      "answer": "D",
+      "explanation": "Транзакционная запись выполняет согласованный набор операций атомарно. DAX ускоряет чтение, а global tables реплицируют данные.",
+      "id": "knowledge-check-d5-6",
+      "module": "D5",
+      "kind": "knowledge-check",
+      "source": "D5 Knowledge Check · 6"
+    },
+    {
+      "question": "Which two workloads can use DynamoDB Streams to react to item changes? Choose two.",
+      "options": [
+        "Achieving the lowest possible latency for key reads",
+        "Repeatedly scanning a large historical dataset for analysis",
+        "Sending notifications when a new photo metadata item is added",
+        "Running an action when a changed value crosses a threshold",
+        "Providing an in-memory cache"
+      ],
+      "answer": "CD",
+      "explanation": "Streams фиксирует изменения items. Обработчик может реагировать на вставки и обновления и отправлять уведомления.",
+      "id": "knowledge-check-d5-7",
+      "module": "D5",
+      "kind": "knowledge-check",
+      "source": "D5 Knowledge Check · 7"
+    },
+    {
+      "question": "Which description of DynamoDB global tables is accurate?",
+      "options": [
+        "They copy data only within a single Region",
+        "They require an S3 replication bucket",
+        "DynamoDB manages replicas and propagates changes between configured Regions",
+        "They replicate only selected items by default"
+      ],
+      "answer": "C",
+      "explanation": "Global tables предоставляют управляемую межрегиональную репликацию. DynamoDB синхронизирует изменения между репликами таблицы.",
+      "id": "knowledge-check-d5-8",
+      "module": "D5",
+      "kind": "knowledge-check",
+      "source": "D5 Knowledge Check · 8"
+    },
+    {
+      "question": "What is the maximum recovery window for DynamoDB point-in-time recovery (PITR)?",
+      "options": [
+        "7 days",
+        "10 days",
+        "35 days",
+        "One calendar month"
+      ],
+      "answer": "C",
+      "explanation": "PITR хранит непрерывную историю до 35 дней. Настройка может сократить окно до выбранного числа дней.",
+      "id": "knowledge-check-d5-9",
+      "module": "D5",
+      "kind": "knowledge-check",
+      "source": "D5 Knowledge Check · 9"
+    },
+    {
+      "question": "Which task is a DynamoDB control-plane operation?",
+      "options": [
+        "Create and manage tables",
+        "Create, read, update, and delete individual items",
+        "Read or write a batch of items",
+        "Apply an atomic group of item writes"
+      ],
+      "answer": "A",
+      "explanation": "Control plane работает с конфигурацией таблиц. Item CRUD, batch и transactions работают с самими данными.",
+      "id": "knowledge-check-d5-10",
+      "module": "D5",
+      "kind": "knowledge-check",
+      "source": "D5 Knowledge Check · 10"
+    },
+    {
+      "question": "What makes an API RESTful?",
+      "options": [
+        "It uses HTTP for every client-server call",
+        "It sits between the client and a backend as a proxy",
+        "It follows the constraints of Representational State Transfer",
+        "It is hosted on a web server"
+      ],
+      "answer": "C",
+      "explanation": "REST — архитектурный стиль. Одно использование HTTP само по себе не означает, что API следует принципам REST.",
+      "id": "knowledge-check-d6-1",
+      "module": "D6",
+      "kind": "knowledge-check",
+      "source": "D6 Knowledge Check · 1"
+    },
+    {
+      "question": "Which application has the strongest use case for an API Gateway WebSocket API?",
+      "options": [
+        "Returning a receipt number for each submitted order",
+        "Sending a batch of orders to a warehouse",
+        "Exchanging messages in a live support chat",
+        "Downloading a static daily report"
+      ],
+      "answer": "C",
+      "explanation": "WebSocket поддерживает постоянное двустороннее соединение. Клиент и сервер могут отправлять сообщения по мере возникновения событий.",
+      "id": "knowledge-check-d6-2",
+      "module": "D6",
+      "kind": "knowledge-check",
+      "source": "D6 Knowledge Check · 2"
+    },
+    {
+      "question": "Which scenario is the best fit for a simple API Gateway HTTP API?",
+      "options": [
+        "Expose a Lambda function via a proxy endpoint",
+        "Apply a REST API mapping template to transform a response body",
+        "Use mock integration endpoints for a staged demonstration",
+        "Set per-client quotas with usage plans"
+      ],
+      "answer": "A",
+      "explanation": "HTTP API подходит для простого Lambda proxy. Mapping templates, mock integration и usage plans относятся к возможностям REST API.",
+      "id": "knowledge-check-d6-3",
+      "module": "D6",
+      "kind": "knowledge-check",
+      "source": "D6 Knowledge Check · 3"
+    },
+    {
+      "question": "Which statement about API Gateway integrations is accurate?",
+      "options": [
+        "A first-class AWS service integration targets any third-party API automatically",
+        "An HTTP proxy integration can forward requests to a public HTTP endpoint",
+        "API Gateway cannot connect to a backend in a VPC",
+        "An integration request must always rewrite the entire client request"
+      ],
+      "answer": "B",
+      "explanation": "HTTP proxy перенаправляет запросы к HTTP-сервису. Для приватного VPC backend можно использовать поддерживаемую private integration через VPC link.",
+      "id": "knowledge-check-d6-4",
+      "module": "D6",
+      "kind": "knowledge-check",
+      "source": "D6 Knowledge Check · 4"
+    },
+    {
+      "question": "A client sends first name, last name, office phone, and mobile phone. A REST API backend expects only full name and mobile phone. What keeps both applications unchanged?",
+      "options": [
+        "Export the API definition and rewrite the client",
+        "Transform the incoming body with an API Gateway mapping template",
+        "Set a usage plan that contains the expected fields",
+        "Use a service integration with no transformation"
+      ],
+      "answer": "B",
+      "explanation": "В REST API mapping template может объединить части имени и передать только нужные поля. Usage plan задаёт параметры использования, а не структуру тела запроса.",
+      "id": "knowledge-check-d6-5",
+      "module": "D6",
+      "kind": "knowledge-check",
+      "source": "D6 Knowledge Check · 5"
+    },
+    {
+      "question": "Which pair appears in the default invoke URL for a deployed API Gateway REST API stage?",
+      "options": [
+        "AWS Region and stage name",
+        "API identifier and mandatory API version",
+        "AWS account ID and stage name",
+        "AWS Region and mandatory API version"
+      ],
+      "answer": "A",
+      "explanation": "Типовой URL REST API содержит API ID и Region в имени хоста, а stage — в пути. Номер версии не является обязательной частью адреса.",
+      "id": "knowledge-check-d6-6",
+      "module": "D6",
+      "kind": "knowledge-check",
+      "source": "D6 Knowledge Check · 6"
+    },
+    {
+      "question": "Which route key should you pass to aws apigatewayv2 create-route to retrieve a single catalog item by ID?",
+      "options": [
+        "--route-key 'GET /products/{product_id}'",
+        "--route-key 'PUT /products'",
+        "--route-selection-expression '$GET/product'",
+        "--route-selection-expression 'PUT /products/{proxy+}'"
+      ],
+      "answer": "A",
+      "explanation": "HTTP API route key содержит метод и путь. GET читает ресурс, а параметр product_id указывает конкретный товар.",
+      "id": "knowledge-check-d6-7",
+      "module": "D6",
+      "kind": "knowledge-check",
+      "source": "D6 Knowledge Check · 7"
+    },
+    {
+      "question": "How can stage variables help when deploying an API to multiple environments?",
+      "options": [
+        "They assign stage names in the order of API versions",
+        "They enable automatic deployment for every API type",
+        "They let different stages resolve to different backends",
+        "They require using just one stage for all environments"
+      ],
+      "answer": "C",
+      "explanation": "Переменные stage хранят значения для разных окружений, например dev и prod. Интеграция может использовать эти значения для выбора backend.",
+      "id": "knowledge-check-d6-8",
+      "module": "D6",
+      "kind": "knowledge-check",
+      "source": "D6 Knowledge Check · 8"
+    },
+    {
+      "question": "Which service should a team use with API Gateway REST API to filter common web attacks such as SQL injection and cross-site scripting?",
+      "options": [
+        "API Gateway throttling alone",
+        "Private endpoints for every public API",
+        "JWT authentication alone",
+        "AWS WAF"
+      ],
+      "answer": "D",
+      "explanation": "AWS WAF фильтрует запросы по правилам защиты приложения. Throttling ограничивает частоту, а JWT authorizer проверяет доступ.",
+      "id": "knowledge-check-d6-9",
+      "module": "D6",
+      "kind": "knowledge-check",
+      "source": "D6 Knowledge Check · 9"
+    },
+    {
+      "question": "What interval does the API Gateway IntegrationLatency metric measure?",
+      "options": [
+        "Frequency of backend errors",
+        "Total client-visible response time",
+        "Time from forwarding a request to the backend until the backend response arrives",
+        "Frequency of throttled requests"
+      ],
+      "answer": "C",
+      "explanation": "IntegrationLatency показывает время обработки запроса интеграцией. Latency в API Gateway включает также время работы самого шлюза.",
+      "id": "knowledge-check-d6-10",
+      "module": "D6",
+      "kind": "knowledge-check",
+      "source": "D6 Knowledge Check · 10"
     }
   ],
   "quickReview": [

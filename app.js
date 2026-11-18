@@ -228,7 +228,7 @@ function showPractice(preselected, sourceFilter) {
   const scope = document.querySelector('#scope');
   const source = document.querySelector('#source');
   const size = document.querySelector('#quiz-size');
-  if (moduleById.has(preselected)) scope.value = preselected;
+  if (moduleById.has(preselected) || courseNames.includes(preselected)) scope.value = preselected;
   if (sourceFilter === checkKind) source.value = checkKind;
   function updateSizes() {
     const total = poolFor(scope.value, source.value).length;
