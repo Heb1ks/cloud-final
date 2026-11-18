@@ -1321,6 +1321,157 @@ window.CLOUD_CONTENT = {
       "answer": "D",
       "explanation": "Boto3 — AWS SDK для Python. Его документация описывает методы и параметры вызовов S3.",
       "source": "D1: 34; D2: 25–28"
+    },
+    {
+      "question": "Which of these are advantages of moving from on-premises infrastructure to cloud computing?",
+      "options": [
+        "Avoiding large upfront hardware purchases",
+        "Adding capacity when it is needed",
+        "Reaching new geographic markets quickly",
+        "Launching changes faster",
+        "All four of these"
+      ],
+      "answer": "E",
+      "explanation": "Все четыре пункта верны. Облако уменьшает первоначальные вложения, позволяет выделять ресурсы по запросу и упрощает быстрый запуск в новых регионах.",
+      "id": "knowledge-check-f1-1",
+      "module": "F1",
+      "kind": "knowledge-check",
+      "source": "F1 Knowledge Check · 1"
+    },
+    {
+      "question": "What is the name of the pricing model in which customers pay for AWS resources as they consume them?",
+      "options": [
+        "Pay on decommissioning",
+        "Pay as you go",
+        "Pay when purchasing hardware",
+        "Pay only after reserving capacity"
+      ],
+      "answer": "B",
+      "explanation": "Pay as you go означает оплату по мере использования ресурсов. Долгосрочное резервирование не является обязательным условием этой модели.",
+      "id": "knowledge-check-f1-2",
+      "module": "F1",
+      "kind": "knowledge-check",
+      "source": "F1 Knowledge Check · 2"
+    },
+    {
+      "question": "Which of the following falls outside the three standard cloud service models?",
+      "options": [
+        "Platform as a Service",
+        "Infrastructure as a Service",
+        "System Administration as a Service",
+        "Software as a Service"
+      ],
+      "answer": "C",
+      "explanation": "Три стандартные модели в этом модуле — IaaS, PaaS и SaaS. System Administration as a Service не входит в эту классификацию.",
+      "id": "knowledge-check-f1-3",
+      "module": "F1",
+      "kind": "knowledge-check",
+      "source": "F1 Knowledge Check · 3"
+    },
+    {
+      "question": "True or false? AWS maintains the physical infrastructure behind its cloud services, and customers provision the resources they need.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "A",
+      "explanation": "AWS обслуживает физическую инфраструктуру. Клиент выделяет нужные ему ресурсы и отвечает за их настройки и данные в пределах выбранного сервиса.",
+      "id": "knowledge-check-f1-4",
+      "module": "F1",
+      "kind": "knowledge-check",
+      "source": "F1 Knowledge Check · 4"
+    },
+    {
+      "question": "Which activity is a burden of running your own data center rather than a cloud computing advantage?",
+      "options": [
+        "Deploying changes more quickly",
+        "Paying to install servers in racks and power them",
+        "Adjusting capacity when demand changes",
+        "Replacing upfront capital costs with variable costs",
+        "Benefiting from economies of scale"
+      ],
+      "answer": "B",
+      "explanation": "Покупка, установка в стойки и питание физических серверов относятся к работе собственного дата-центра. При использовании AWS физической инфраструктурой управляет провайдер.",
+      "id": "knowledge-check-f1-5",
+      "module": "F1",
+      "kind": "knowledge-check",
+      "source": "F1 Knowledge Check · 5"
+    },
+    {
+      "question": "Which two characteristics work against the advantages of cloud computing? Choose two.",
+      "options": [
+        "Repeated hardware procurement cycles",
+        "High availability",
+        "Long network delays",
+        "Resources that can be created and discarded quickly",
+        "Databases designed to tolerate failures"
+      ],
+      "answer": "AC",
+      "explanation": "Циклы закупки оборудования замедляют запуск, а высокая задержка ухудшает отзывчивость. Высокая доступность, временные ресурсы и отказоустойчивость — возможности облака.",
+      "id": "knowledge-check-f1-6",
+      "module": "F1",
+      "kind": "knowledge-check",
+      "source": "F1 Knowledge Check · 6"
+    },
+    {
+      "question": "Which AWS service belongs in the compute category?",
+      "options": [
+        "Amazon VPC",
+        "Amazon S3",
+        "Amazon EC2",
+        "Amazon CloudFront",
+        "Amazon Redshift"
+      ],
+      "answer": "C",
+      "explanation": "EC2 предоставляет виртуальные серверы. VPC относится к сетям, S3 — к хранилищам, CloudFront — к доставке контента, Redshift — к аналитике данных.",
+      "id": "knowledge-check-f1-7",
+      "module": "F1",
+      "kind": "knowledge-check",
+      "source": "F1 Knowledge Check · 7"
+    },
+    {
+      "question": "True or false? Before using cloud servers or storage over the internet, an AWS customer must own the physical servers providing those resources.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "B",
+      "explanation": "Клиент получает доступ к ресурсам по запросу. Физическое оборудование для облачных сервисов находится у провайдера. Формулировка про обязательное владение оборудованием делает утверждение ложным.",
+      "id": "knowledge-check-f1-8",
+      "module": "F1",
+      "kind": "knowledge-check",
+      "source": "F1 Knowledge Check · 8"
+    },
+    {
+      "question": "What drives economies of scale for a large cloud provider?",
+      "options": [
+        "A large number of competing providers",
+        "Pooling demand from a large number of customers",
+        "The number of services shown in the console",
+        "High capital investment by each customer"
+      ],
+      "answer": "B",
+      "explanation": "Когда провайдер объединяет спрос множества клиентов, он распределяет затраты по большему объёму и снижает стоимость обслуживания в расчёте на единицу ресурса.",
+      "id": "knowledge-check-f1-9",
+      "module": "F1",
+      "kind": "knowledge-check",
+      "source": "F1 Knowledge Check · 9"
+    },
+    {
+      "question": "Which three interfaces can customers use to interact directly with AWS service operations? Choose three.",
+      "options": [
+        "A phone call to technical support",
+        "The AWS Marketplace catalog",
+        "The AWS Management Console",
+        "The AWS Command Line Interface (CLI)",
+        "An AWS Software Development Kit (SDK)"
+      ],
+      "answer": "CDE",
+      "explanation": "Console даёт графический интерфейс, CLI запускает команды, а SDK позволяет обращаться к AWS из кода. Marketplace служит каталогом, а звонок в поддержку не является интерфейсом управления ресурсами.",
+      "id": "knowledge-check-f1-10",
+      "module": "F1",
+      "kind": "knowledge-check",
+      "source": "F1 Knowledge Check · 10"
     }
   ],
   "quickReview": [

@@ -5,7 +5,8 @@ const moduleById = new Map(modules.map(module => [module.id, module]));
 const questionById = new Map(questions.map(question => [question.id, question]));
 const courseNames = ['Foundations', 'Developing'];
 const main = document.querySelector('#main');
-const letters = 'ABCD';
+const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const checkKind = 'knowledge-check';
 const storageKey = 'cloud-final-study-v1';
 let storageAvailable = true;
 let state = loadState();
@@ -62,8 +63,8 @@ function errors() {
 }
 
 function route() {
-  const [page, id] = location.hash.slice(1).split('/');
-  return { page, id };
+  const [page, id, source] = location.hash.slice(1).split('/');
+  return { page, id, source };
 }
 
 function go(hash) {
@@ -115,7 +116,7 @@ function showHome() {
       <div class="hero-text">
         <p class="eyebrow">AWS Academy · Final Review</p>
         <h1>Подготовка к Cloud Computing Final</h1>
-        <p>Повтори темы Cloud Foundations и Cloud Developing, затем проверь себя на вопросах по лекциям.</p>
+        <p>Повтори темы Cloud Foundations и Cloud Developing, затем проверь себя на вопросах по лекциям и Knowledge Checks.</p>
         <div class="actions">
           <button class="btn primary" id="mixed">Смешанный тест <span aria-hidden="true">↗</span></button>
           <a class="btn secondary" href="#study/${next.id}">${state.lastModule ? `Продолжить с ${next.id}` : 'Открыть первый модуль'}</a>
@@ -145,6 +146,7 @@ function showModule(module) {
   save();
   const next = modules[modules.indexOf(module) + 1];
   const count = questions.filter(question => question.module === module.id).length;
+  const checkCount = poolFor(module.id, checkKind).length;
   main.innerHTML = `<a class="back" href="#home">← Все темы</a>
     <div class="study-layout">
       <nav class="study-nav" aria-label="Модули курса"><p>Cloud ${module.course}</p><ul>${modules.filter(m => m.course === module.course).map(m =>
@@ -153,7 +155,9 @@ function showModule(module) {
         <div class="study-intro">
           <p class="eyebrow">Cloud ${module.course} / Модуль ${module.number}</p>
           <h1>${module.title}</h1><p class="helper">${module.terms}</p>
-          <div class="actions"><a class="btn primary" href="#practice/${module.id}">Тест по теме · ${count} вопр.</a>${module.academy ? `<a class="btn" href="${module.academy}" target="_blank" rel="noopener">Knowledge Check ↗</a>` : ''}</div>
+          <div class="actions"><a class="btn primary" href="#practice/${module.id}">Тест по теме · ${count} вопр.</a>
+            ${checkCount ? `<a class="btn" href="#practice/${module.id}/${checkKind}">По Knowledge Check · ${checkCount} вопр.</a>` : ''}
+            ${module.academy ? `<a class="btn" href="${module.academy}" target="_blank" rel="noopener">Открыть в AWS Academy ↗</a>` : ''}</div>
         </div>
         <div class="reading">${reading(module.html)}</div>
         <div class="study-end">
@@ -173,11 +177,10 @@ function showModule(module) {
   });
 }
 
-function poolFor(scope) {
-  if (scope === 'errors') return errors();
-  if (scope === 'all') return questions;
-  if (courseNames.includes(scope)) return questions.filter(question => moduleById.get(question.module).course === scope);
-  return questions.filter(question => question.module === scope);
+function poolFor(scope, source = 'all') {
+  const pool = scope === 'errors' ? errors() : questions.filter(question =>
+    scope === 'all' || moduleById.get(question.module).course === scope || question.module === scope);
+  return source === 'all' ? pool : pool.filter(question => (question.kind || 'lecture') === source);
 }
 
 function chooseQuestions(pool, count) {
@@ -197,11 +200,11 @@ function startQuiz(items, title) {
   go('#quiz');
 }
 
-function showPractice(preselected) {
+function showPractice(preselected, sourceFilter) {
   const previous = state.session;
   const canResume = previous && previous.index < previous.ids.length;
   main.innerHTML = `<div class="quiz-frame">
-    <div class="page-heading"><p class="eyebrow">Практика по лекциям</p><h1>Тесты</h1>
+    <div class="page-heading"><p class="eyebrow">Тренировка к экзамену</p><h1>Тесты</h1>
     <p class="helper">Выбери курс или модуль. Вопросы на английском, разбор на русском появляется после каждого ответа.</p></div>
     ${canResume ? `<div class="notice"><span>Тест в процессе · ${Object.keys(previous.replies).length} из ${previous.ids.length} отвечено</span><a class="btn" href="#quiz">Продолжить</a></div>` : previous ? '<div class="notice"><span>Последний тест завершён</span><a class="btn" href="#quiz">Посмотреть результат</a></div>' : ''}
     <form class="config" id="quiz-settings">
@@ -212,27 +215,41 @@ function showPractice(preselected) {
         <option value="errors" ${errors().length ? '' : 'disabled'}>Мои ошибки (${errors().length})</option>
         ${courseNames.map(course => `<optgroup label="Cloud ${course}">${modules.filter(module => module.course === course).map(module => `<option value="${module.id}">${module.id} · ${module.title}</option>`).join('')}</optgroup>`).join('')}
       </select></div>
+      <div class="field"><label for="source">Источник вопросов</label><select id="source">
+        <option value="all">Все вопросы</option>
+        <option value="lecture">Практика по лекциям</option>
+        <option value="${checkKind}">По материалам Knowledge Checks</option>
+      </select></div>
       <div class="field"><label for="quiz-size">Количество вопросов</label><select id="quiz-size"></select></div>
       <p class="small" id="bank-size" aria-live="polite" style="margin:12px 0 17px"></p>
-      <div class="actions"><button class="btn primary" type="submit">${canResume ? 'Начать новый тест' : 'Начать тест'}</button>
+      <div class="actions"><button class="btn primary" type="submit" id="start-quiz">${canResume ? 'Начать новый тест' : 'Начать тест'}</button>
       ${moduleById.has(preselected) ? `<a class="btn" href="#study/${preselected}">Вернуться к теме</a>` : ''}</div>
     </form></div>`;
   const scope = document.querySelector('#scope');
+  const source = document.querySelector('#source');
   const size = document.querySelector('#quiz-size');
   if (moduleById.has(preselected)) scope.value = preselected;
+  if (sourceFilter === checkKind) source.value = checkKind;
   function updateSizes() {
-    const total = poolFor(scope.value).length;
-    size.innerHTML = [10, 20, 40].filter(n => n < total).map(n => `<option value="${n}">${n}</option>`).join('') + `<option value="${total}">Все (${total})</option>`;
+    const total = poolFor(scope.value, source.value).length;
+    size.disabled = total === 0;
+    document.querySelector('#start-quiz').disabled = total === 0;
+    size.innerHTML = total ? [10, 20, 40].filter(n => n < total).map(n => `<option value="${n}">${n}</option>`).join('') + `<option value="${total}">Все (${total})</option>` : '<option value="0">Нет вопросов</option>';
     size.value = String(Math.min(total, 20));
-    document.querySelector('#bank-size').textContent = `В подборке ${total} вопр.`;
+    document.querySelector('#bank-size').textContent = total ? `В подборке ${total} вопр.` : 'Для этого источника пока нет вопросов в выбранной теме.';
   }
   updateSizes();
   scope.addEventListener('change', updateSizes);
+  source.addEventListener('change', updateSizes);
   document.querySelector('#quiz-settings').addEventListener('submit', event => {
     event.preventDefault();
     const value = scope.value;
     const title = moduleById.has(value) ? moduleById.get(value).title : scope.selectedOptions[0].textContent;
-    startQuiz(chooseQuestions(poolFor(value), Number(size.value)), title);
+    const checkOnly = source.value === checkKind;
+    const pool = poolFor(value, source.value);
+    const count = Number(size.value);
+    const items = checkOnly && moduleById.has(value) && count === pool.length ? pool : chooseQuestions(pool, count);
+    startQuiz(items, checkOnly ? `${title} · Knowledge Check` : title);
   });
 }
 
@@ -259,10 +276,10 @@ function showQuiz() {
   main.innerHTML = `<div class="quiz-frame">
     <a class="back" href="#practice">← Настройки теста</a>
     <div class="quiz-card">
-      <div class="question-top ${module.course.toLowerCase()}"><span class="module-tag">${module.id} · ${module.course}</span><span class="small">Вопрос ${session.index + 1} из ${session.ids.length}</span></div>
+      <div class="question-top ${module.course.toLowerCase()}"><span class="module-tag">${module.id} · ${question.kind === checkKind ? 'Knowledge Check' : module.course}</span><span class="small">Вопрос ${session.index + 1} из ${session.ids.length}</span></div>
       <progress class="progress" value="${session.index + Number(submitted)}" max="${session.ids.length}" aria-label="Отвечено вопросов"></progress>
       <h1 class="question-title" id="question-heading" lang="en">${escapeHtml(question.question)}</h1>
-      <p class="small" id="choice-hint">${required > 1 ? `Выбери ${required} варианта ответа.` : 'Выбери один вариант ответа.'}</p>
+      <p class="small" id="choice-hint">${required > 1 ? `Выбери нужное число ответов (${required}).` : 'Выбери один вариант ответа.'}</p>
       <form id="question-form">
         <fieldset class="choices" aria-labelledby="question-heading" aria-describedby="choice-hint" ${submitted ? 'disabled' : ''}>
           ${question.options.map((option, i) => {
@@ -363,13 +380,13 @@ function showReview() {
 }
 
 function render(moveFocus = false) {
-  const { page, id } = route();
+  const { page, id, source } = route();
   if (page === 'study' && moduleById.has(id)) {
     showModule(moduleById.get(id));
     updateNav('home');
   } else if (page === 'practice' || page === 'quiz') {
     if (page === 'quiz') showQuiz();
-    else showPractice(id);
+    else showPractice(id, source);
     updateNav('practice');
   } else if (page === 'review') {
     showReview();
