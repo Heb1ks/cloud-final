@@ -105,7 +105,7 @@ window.CLOUD_CONTENT = {
       "terms": "SDLC · SDK · Boto3 · CLI · CloudShell",
       "number": 2,
       "course": "Developing",
-      "html": "<h3>Что проверить перед тестом</h3>\n<ul>\n<li><strong>SDLC в модели курса:</strong> plan → define → design → develop → deploy → maintain. Написание кода, сборка и тестирование входят в работу по разработке. Deploy вводит готовую систему в эксплуатацию.</li>\n<li><strong>Инструменты.</strong> CloudShell открывается с аутентификацией консоли. AWS Tools for PowerShell даёт команды для скриптов. Amazon Q Developer помогает с кодом. IAM управляет пользователями, группами и политиками.</li>\n<li><strong>Работа из Boto3.</strong> Client ближе к операциям сервиса, Resource API даёт высокоуровневые классы и коллекции. <code>region_name</code> выбирает регион для клиента. Отсутствующий бакет обычно даёт <code>NoSuchBucket</code> и HTTP 404.</li>\n</ul>\n<h3>Конспект лекции</h3>\n<p>Основные software development phases из D2: <strong>Develop → Build → Test → Deploy → Maintain</strong>. Develop — код и review, Build — сборка и unit tests, Test — интеграционные/load/UI/security tests, Deploy — размещение, Maintain — эксплуатация и мониторинг. Unit tests могут запускаться при сборке: не связывай слово test только с одной фазой.</p>\n<table>\n<thead>\n<tr>\n<th>Инструмент</th>\n<th>Что даёт</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Console</td>\n<td>Графический web-интерфейс</td>\n</tr>\n<tr>\n<td>AWS CLI</td>\n<td>Команды из shell</td>\n</tr>\n<tr>\n<td>SDK</td>\n<td>Доступ к AWS services из кода на выбранном языке</td>\n</tr>\n<tr>\n<td>Service API</td>\n<td>Контракт операций сервиса</td>\n</tr>\n<tr>\n<td>IDE</td>\n<td>Среда редактирования, запуска и отладки кода</td>\n</tr>\n<tr>\n<td>AWS Toolkit</td>\n<td>Интеграция IDE с AWS</td>\n</tr>\n<tr>\n<td>CloudShell</td>\n<td>Shell в браузере, предаутентифицированный в console, инструменты уже установлены</td>\n</tr>\n<tr>\n<td>Amazon Q Developer</td>\n<td>Помощь с кодом, объяснением, тестированием, поиском уязвимостей и troubleshooting</td>\n</tr>\n</tbody></table>\n<p>Форма CLI: <code>aws &lt;service&gt; &lt;operation&gt; &lt;parameters&gt;</code>, например <code>aws s3 ls</code>. <strong>Endpoint</strong> — адрес входа в service API. <strong>Region</strong> и credentials/profile — разные настройки.</p>\n<p><strong>Boto3</strong> — AWS SDK for Python. <code>boto3.client(&#39;s3&#39;)</code> даёт низкоуровневые методы операций сервиса и ответы-структуры. <code>boto3.resource(&#39;s3&#39;)</code> даёт объектную абстракцию ресурсов, например Bucket. Не у всех сервисов есть resource API.</p>\n<pre><code class=\"language-python\">import boto3\n\ns3 = boto3.client(&#39;s3&#39;, region_name=&#39;eu-west-1&#39;)\ns3.upload_file(&#39;menu.json&#39;, &#39;exam-bucket&#39;, &#39;data/menu.json&#39;)\n</code></pre>\n<p>Здесь local filename — <code>menu.json</code>, bucket — <code>exam-bucket</code>, key — <code>data/menu.json</code>. Credentials в этом фрагменте не прописаны: SDK использует настроенный механизм получения credentials.</p>\n<p><strong>4xx</strong> обычно указывает на проблему запроса/доступа: проверь параметры, resource и permissions. <strong>5xx</strong> обычно указывает на server error: может понадобиться retry. В D2 это базовое правило. Отдельные 4xx, например throttling, тоже могут требовать retry. Для transient errors используют ограниченные retries с backoff, а не бесконечное немедленное повторение.</p>\n",
+      "html": "<h3>Что проверить перед тестом</h3>\n<ul>\n<li><strong>SDLC в модели курса:</strong> plan → define → design → develop → deploy → maintain. Написание кода, сборка и тестирование входят в работу по разработке. Deploy вводит готовую систему в эксплуатацию.</li>\n<li><strong>Инструменты.</strong> CloudShell открывается с аутентификацией консоли. AWS Tools for PowerShell даёт команды для скриптов. Amazon Q Developer помогает с кодом. IAM управляет пользователями, группами и политиками.</li>\n<li><strong>Работа из Boto3.</strong> Client ближе к операциям сервиса, Resource API даёт высокоуровневые классы и коллекции. <code>region_name</code> выбирает регион для клиента. Отсутствующий бакет обычно даёт <code>NoSuchBucket</code> и HTTP 404.</li>\n</ul>\n<h3>Конспект лекции</h3>\n<p>Основные software development phases из D2: <strong>Develop → Build → Test → Deploy → Maintain</strong>. Develop — код и review, Build — сборка и unit tests, Test — интеграционные/load/UI/security tests, Deploy — размещение, Maintain — эксплуатация и мониторинг. Unit tests могут запускаться при сборке: не связывай слово test только с одной фазой.</p>\n<table>\n<thead>\n<tr>\n<th>Инструмент</th>\n<th>Что даёт</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Console</td>\n<td>Графический web-интерфейс</td>\n</tr>\n<tr>\n<td>AWS CLI</td>\n<td>Команды из shell</td>\n</tr>\n<tr>\n<td>SDK</td>\n<td>Доступ к AWS services из кода на выбранном языке</td>\n</tr>\n<tr>\n<td>Service API</td>\n<td>Контракт операций сервиса</td>\n</tr>\n<tr>\n<td>IDE</td>\n<td>Среда редактирования, запуска и отладки кода</td>\n</tr>\n<tr>\n<td>AWS Toolkit</td>\n<td>Интеграция IDE с AWS</td>\n</tr>\n<tr>\n<td>CloudShell</td>\n<td>Shell в браузере, предаутентифицированный в console, инструменты уже установлены</td>\n</tr>\n<tr>\n<td>Amazon Q Developer</td>\n<td>Помощь с кодом, объяснением, тестированием, поиском уязвимостей и troubleshooting</td>\n</tr>\n</tbody></table>\n<p>Форма CLI: <code>aws &lt;service&gt; &lt;operation&gt; &lt;parameters&gt;</code>, например <code>aws s3 ls</code>. <strong>Endpoint</strong> — адрес входа в service API. <strong>Region</strong> и credentials/profile — разные настройки.</p>\n<p>Console, CLI и SDK работают с одними и теми же AWS API. Например, инстанс EC2 можно создать через Boto3 и остановить через консоль. SDK отправляет HTTPS-запросы к эндпоинту сервиса. Если <code>DescribeInstances</code> не показывает созданный через CLI инстанс, проверь, что клиент SDK настроен на нужные аккаунт и регион.</p>\n<p>Обычный <strong>CloudShell</strong> сохраняет файлы домашнего каталога между сессиями в том же AWS Region. У CloudShell VPC environment домашний каталог временный. <a href=\"https://docs.aws.amazon.com/cloudshell/latest/userguide/limits.html#persistent-storage\">Хранилище CloudShell</a></p>\n<p><strong>Boto3</strong> — AWS SDK for Python. <code>boto3.client(&#39;s3&#39;)</code> даёт низкоуровневые методы операций сервиса и ответы-структуры. <code>boto3.resource(&#39;s3&#39;)</code> даёт объектную абстракцию ресурсов, например Bucket. Не у всех сервисов есть resource API.</p>\n<pre><code class=\"language-python\">import boto3\n\ns3 = boto3.client(&#39;s3&#39;, region_name=&#39;eu-west-1&#39;)\ns3.upload_file(&#39;menu.json&#39;, &#39;exam-bucket&#39;, &#39;data/menu.json&#39;)\n</code></pre>\n<p>Здесь local filename — <code>menu.json</code>, bucket — <code>exam-bucket</code>, key — <code>data/menu.json</code>. Credentials в этом фрагменте не прописаны: SDK использует настроенный механизм получения credentials.</p>\n<p><strong>4xx</strong> обычно указывает на проблему запроса/доступа: проверь параметры, resource и permissions. <strong>5xx</strong> обычно указывает на server error: может понадобиться retry. В D2 это базовое правило. Отдельные 4xx, например throttling, тоже могут требовать retry. Для transient errors используют ограниченные retries с backoff, а не бесконечное немедленное повторение.</p>\n",
       "academy": null
     },
     {
@@ -114,7 +114,7 @@ window.CLOUD_CONTENT = {
       "terms": "Buckets и keys · versioning · presigned URLs · CORS",
       "number": 3,
       "course": "Developing",
-      "html": "<h3>Что проверить перед тестом</h3>\n<ul>\n<li><strong>Бакеты и сайты.</strong> S3 подходит для data lake. В общем namespace занятое имя бакета требует другого имени. Для статического сайта в <code>us-east-1</code> используйте <code>http://&lt;bucket&gt;.s3-website-us-east-1.amazonaws.com</code>. Нативный website endpoint не поддерживает HTTPS.</li>\n<li><strong>Загрузка и версии.</strong> Для одного <code>PUT</code> предел — 5 GB. Multipart upload загружает объект частями и имеет другой предел. После включения версионирование можно приостановить, а прошлые версии останутся.</li>\n<li><strong>Доступ и защита.</strong> Bucket policy применяется к бакету. Presigned URL даёт временный доступ к конкретной операции. TLS защищает данные при передаче, SSE — при хранении. Если браузер блокирует междоменный <code>fetch</code>, проверяй CORS на бакете с ресурсами.</li>\n<li><a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteEndpoints.html\">S3 website endpoints</a> · <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/upload-objects.html\">Загрузка объектов</a></li>\n</ul>\n<h3>Конспект лекции</h3>\n<h3>Модель S3</h3>\n<ul>\n<li><strong>Bucket</strong> — контейнер объектов. Для обычных general purpose buckets в модели курса имя глобально уникально в AWS partition, bucket создаётся в выбранном Region.</li>\n<li><strong>Object</strong> — содержимое плюс metadata.</li>\n<li><strong>Key</strong> — полное имя объекта внутри bucket, например <code>photos/2026/cat.jpg</code>.</li>\n<li><strong>Prefix</strong> — начало key, позволяющее группировать объекты. В обычной модели S3 «папки» представлены prefixes.</li>\n<li><strong>Version ID</strong> — идентификатор версии при включённом versioning.</li>\n<li><strong>Metadata</strong> — system-defined или user-defined пары key-value. Для пользовательских HTTP metadata используется префикс <code>x-amz-meta-</code>.</li>\n</ul>\n<p>Пример URL: <code>https://exam-bucket.s3.eu-west-1.amazonaws.com/photos/cat.jpg</code>. Bucket — <code>exam-bucket</code>, Region — <code>eu-west-1</code>, object key — <code>photos/cat.jpg</code>. Наличие URL само по себе не даёт разрешения читать private object.</p>\n<p><strong>PUT</strong> загружает/заменяет объект, <strong>GET</strong> получает объект или диапазон bytes, <strong>DELETE</strong> удаляет объект/создаёт delete marker при соответствующих условиях versioning. Сервис также имеет другие API, например LIST и HEAD: фраза слайда «three operations» обозначает рассматриваемые основные действия.</p>\n<p><strong>Versioning</strong> сохраняет версии при перезаписи и помогает восстановить случайно удалённый объект. Обычный DELETE без version ID в versioned bucket обычно создаёт delete marker. После включения versioning можно suspend, но нельзя вернуть bucket в исходное unversioned состояние. Versioning не делает невозможным явное удаление конкретной версии.</p>\n<p><strong>Multipart upload</strong> разбивает загрузку на части, позволяет отправлять их параллельно и повторять неудачные части. Курс рекомендует рассматривать его от 100 MB. Один <code>PUT</code> принимает объект до 5 GB. Указанный в лекции предел 5 TB для multipart устарел. Действующая документация AWS указывает до 50 TB (48.8 TiB) при загрузке частями. <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/upload-objects.html\">Пределы загрузки S3</a></p>\n<p>Storage classes из лекции: Standard — частый доступ; Standard-IA — редкий доступ с быстрым retrieval; One Zone-IA — редкий доступ с размещением в одной AZ; Intelligent-Tiering — меняющийся/неизвестный pattern; Glacier и Deep Archive — архив. Не выбирай архив только по словам «редкий доступ», если одновременно требуется немедленное чтение: учитывай конкретный класс и время восстановления.</p>\n<p><strong>Lifecycle policy</strong> переводит объекты между подходящими storage classes и/или удаляет по заданным условиям. Versioning отвечает за версии, lifecycle — за управление их жизненным циклом.</p>\n<h3>S3 protection и access</h3>\n<p><strong>Identity policy</strong> прикрепляется к identity. <strong>Bucket policy</strong> — resource-based, задаёт доступ к bucket/objects. <strong>ACL</strong> — более старый механизм доступа, рассматриваемый в лекции. <strong>Block Public Access</strong> помогает ограничить публичность.</p>\n<p><strong>Presigned URL</strong> — временная подписанная ссылка на конкретную операцию с объектом. Использует разрешения подписавшего principal, не открывает весь bucket и не выдаёт получателю AWS secret key. Ссылка может стать недействительной раньше заданного срока, например при истечении временных credentials.</p>\n<p><strong>SSE-S3</strong> использует ключи S3, <strong>SSE-KMS</strong> — AWS KMS, <strong>SSE-C</strong> в модели лекции — ключи, предоставляемые клиентом. <strong>Client-side encryption</strong> шифрует данные до отправки. Новые загрузки S3 автоматически шифруются at rest по умолчанию. Это уточнение проверено по <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingServerSideEncryption.html\">AWS S3 documentation</a>.</p>\n<p><strong>CORS</strong> позволяет браузеру прочитать разрешённый ответ с другого origin. Он не выдаёт IAM permissions и не заменяет authentication/authorization. Origin включает scheme, hostname и port.</p>\n",
+      "html": "<h3>Что проверить перед тестом</h3>\n<ul>\n<li><strong>Бакеты и сайты.</strong> S3 подходит для data lake. В общем namespace занятое имя бакета требует другого имени. Для статического сайта в <code>us-east-1</code> используйте <code>http://&lt;bucket&gt;.s3-website-us-east-1.amazonaws.com</code>. Нативный website endpoint не поддерживает HTTPS.</li>\n<li><strong>Загрузка и версии.</strong> Для одного <code>PUT</code> предел — 5 GB. Multipart upload загружает объект частями и имеет другой предел. После включения версионирование можно приостановить, а прошлые версии останутся.</li>\n<li><strong>Доступ и защита.</strong> Bucket policy применяется к бакету. Presigned URL даёт временный доступ к конкретной операции. TLS защищает данные при передаче, SSE — при хранении. Если браузер блокирует междоменный <code>fetch</code>, проверяй CORS на бакете с ресурсами.</li>\n<li><a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteEndpoints.html\">S3 website endpoints</a> · <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/upload-objects.html\">Загрузка объектов</a></li>\n</ul>\n<h3>Конспект лекции</h3>\n<h3>Модель S3</h3>\n<ul>\n<li><strong>Bucket</strong> — контейнер объектов. Для обычных general purpose buckets в модели курса имя глобально уникально в AWS partition, bucket создаётся в выбранном Region.</li>\n<li><strong>Object</strong> — содержимое плюс metadata.</li>\n<li><strong>Key</strong> — полное имя объекта внутри bucket, например <code>photos/2026/cat.jpg</code>.</li>\n<li><strong>Prefix</strong> — начало key, позволяющее группировать объекты. В обычной модели S3 «папки» представлены prefixes.</li>\n<li><strong>Version ID</strong> — идентификатор версии при включённом versioning.</li>\n<li><strong>Metadata</strong> — system-defined или user-defined пары key-value. Для пользовательских HTTP metadata используется префикс <code>x-amz-meta-</code>.</li>\n</ul>\n<p>Пример URL: <code>https://exam-bucket.s3.eu-west-1.amazonaws.com/photos/cat.jpg</code>. Bucket — <code>exam-bucket</code>, Region — <code>eu-west-1</code>, object key — <code>photos/cat.jpg</code>. Наличие URL само по себе не даёт разрешения читать private object.</p>\n<p>Для создания бакета в <code>us-east-1</code> подойдёт <code>aws s3api create-bucket --bucket my-lab-bucket --region us-east-1</code>. Для других регионов при вызове <code>s3api create-bucket</code> указывают <code>LocationConstraint</code> в <code>--create-bucket-configuration</code>. При <code>BucketAlreadyExists</code> выбери другое имя: в общем пространстве имён S3 смена Region внутри одной AWS partition не освобождает занятое имя. <a href=\"https://docs.aws.amazon.com/cli/latest/reference/s3api/create-bucket.html\">AWS CLI create-bucket</a></p>\n<p><strong>PUT</strong> загружает/заменяет объект, <strong>GET</strong> получает объект или диапазон bytes, <strong>DELETE</strong> удаляет объект/создаёт delete marker при соответствующих условиях versioning. Сервис также имеет другие API, например LIST и HEAD: фраза слайда «three operations» обозначает рассматриваемые основные действия.</p>\n<p><strong>Versioning</strong> сохраняет версии при перезаписи и помогает восстановить случайно удалённый объект. Обычный DELETE без version ID в versioned bucket обычно создаёт delete marker. После включения versioning можно suspend, но нельзя вернуть bucket в исходное unversioned состояние. Versioning не делает невозможным явное удаление конкретной версии.</p>\n<p><strong>Multipart upload</strong> разбивает загрузку на части, позволяет отправлять их параллельно и повторять неудачные части. Курс рекомендует рассматривать его от 100 MB. Один <code>PUT</code> принимает объект до 5 GB. Указанный в лекции предел 5 TB для multipart устарел. Действующая документация AWS указывает до 50 TB (48.8 TiB) при загрузке частями. <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/upload-objects.html\">Пределы загрузки S3</a></p>\n<p>Storage classes из лекции: Standard — частый доступ; Standard-IA — редкий доступ с быстрым retrieval; One Zone-IA — редкий доступ с размещением в одной AZ; Intelligent-Tiering — меняющийся/неизвестный pattern; Glacier и Deep Archive — архив. Не выбирай архив только по словам «редкий доступ», если одновременно требуется немедленное чтение: учитывай конкретный класс и время восстановления.</p>\n<p><strong>Lifecycle policy</strong> переводит объекты между подходящими storage classes и/или удаляет по заданным условиям. Versioning отвечает за версии, lifecycle — за управление их жизненным циклом.</p>\n<h3>S3 protection и access</h3>\n<p><strong>Identity policy</strong> прикрепляется к identity. <strong>Bucket policy</strong> — resource-based, задаёт доступ к bucket/objects. <strong>ACL</strong> — более старый механизм доступа, рассматриваемый в лекции. <strong>Block Public Access</strong> помогает ограничить публичность.</p>\n<p>Для статического сайта S3 ответ <code>403</code> на запрос существующего объекта означает, что у посетителя нет разрешения на чтение. Проверь <code>s3:GetObject</code> в bucket policy, настройки Block Public Access и условия <code>aws:SourceIp</code>. Политика, разрешающая чтение только с домашнего IP, не пропустит запрос с другого публичного IP. Диапазон <code>0.0.0.0/0</code> охватывает все IPv4-адреса, поэтому такое разрешение считается публичным. В новых бакетах ACL по умолчанию отключены. <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteAccessPermissionsReqd.html\">Доступ к статическому сайту S3</a> · <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html#access-control-block-public-access-policy-status\">Как S3 определяет публичную политику</a></p>\n<p><strong>Presigned URL</strong> — временная подписанная ссылка на конкретную операцию с объектом. Использует разрешения подписавшего principal, не открывает весь bucket и не выдаёт получателю AWS secret key. Ссылка может стать недействительной раньше заданного срока, например при истечении временных credentials.</p>\n<p><strong>SSE-S3</strong> использует ключи S3, <strong>SSE-KMS</strong> — AWS KMS, <strong>SSE-C</strong> в модели лекции — ключи, предоставляемые клиентом. <strong>Client-side encryption</strong> шифрует данные до отправки. Новые загрузки S3 автоматически шифруются at rest по умолчанию. Это уточнение проверено по <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingServerSideEncryption.html\">AWS S3 documentation</a>.</p>\n<p><strong>CORS</strong> позволяет браузеру прочитать разрешённый ответ с другого origin. Он не выдаёт IAM permissions и не заменяет authentication/authorization. Origin включает scheme, hostname и port.</p>\n",
       "academy": null
     },
     {
@@ -123,7 +123,7 @@ window.CLOUD_CONTENT = {
       "terms": "IAM policies · роли · временные credentials · least privilege",
       "number": 4,
       "course": "Developing",
-      "html": "<h3>Что проверить перед тестом</h3>\n<ul>\n<li><strong>Проверка личности и полномочий.</strong> Authentication устанавливает личность, authorization проверяет право на действие. IAM user может использовать вход в консоль или AWS credentials для программного доступа.</li>\n<li><strong>Роль на EC2.</strong> Приложению назначают роль через instance profile. Она выдаёт временные credentials. JSON-политики на пользователе, группе или роли являются identity-based. Политика на бакете S3 — пример resource-based policy.</li>\n<li><strong>Разбор <code>Deny</code> + <code>NotResource</code>.</strong> Сначала определи действия из <code>Action</code>, затем исключи перечисленные ARN. На остальные подходящие ресурсы действует запрет. Для ресурсов из исключений всё ещё нужно разрешение. <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notresource.html\">IAM NotResource</a></li>\n</ul>\n<h3>Конспект лекции</h3>\n<p><strong>AWS отвечает за security OF the cloud</strong>: физические здания, оборудование, инфраструктуру сети и виртуализацию. <strong>Клиент отвечает за security IN the cloud</strong>: данные, разрешения, приложения и доступные ему настройки.</p>\n<p>В EC2 клиент обновляет guest OS и свои приложения. В managed services AWS берёт на себя больше обслуживания платформы. При этом клиент по-прежнему выбирает, кто имеет доступ к его данным. Нельзя отвечать «AWS делает всю безопасность», увидев слово managed.</p>\n<table>\n<thead>\n<tr>\n<th>Понятие</th>\n<th>Что означает</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Principal</td>\n<td>Сущность, которая делает запрос: например пользователь или role session</td>\n</tr>\n<tr>\n<td>Authentication</td>\n<td>Кто ты? Проверка личности/credentials</td>\n</tr>\n<tr>\n<td>Authorization</td>\n<td>Что тебе разрешено делать? Проверка permissions</td>\n</tr>\n<tr>\n<td>IAM user</td>\n<td>Identity в аккаунте для пользователя или workload в традиционной модели IAM</td>\n</tr>\n<tr>\n<td>IAM group</td>\n<td>Набор пользователей для совместного назначения permissions</td>\n</tr>\n<tr>\n<td>IAM role</td>\n<td>Роль, которую принимает доверенная сущность, получая временные credentials</td>\n</tr>\n<tr>\n<td>IAM policy</td>\n<td>JSON-документ с правилами разрешения или запрета</td>\n</tr>\n</tbody></table>\n<p>Группы содержат IAM users. Пользователь может состоять в нескольких группах. Роль не является обычным членом IAM group. Роль может использовать приложение, AWS service или человек, которому доверено её принимать.</p>\n<p><strong>Console credentials</strong>: имя пользователя и пароль, возможно MFA. <strong>Programmatic credentials</strong>: access key ID и secret access key. У временных credentials также есть <strong>session token</strong>. Для приложения на EC2 предпочтительна IAM role с необходимыми permissions: SDK может получить временные credentials, без ключей в исходном коде или AMI.</p>\n<p><strong>Least privilege</strong>: разрешить только нужные actions на нужных resources. <strong>MFA</strong> добавляет фактор проверки личности, но сама по себе не выдаёт дополнительные permissions.</p>\n<h3>Как читать IAM policy</h3>\n<pre><code class=\"language-json\">{\n  &quot;Version&quot;: &quot;2012-10-17&quot;,\n  &quot;Statement&quot;: [{\n    &quot;Effect&quot;: &quot;Allow&quot;,\n    &quot;Action&quot;: &quot;s3:GetObject&quot;,\n    &quot;Resource&quot;: &quot;arn:aws:s3:::exam-bucket/*&quot;\n  }]\n}\n</code></pre>\n<p>Этот statement разрешает получать объекты в <code>exam-bucket</code>. Он не разрешает удалять объекты и не равнозначен разрешению <code>s3:ListBucket</code>.</p>\n<ul>\n<li><strong>Effect</strong>: Allow или Deny.</li>\n<li><strong>Action</strong>: операция, например <code>s3:GetObject</code>.</li>\n<li><strong>Resource</strong>: ARN ресурса, к которому относится действие.</li>\n<li><strong>Principal</strong>: кому разрешается действие в resource-based policy.</li>\n<li><strong>Condition</strong>: дополнительные условия, если они указаны.</li>\n<li><strong>Version</strong>: версия языка policy. Это не дата создания текущей политики.</li>\n</ul>\n<p>Упрощённое правило для типовых задач курса: сначала <strong>implicit deny</strong>, затем ищем применимые Allow, затем учитываем ограничения. <strong>Explicit Deny перекрывает Allow</strong>. В реальной оценке также действуют SCP, permissions boundaries и другие ограничения, поэтому наличия одного Allow не всегда достаточно.</p>\n<table>\n<thead>\n<tr>\n<th>Классификация</th>\n<th>Различие</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Identity-based / resource-based</td>\n<td>Политика прикреплена к identity или к ресурсу</td>\n</tr>\n<tr>\n<td>Managed / inline</td>\n<td>Политика существует отдельно и переиспользуется или встроена в конкретную identity</td>\n</tr>\n<tr>\n<td>AWS managed / customer managed</td>\n<td>Отдельную managed policy поддерживает AWS или сам клиент</td>\n</tr>\n</tbody></table>\n<p>Это две разные классификации. <strong>Inline policy у IAM user/group/role является identity-based</strong>. В D4, слайд 32, есть ошибочная подпись resource-based. Проверено по <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html\">AWS IAM documentation</a>.</p>\n",
+      "html": "<h3>Что проверить перед тестом</h3>\n<ul>\n<li><strong>Проверка личности и полномочий.</strong> Authentication устанавливает личность, authorization проверяет право на действие. IAM user может использовать вход в консоль или AWS credentials для программного доступа.</li>\n<li><strong>Роль на EC2.</strong> Приложению назначают роль через instance profile. Она выдаёт временные credentials. JSON-политики на пользователе, группе или роли являются identity-based. Политика на бакете S3 — пример resource-based policy.</li>\n<li><strong>Разбор <code>Deny</code> + <code>NotResource</code>.</strong> Сначала определи действия из <code>Action</code>, затем исключи перечисленные ARN. На остальные подходящие ресурсы действует запрет. Для ресурсов из исключений всё ещё нужно разрешение. <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notresource.html\">IAM NotResource</a></li>\n</ul>\n<h3>Конспект лекции</h3>\n<p><strong>AWS отвечает за security OF the cloud</strong>: физические здания, оборудование, инфраструктуру сети и виртуализацию. <strong>Клиент отвечает за security IN the cloud</strong>: данные, разрешения, приложения и доступные ему настройки.</p>\n<p>В EC2 клиент обновляет guest OS и свои приложения. В managed services AWS берёт на себя больше обслуживания платформы. При этом клиент по-прежнему выбирает, кто имеет доступ к его данным. Нельзя отвечать «AWS делает всю безопасность», увидев слово managed.</p>\n<table>\n<thead>\n<tr>\n<th>Понятие</th>\n<th>Что означает</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Principal</td>\n<td>Сущность, которая делает запрос: например пользователь или role session</td>\n</tr>\n<tr>\n<td>Authentication</td>\n<td>Кто ты? Проверка личности/credentials</td>\n</tr>\n<tr>\n<td>Authorization</td>\n<td>Что тебе разрешено делать? Проверка permissions</td>\n</tr>\n<tr>\n<td>IAM user</td>\n<td>Identity в аккаунте для пользователя или workload в традиционной модели IAM</td>\n</tr>\n<tr>\n<td>IAM group</td>\n<td>Набор пользователей для совместного назначения permissions</td>\n</tr>\n<tr>\n<td>IAM role</td>\n<td>Роль, которую принимает доверенная сущность, получая временные credentials</td>\n</tr>\n<tr>\n<td>IAM policy</td>\n<td>JSON-документ с правилами разрешения или запрета</td>\n</tr>\n</tbody></table>\n<p>Группы содержат IAM users. Пользователь может состоять в нескольких группах. Роль не является обычным членом IAM group. Роль может использовать приложение, AWS service или человек, которому доверено её принимать.</p>\n<p><strong>Console credentials</strong>: имя пользователя и пароль, возможно MFA. <strong>Programmatic credentials</strong>: access key ID и secret access key. У временных credentials также есть <strong>session token</strong>. Для приложения на EC2 предпочтительна IAM role с необходимыми permissions: SDK может получить временные credentials, без ключей в исходном коде или AMI.</p>\n<p><strong>Least privilege</strong>: разрешить только нужные actions на нужных resources. <strong>MFA</strong> добавляет фактор проверки личности, но сама по себе не выдаёт дополнительные permissions.</p>\n<h3>Как читать IAM policy</h3>\n<pre><code class=\"language-json\">{\n  &quot;Version&quot;: &quot;2012-10-17&quot;,\n  &quot;Statement&quot;: [{\n    &quot;Effect&quot;: &quot;Allow&quot;,\n    &quot;Action&quot;: &quot;s3:GetObject&quot;,\n    &quot;Resource&quot;: &quot;arn:aws:s3:::exam-bucket/*&quot;\n  }]\n}\n</code></pre>\n<p>Этот statement разрешает получать объекты в <code>exam-bucket</code>. Он не разрешает удалять объекты и не равнозначен разрешению <code>s3:ListBucket</code>.</p>\n<ul>\n<li><strong>Effect</strong>: Allow или Deny.</li>\n<li><strong>Action</strong>: операция, например <code>s3:GetObject</code>.</li>\n<li><strong>Resource</strong>: ARN ресурса, к которому относится действие.</li>\n<li><strong>Principal</strong>: кому разрешается действие в resource-based policy.</li>\n<li><strong>Condition</strong>: дополнительные условия, если они указаны.</li>\n<li><strong>Version</strong>: версия языка policy. Это не дата создания текущей политики.</li>\n</ul>\n<p>Упрощённое правило для типовых задач курса: сначала <strong>implicit deny</strong>, затем ищем применимые Allow, затем учитываем ограничения. <strong>Explicit Deny перекрывает Allow</strong>. В реальной оценке также действуют SCP, permissions boundaries и другие ограничения, поэтому наличия одного Allow не всегда достаточно.</p>\n<p>В <code>Deny</code> с <code>NotResource</code> перечисленные ARN исключены из этого правила. Например, <code>arn:aws:s3:::exam-bucket</code> исключает сам бакет, а <code>arn:aws:s3:::exam-bucket/*</code> исключает объекты внутри него. Если исключены только объекты, запрет всё ещё может охватывать <code>s3:ListBucket</code>. Для доступа к исключённым ресурсам по-прежнему нужен применимый <code>Allow</code>. <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_notresource.html\">IAM NotResource</a></p>\n<table>\n<thead>\n<tr>\n<th>Классификация</th>\n<th>Различие</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Identity-based / resource-based</td>\n<td>Политика прикреплена к identity или к ресурсу</td>\n</tr>\n<tr>\n<td>Managed / inline</td>\n<td>Политика существует отдельно и переиспользуется или встроена в конкретную identity</td>\n</tr>\n<tr>\n<td>AWS managed / customer managed</td>\n<td>Отдельную managed policy поддерживает AWS или сам клиент</td>\n</tr>\n</tbody></table>\n<p>Это две разные классификации. <strong>Inline policy у IAM user/group/role является identity-based</strong>. В D4, слайд 32, есть ошибочная подпись resource-based. Проверено по <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html\">AWS IAM documentation</a>.</p>\n",
       "academy": null
     },
     {
@@ -132,7 +132,7 @@ window.CLOUD_CONTENT = {
       "terms": "Keys · GSI/LSI · Query/Scan · RCU/WCU · Streams",
       "number": 5,
       "course": "Developing",
-      "html": "<h3>Что проверить перед тестом</h3>\n<ul>\n<li><strong>Ключи и индексы.</strong> DynamoDB хеширует partition key для размещения данных. При составном ключе уникальна пара partition key + sort key. GSI позволяет задать альтернативный partition key, а LSI сохраняет исходный.</li>\n<li><strong>Три разных механизма.</strong> Transactions выполняют набор операций атомарно. Streams выдают события изменений для обработчиков. Global tables реплицируют данные между регионами.</li>\n<li><strong>Control plane и восстановление.</strong> Создание таблицы и изменение её настроек относятся к control plane. Операции над items относятся к data plane. PITR даёт настраиваемое окно до 35 дней. <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Point-in-time-recovery.html\">Документация DynamoDB PITR</a></li>\n</ul>\n<h3>Конспект лекции</h3>\n<p><strong>Table → items → attributes</strong>. Item соответствует отдельной записи, attribute — её полю. Не все items должны иметь одинаковые non-key attributes. При этом key schema таблицы задана.</p>\n<table>\n<thead>\n<tr>\n<th>Primary key</th>\n<th>Правило уникальности</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Simple: partition key</td>\n<td>Значение partition key уникально для item</td>\n</tr>\n<tr>\n<td>Composite: partition key + sort key</td>\n<td>Уникальна комбинация двух значений, partition key может повторяться</td>\n</tr>\n</tbody></table>\n<p>Например, <code>CustomerId</code> + <code>OrderDate</code>: у одного клиента несколько заказов, различаются sort key. Partition key проходит через hash function для распределения данных. Items с одним partition key упорядочены по sort key. Плохое распределение обращений может создать <strong>hot partition</strong>, поэтому важны равномерно используемые ключи.</p>\n<h3>Secondary indexes</h3>\n<table>\n<thead>\n<tr>\n<th>Свойство</th>\n<th>GSI</th>\n<th>LSI</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Partition key</td>\n<td>Может отличаться от base table</td>\n<td>Тот же, что у base table</td>\n</tr>\n<tr>\n<td>Sort key</td>\n<td>Может отличаться, необязателен при simple key</td>\n<td>Другой sort key</td>\n</tr>\n<tr>\n<td>Создание</td>\n<td>Можно при создании и добавить позже</td>\n<td>При создании таблицы</td>\n</tr>\n<tr>\n<td>Consistency чтения</td>\n<td>Eventually consistent</td>\n<td>Eventual или strong</td>\n</tr>\n<tr>\n<td>Provisioned throughput</td>\n<td>Собственные настройки</td>\n<td>Использует capacity таблицы</td>\n</tr>\n</tbody></table>\n<p>GSI позволяет другой access pattern по другому ключу. LSI позволяет иначе сортировать items для того же partition key. <strong>Global в GSI не означает multi-Region</strong>. Multi-Region replication — это <strong>global tables</strong>. Уточнения по индексам: <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SecondaryIndexes.html\">AWS secondary indexes</a>.</p>\n<h3>Operations</h3>\n<table>\n<thead>\n<tr>\n<th>Операция</th>\n<th>Что делает</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>CreateTable</td>\n<td>Создаёт таблицу</td>\n</tr>\n<tr>\n<td>PutItem</td>\n<td>Создаёт item или полностью заменяет item с тем же primary key</td>\n</tr>\n<tr>\n<td>UpdateItem</td>\n<td>Меняет указанные attributes</td>\n</tr>\n<tr>\n<td>GetItem</td>\n<td>Получает один item по полному primary key</td>\n</tr>\n<tr>\n<td>DeleteItem</td>\n<td>Удаляет item по primary key</td>\n</tr>\n<tr>\n<td>Query</td>\n<td>Ищет по равенству partition key, возможно условие по sort key</td>\n</tr>\n<tr>\n<td>Scan</td>\n<td>Читает items таблицы/индекса, затем может применять filter</td>\n</tr>\n<tr>\n<td>Batch operations</td>\n<td>Группируют чтение/запись нескольких items</td>\n</tr>\n<tr>\n<td>Transaction operations</td>\n<td>Обеспечивают согласованное all-or-nothing выполнение</td>\n</tr>\n</tbody></table>\n<p>Для composite key при <code>GetItem</code> нужны оба key attributes. <code>Query</code> по индексу использует ключи индекса. FilterExpression не превращает Scan в эффективный поиск по ключу и не устраняет стоимость прочитанных, затем отфильтрованных данных. У Batch нет общей гарантии all-or-nothing только потому, что операции объединены.</p>\n<h3>Read consistency и throughput</h3>\n<p><strong>Eventually consistent</strong> может вернуть данные без самого последнего успешного изменения, стоит меньше capacity. <strong>Strongly consistent</strong> отражает ранее успешно завершившиеся записи при чтении. По умолчанию чтение eventual. Для таблиц/LSI можно указать <code>ConsistentRead=True</code>; для GSI strong read не поддерживается. <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html\">AWS read consistency</a>.</p>\n<p><strong>Provisioned</strong>: задаёшь RCU/WCU. <strong>On-demand</strong>: платишь за запросы, удобно при неизвестной/неровной нагрузке. On-demand не означает отсутствие quotas.</p>\n<p>Для обычных независимых операций чтения/записи одинаковых items в задачах курса:</p>\n<pre><code class=\"language-text\">Strong RCU = reads_per_second × ceil(item_size_KB / 4)\nEventual RCU = reads_per_second × ceil(item_size_KB / 4) / 2\nWCU = writes_per_second × ceil(item_size_KB / 1)\n</code></pre>\n<p><code>ceil</code> округляет вверх. Размер округляй для item, а минуты сначала переводишь в секунды. Это не универсальная формула для всех особенностей Query/Scan/batch. Transactional operations требуют удвоенной capacity относительно соответствующих обычных strong reads/writes. Единицы и правила проверены по <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Constraints.html\">AWS capacity documentation</a>.</p>\n<p><strong>Пример со слайдов D5 36–37</strong>: 20 items/с, по 11 KB, eventual read. <code>ceil(11/4)=3</code>, <code>20×3/2 = 30 RCU</code>. При strong read получится 60 RCU.</p>\n<p><strong>Пример со слайдов D5 38–39</strong>: 120 items/мин, по 7 KB. <code>120/60=2 writes/с</code>, <code>2×7 = 14 WCU</code>.</p>\n<p>Ещё для самопроверки: 10 strong reads/с по 5 KB = <strong>20 RCU</strong>; 10 eventual reads/с по 5 KB = <strong>10 RCU</strong>; 5 writes/с по 1.2 KB = <strong>10 WCU</strong>.</p>\n<h3>Streams, global tables, backup</h3>\n<p><strong>DynamoDB Streams</strong> содержит записи изменений items, организованные в shards. Может запускать обработку через Lambda. <strong>Global tables</strong> реплицируют таблицу между выбранными Regions. <strong>Backup/PITR</strong> нужны для восстановления данных после нежелательных изменений. Репликация и backup не взаимозаменяемы: ошибка приложения может реплицироваться.</p>\n<p>Для модели курса запомни eventual replication global tables. В актуальном DynamoDB есть и варианты multi-Region strong consistency, поэтому не учи утверждение «все global tables при любых настройках только eventual» как вечное правило. <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html\">AWS documentation</a>.</p>\n",
+      "html": "<h3>Что проверить перед тестом</h3>\n<ul>\n<li><strong>Ключи и индексы.</strong> DynamoDB хеширует partition key для размещения данных. При составном ключе уникальна пара partition key + sort key. GSI позволяет задать альтернативный partition key, а LSI сохраняет исходный.</li>\n<li><strong>Три разных механизма.</strong> Transactions выполняют набор операций атомарно. Streams выдают события изменений для обработчиков. Global tables реплицируют данные между регионами.</li>\n<li><strong>Control plane и восстановление.</strong> Создание таблицы и изменение её настроек относятся к control plane. Операции над items относятся к data plane. PITR даёт настраиваемое окно до 35 дней. <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Point-in-time-recovery.html\">Документация DynamoDB PITR</a></li>\n</ul>\n<h3>Конспект лекции</h3>\n<p><strong>Table → items → attributes</strong>. Item соответствует отдельной записи, attribute — её полю. Не все items должны иметь одинаковые non-key attributes. При этом key schema таблицы задана.</p>\n<table>\n<thead>\n<tr>\n<th>Primary key</th>\n<th>Правило уникальности</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Simple: partition key</td>\n<td>Значение partition key уникально для item</td>\n</tr>\n<tr>\n<td>Composite: partition key + sort key</td>\n<td>Уникальна комбинация двух значений, partition key может повторяться</td>\n</tr>\n</tbody></table>\n<p>Например, <code>CustomerId</code> + <code>OrderDate</code>: у одного клиента несколько заказов, различаются sort key. Partition key проходит через hash function для распределения данных. Items с одним partition key упорядочены по sort key. Плохое распределение обращений может создать <strong>hot partition</strong>, поэтому важны равномерно используемые ключи.</p>\n<p>Если у каждого студента свой <code>StudentID</code>, для хранения однофамильцев достаточно простого ключа <code>StudentID</code>. Если <code>EmployeeID</code> уникален только в пределах отдела, подойдёт составной ключ <code>EmployeeID</code> + <code>Department</code>. Для изменения схемы первичного ключа уже созданной таблицы создай новую таблицу с нужными ключами и перенеси данные. <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey\">Первичный ключ DynamoDB</a></p>\n<h3>Secondary indexes</h3>\n<table>\n<thead>\n<tr>\n<th>Свойство</th>\n<th>GSI</th>\n<th>LSI</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Partition key</td>\n<td>Может отличаться от base table</td>\n<td>Тот же, что у base table</td>\n</tr>\n<tr>\n<td>Sort key</td>\n<td>Может отличаться, необязателен при simple key</td>\n<td>Другой sort key</td>\n</tr>\n<tr>\n<td>Создание</td>\n<td>Можно при создании и добавить позже</td>\n<td>При создании таблицы</td>\n</tr>\n<tr>\n<td>Consistency чтения</td>\n<td>Eventually consistent</td>\n<td>Eventual или strong</td>\n</tr>\n<tr>\n<td>Provisioned throughput</td>\n<td>Собственные настройки</td>\n<td>Использует capacity таблицы</td>\n</tr>\n</tbody></table>\n<p>GSI позволяет другой access pattern по другому ключу. LSI позволяет иначе сортировать items для того же partition key. <strong>Global в GSI не означает multi-Region</strong>. Multi-Region replication — это <strong>global tables</strong>. Уточнения по индексам: <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SecondaryIndexes.html\">AWS secondary indexes</a>.</p>\n<h3>Operations</h3>\n<table>\n<thead>\n<tr>\n<th>Операция</th>\n<th>Что делает</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>CreateTable</td>\n<td>Создаёт таблицу</td>\n</tr>\n<tr>\n<td>PutItem</td>\n<td>Создаёт item или полностью заменяет item с тем же primary key</td>\n</tr>\n<tr>\n<td>UpdateItem</td>\n<td>Меняет указанные attributes</td>\n</tr>\n<tr>\n<td>GetItem</td>\n<td>Получает один item по полному primary key</td>\n</tr>\n<tr>\n<td>DeleteItem</td>\n<td>Удаляет item по primary key</td>\n</tr>\n<tr>\n<td>Query</td>\n<td>Ищет по равенству partition key, возможно условие по sort key</td>\n</tr>\n<tr>\n<td>Scan</td>\n<td>Читает items таблицы/индекса, затем может применять filter</td>\n</tr>\n<tr>\n<td>Batch operations</td>\n<td>Группируют чтение/запись нескольких items</td>\n</tr>\n<tr>\n<td>Transaction operations</td>\n<td>Обеспечивают согласованное all-or-nothing выполнение</td>\n</tr>\n</tbody></table>\n<p>Для composite key при <code>GetItem</code> нужны оба key attributes. <code>Query</code> по индексу использует ключи индекса. FilterExpression не превращает Scan в эффективный поиск по ключу и не устраняет стоимость прочитанных, затем отфильтрованных данных. У Batch нет общей гарантии all-or-nothing только потому, что операции объединены.</p>\n<h3>Read consistency и throughput</h3>\n<p><strong>Eventually consistent</strong> может вернуть данные без самого последнего успешного изменения, стоит меньше capacity. <strong>Strongly consistent</strong> отражает ранее успешно завершившиеся записи при чтении. По умолчанию чтение eventual. Для таблиц/LSI можно указать <code>ConsistentRead=True</code>; для GSI strong read не поддерживается. <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html\">AWS read consistency</a>.</p>\n<p><strong>Provisioned</strong>: задаёшь RCU/WCU. <strong>On-demand</strong>: платишь за запросы, удобно при неизвестной/неровной нагрузке. On-demand не означает отсутствие quotas.</p>\n<p>Для обычных независимых операций чтения/записи одинаковых items в задачах курса:</p>\n<pre><code class=\"language-text\">Strong RCU = reads_per_second × ceil(item_size_KB / 4)\nEventual RCU = reads_per_second × ceil(item_size_KB / 4) / 2\nWCU = writes_per_second × ceil(item_size_KB / 1)\n</code></pre>\n<p><code>ceil</code> округляет вверх. Размер округляй для item, а минуты сначала переводишь в секунды. Это не универсальная формула для всех особенностей Query/Scan/batch. Transactional operations требуют удвоенной capacity относительно соответствующих обычных strong reads/writes. Единицы и правила проверены по <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Constraints.html\">AWS capacity documentation</a>.</p>\n<p><strong>Пример со слайдов D5 36–37</strong>: 20 items/с, по 11 KB, eventual read. <code>ceil(11/4)=3</code>, <code>20×3/2 = 30 RCU</code>. При strong read получится 60 RCU.</p>\n<p><strong>Пример со слайдов D5 38–39</strong>: 120 items/мин, по 7 KB. <code>120/60=2 writes/с</code>, <code>2×7 = 14 WCU</code>.</p>\n<p>Ещё для самопроверки: 10 strong reads/с по 5 KB = <strong>20 RCU</strong>; 10 eventual reads/с по 5 KB = <strong>10 RCU</strong>; 5 writes/с по 1.2 KB = <strong>10 WCU</strong>.</p>\n<h3>Streams, global tables, backup</h3>\n<p><strong>DynamoDB Streams</strong> содержит записи изменений items, организованные в shards. Может запускать обработку через Lambda. <strong>Global tables</strong> реплицируют таблицу между выбранными Regions. <strong>Backup/PITR</strong> нужны для восстановления данных после нежелательных изменений. Репликация и backup не взаимозаменяемы: ошибка приложения может реплицироваться.</p>\n<p>Для модели курса запомни eventual replication global tables. В актуальном DynamoDB есть и варианты multi-Region strong consistency, поэтому не учи утверждение «все global tables при любых настройках только eventual» как вечное правило. <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html\">AWS documentation</a>.</p>\n",
       "academy": null
     },
     {
@@ -141,7 +141,7 @@ window.CLOUD_CONTENT = {
       "terms": "Интеграции · stages · authorizers · throttling",
       "number": 6,
       "course": "Developing",
-      "html": "<h3>Что проверить перед тестом</h3>\n<ul>\n<li><strong>Тип API.</strong> REST — архитектурный стиль. В API Gateway HTTP API подходит для простого Lambda proxy, REST API даёт mapping templates, mock integrations и usage plans, а WebSocket API подходит для двустороннего чата.</li>\n<li><strong>Запрос и развёртывание.</strong> Route key <code>GET /products/{product_id}</code> задаёт метод и путь. Default invoke URL REST API включает ID API, регион и stage. Stage variables позволяют окружениям использовать разные backend.</li>\n<li><strong>Доступ и диагностика.</strong> AWS WAF фильтрует распространённые веб-атаки для поддерживаемых ресурсов, включая API Gateway REST APIs. IntegrationLatency измеряет ожидание backend. Latency включает и обработку внутри API Gateway. <a href=\"https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-metrics.html\">Метрики API Gateway</a></li>\n</ul>\n<h3>Конспект лекции</h3>\n<p><strong>API</strong> — контракт взаимодействия приложений, скрывающий детали реализации. <strong>API Gateway</strong> — managed сервис, который принимает запросы, маршрутизирует их к backend, может проверять доступ, ограничивать частоту и собирать monitoring.</p>\n<p><strong>RESTful request/response</strong> обычно stateless: серверу не требуется хранить контекст сессии предыдущих запросов, чтобы понять текущий. <strong>WebSocket</strong> — длительное двустороннее соединение, удобно для chat/realtime updates.</p>\n<p>В API Gateway есть <strong>REST APIs</strong>, <strong>HTTP APIs</strong> и <strong>WebSocket APIs</strong>. REST и HTTP APIs оба подходят для RESTful сценариев. REST API в лекции имеет больше возможностей управления, HTTP API ориентирован на простой proxy с меньшей стоимостью/latency. Не переноси feature одного типа API на все остальные.</p>\n<h3>Resource, method, integration</h3>\n<p><code>GET /products/34</code>: <code>/products/34</code> — путь к ресурсу, <code>GET</code> — method, <code>34</code> может быть path parameter. <code>?category=coffee</code> — query parameter. Body — payload запроса. Headers — дополнительные сведения, например authorization/content type.</p>\n<table>\n<thead>\n<tr>\n<th>HTTP method</th>\n<th>Типовое намерение</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>GET</td>\n<td>Получить данные</td>\n</tr>\n<tr>\n<td>POST</td>\n<td>Создать/запустить действие</td>\n</tr>\n<tr>\n<td>PUT</td>\n<td>Создать или полностью заменить ресурс по заданному адресу</td>\n</tr>\n<tr>\n<td>PATCH</td>\n<td>Частично обновить</td>\n</tr>\n<tr>\n<td>DELETE</td>\n<td>Удалить</td>\n</tr>\n<tr>\n<td>OPTIONS</td>\n<td>Информация о разрешённых взаимодействиях, в том числе CORS preflight</td>\n</tr>\n</tbody></table>\n<p>Создать REST API можно через console, CLI/SDK или импорт OpenAPI definition. <strong>OpenAPI</strong> описывает контракт API в JSON/YAML.</p>\n<p>Поток non-proxy REST integration: <strong>method request → integration request → backend → integration response → method response</strong>. Method request обращён к клиенту, integration request — к backend.</p>\n<table>\n<thead>\n<tr>\n<th>Integration</th>\n<th>Как понимать</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Lambda proxy</td>\n<td>Gateway передаёт сведения запроса в Lambda; функция формирует ответ в ожидаемом proxy формате</td>\n</tr>\n<tr>\n<td>Lambda non-proxy/custom</td>\n<td>Можно явно настроить преобразование request/response</td>\n</tr>\n<tr>\n<td>HTTP proxy</td>\n<td>Передача запроса HTTP backend</td>\n</tr>\n<tr>\n<td>AWS service integration</td>\n<td>Вызов поддерживаемого AWS service без промежуточного собственного кода</td>\n</tr>\n<tr>\n<td>Mock</td>\n<td>Ответ для тестирования без реального backend</td>\n</tr>\n<tr>\n<td>Private integration</td>\n<td>Доступ к private backend через подходящий VPC link</td>\n</tr>\n</tbody></table>\n<p><strong>Mapping template</strong> преобразует payload в custom integration. В обычном REST Lambda proxy ответ включает <code>statusCode</code>, headers и строковое <code>body</code>. Не считай любой произвольный JSON автоматически корректным proxy response.</p>\n<p>Endpoint types REST API в лекции: <strong>edge-optimized</strong> — через управляемый CloudFront; <strong>Regional</strong> — endpoint региона; <strong>private</strong> — доступ через VPC interface endpoint. Private API endpoint и private backend integration — разные понятия.</p>\n<h3>Deployment, stage, canary</h3>\n<p><strong>Deployment</strong> — snapshot конфигурации API. <strong>Stage</strong> — именованная ссылка на deployment плюс настройки окружения, например <code>dev</code>, <code>test</code>, <code>prod</code>. Упрощение «stage = snapshot» в D6 слайд 60 неточно. <a href=\"https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-stages.html\">AWS stages</a>.</p>\n<p><strong>Stage variables</strong> позволяют выбирать настройки/разные backend, например Lambda aliases dev/prod. Для одной API и двух aliases из sample question D6 подходят две stages со своими stage variables.</p>\n<p><strong>Canary deployment</strong> отправляет часть трафика на новую версию для проверки. Отдельные environments и распределение небольшой доли трафика на экспериментальную версию решают разные задачи.</p>\n<h3>Access, CORS, throttling</h3>\n<table>\n<thead>\n<tr>\n<th>Механизм</th>\n<th>Задача</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>IAM authorization</td>\n<td>Доступ по IAM credentials/permissions, signed requests</td>\n</tr>\n<tr>\n<td>Cognito authorizer для REST API</td>\n<td>Проверка пользовательских токенов</td>\n</tr>\n<tr>\n<td>JWT authorizer для HTTP API</td>\n<td>Проверка JWT от настроенного issuer</td>\n</tr>\n<tr>\n<td>Lambda authorizer</td>\n<td>Собственная логика проверки token/request</td>\n</tr>\n<tr>\n<td>Resource policy</td>\n<td>Ограничения на доступ к API, например по principal/network context</td>\n</tr>\n<tr>\n<td>WAF</td>\n<td>Фильтрация нежелательных HTTP(S) запросов</td>\n</tr>\n<tr>\n<td>CORS</td>\n<td>Разрешение браузеру прочитать cross-origin response</td>\n</tr>\n<tr>\n<td>Usage plans + API keys</td>\n<td>Идентификация клиентов для usage/quota/throttling</td>\n</tr>\n</tbody></table>\n<p><strong>API key не заменяет authentication/authorization.</strong> Для ограничения доступа AWS предлагает IAM, Lambda authorizer или Cognito. Quotas/throttling usage plan применяются best effort, это не абсолютная гарантия запрета превышения. <a href=\"https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html\">AWS API keys and usage plans</a>.</p>\n<p><strong>Throttling</strong> ограничивает частоту запросов. При превышении может вернуться <strong>429 Too Many Requests</strong>. В лекции настройки идут от более конкретных client/method к stage/method и account-level ограничениям. Не заучивай общий quota как одинаковый для всех Regions и аккаунтов.</p>\n<p><strong>CORS preflight</strong>: браузер может сначала отправить OPTIONS. Ответ сообщает допустимые origins/methods/headers. CORS не защищает endpoint от прямых запросов произвольного клиента, например из CLI, и не выдаёт доступ к private S3 объекту.</p>\n<h3>Monitoring и optimization</h3>\n<table>\n<thead>\n<tr>\n<th>Метрика/сервис</th>\n<th>Что означает</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Count</td>\n<td>Количество API calls</td>\n</tr>\n<tr>\n<td>Latency</td>\n<td>Полное время от получения запроса Gateway до отправки ответа</td>\n</tr>\n<tr>\n<td>IntegrationLatency</td>\n<td>Время взаимодействия с backend</td>\n</tr>\n<tr>\n<td>4XXError / 5XXError</td>\n<td>Client/server errors</td>\n</tr>\n<tr>\n<td>CacheHitCount</td>\n<td>Запрос обслужен из cache</td>\n</tr>\n<tr>\n<td>CacheMissCount</td>\n<td>Понадобилось обращение к backend</td>\n</tr>\n<tr>\n<td>CloudWatch</td>\n<td>Metrics, alarms, logs</td>\n</tr>\n<tr>\n<td>CloudTrail</td>\n<td>Аудит операций с API Gateway</td>\n</tr>\n<tr>\n<td>X-Ray</td>\n<td>Трассировка пути запроса и поиск задержек</td>\n</tr>\n</tbody></table>\n<p>Кэш REST API снижает повторные обращения к backend. Cache key должен различать запросы, ответы на которые различаются. <strong>TTL</strong> задаёт время жизни записи. <strong>Compression</strong> уменьшает размер передаваемого payload, но добавляет работу по сжатию/распаковке.</p>\n",
+      "html": "<h3>Что проверить перед тестом</h3>\n<ul>\n<li><strong>Тип API.</strong> REST — архитектурный стиль. В API Gateway HTTP API подходит для простого Lambda proxy, REST API даёт mapping templates, mock integrations и usage plans, а WebSocket API подходит для двустороннего чата.</li>\n<li><strong>Запрос и развёртывание.</strong> Route key <code>GET /products/{product_id}</code> задаёт метод и путь. Default invoke URL REST API включает ID API, регион и stage. Stage variables позволяют окружениям использовать разные backend.</li>\n<li><strong>Доступ и диагностика.</strong> AWS WAF фильтрует распространённые веб-атаки для поддерживаемых ресурсов, включая API Gateway REST APIs. IntegrationLatency измеряет ожидание backend. Latency включает и обработку внутри API Gateway. <a href=\"https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-metrics.html\">Метрики API Gateway</a></li>\n</ul>\n<h3>Конспект лекции</h3>\n<p><strong>API</strong> — контракт взаимодействия приложений, скрывающий детали реализации. <strong>API Gateway</strong> — managed сервис, который принимает запросы, маршрутизирует их к backend, может проверять доступ, ограничивать частоту и собирать monitoring.</p>\n<p><strong>RESTful request/response</strong> обычно stateless: серверу не требуется хранить контекст сессии предыдущих запросов, чтобы понять текущий. <strong>WebSocket</strong> — длительное двустороннее соединение, удобно для chat/realtime updates.</p>\n<p>В API Gateway есть <strong>REST APIs</strong>, <strong>HTTP APIs</strong> и <strong>WebSocket APIs</strong>. REST и HTTP APIs оба подходят для RESTful сценариев. REST API в лекции имеет больше возможностей управления, HTTP API ориентирован на простой proxy с меньшей стоимостью/latency. Не переноси feature одного типа API на все остальные.</p>\n<h3>Resource, method, integration</h3>\n<p><code>GET /products/34</code>: <code>/products/34</code> — путь к ресурсу, <code>GET</code> — method, <code>34</code> может быть path parameter. <code>?category=coffee</code> — query parameter. Body — payload запроса. Headers — дополнительные сведения, например authorization/content type.</p>\n<table>\n<thead>\n<tr>\n<th>HTTP method</th>\n<th>Типовое намерение</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>GET</td>\n<td>Получить данные</td>\n</tr>\n<tr>\n<td>POST</td>\n<td>Создать/запустить действие</td>\n</tr>\n<tr>\n<td>PUT</td>\n<td>Создать или полностью заменить ресурс по заданному адресу</td>\n</tr>\n<tr>\n<td>PATCH</td>\n<td>Частично обновить</td>\n</tr>\n<tr>\n<td>DELETE</td>\n<td>Удалить</td>\n</tr>\n<tr>\n<td>OPTIONS</td>\n<td>Информация о разрешённых взаимодействиях, в том числе CORS preflight</td>\n</tr>\n</tbody></table>\n<p>Создать REST API можно через console, CLI/SDK или импорт OpenAPI definition. <strong>OpenAPI</strong> описывает контракт API в JSON/YAML.</p>\n<p>Поток non-proxy REST integration: <strong>method request → integration request → backend → integration response → method response</strong>. Method request обращён к клиенту, integration request — к backend.</p>\n<table>\n<thead>\n<tr>\n<th>Integration</th>\n<th>Как понимать</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Lambda proxy</td>\n<td>Gateway передаёт сведения запроса в Lambda; функция формирует ответ в ожидаемом proxy формате</td>\n</tr>\n<tr>\n<td>Lambda non-proxy/custom</td>\n<td>Можно явно настроить преобразование request/response</td>\n</tr>\n<tr>\n<td>HTTP proxy</td>\n<td>Передача запроса HTTP backend</td>\n</tr>\n<tr>\n<td>AWS service integration</td>\n<td>Вызов поддерживаемого AWS service без промежуточного собственного кода</td>\n</tr>\n<tr>\n<td>Mock</td>\n<td>Ответ для тестирования без реального backend</td>\n</tr>\n<tr>\n<td>Private integration</td>\n<td>Доступ к private backend через подходящий VPC link</td>\n</tr>\n</tbody></table>\n<p><strong>Mapping template</strong> преобразует payload в custom integration. В <strong>integration request</strong> шаблон может преобразовать JSON в XML перед вызовом бэкенда. В <strong>integration response</strong> шаблон преобразует тело ответа перед отправкой клиенту. Для простого HTTP API перед Lambda подходит Lambda proxy. В обычном REST Lambda proxy ответ включает <code>statusCode</code>, headers и строковое <code>body</code>.</p>\n<p>У Lambda-функции изначально нет собственного публичного HTTP-адреса. Для вызова по HTTPS можно настроить Lambda Function URL или опубликовать маршрут через API Gateway. <a href=\"https://docs.aws.amazon.com/lambda/latest/dg/urls-configuration.html\">Lambda Function URLs</a></p>\n<p>Endpoint types REST API в лекции: <strong>edge-optimized</strong> — через управляемый CloudFront; <strong>Regional</strong> — endpoint региона; <strong>private</strong> — доступ через VPC interface endpoint. Private API endpoint и private backend integration — разные понятия.</p>\n<h3>Deployment, stage, canary</h3>\n<p><strong>Deployment</strong> — snapshot конфигурации API. <strong>Stage</strong> — именованная ссылка на deployment плюс настройки окружения, например <code>dev</code>, <code>test</code>, <code>prod</code>. Упрощение «stage = snapshot» в D6 слайд 60 неточно. <a href=\"https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-stages.html\">AWS stages</a>.</p>\n<p>Базовый адрес развёрнутого REST API имеет вид <code>https://{api-id}.execute-api.{region}.amazonaws.com/{stage}/</code>. Например, в адресе <code>https://abc123.execute-api.us-east-1.amazonaws.com/dev/</code> стадия — <code>dev</code>, регион — <code>us-east-1</code>. <a href=\"https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-call-api.html\">Вызов REST API</a></p>\n<p><strong>Stage variables</strong> позволяют выбирать настройки/разные backend, например Lambda aliases dev/prod. Для одной API и двух aliases из sample question D6 подходят две stages со своими stage variables.</p>\n<p><strong>Canary deployment</strong> отправляет часть трафика на новую версию для проверки. Отдельные environments и распределение небольшой доли трафика на экспериментальную версию решают разные задачи.</p>\n<h3>Access, CORS, throttling</h3>\n<table>\n<thead>\n<tr>\n<th>Механизм</th>\n<th>Задача</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>IAM authorization</td>\n<td>Доступ по IAM credentials/permissions, signed requests</td>\n</tr>\n<tr>\n<td>Cognito authorizer для REST API</td>\n<td>Проверка пользовательских токенов</td>\n</tr>\n<tr>\n<td>JWT authorizer для HTTP API</td>\n<td>Проверка JWT от настроенного issuer</td>\n</tr>\n<tr>\n<td>Lambda authorizer</td>\n<td>Собственная логика проверки token/request</td>\n</tr>\n<tr>\n<td>Resource policy</td>\n<td>Ограничения на доступ к API, например по principal/network context</td>\n</tr>\n<tr>\n<td>WAF</td>\n<td>Фильтрация нежелательных HTTP(S) запросов</td>\n</tr>\n<tr>\n<td>CORS</td>\n<td>Разрешение браузеру прочитать cross-origin response</td>\n</tr>\n<tr>\n<td>Usage plans + API keys</td>\n<td>Идентификация клиентов для usage/quota/throttling</td>\n</tr>\n</tbody></table>\n<p><strong>API key не заменяет authentication/authorization.</strong> Для ограничения доступа AWS предлагает IAM, Lambda authorizer или Cognito. Quotas/throttling usage plan применяются best effort, это не абсолютная гарантия запрета превышения. <a href=\"https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html\">AWS API keys and usage plans</a>.</p>\n<p><strong>Throttling</strong> ограничивает частоту запросов. При превышении API Gateway может вернуть <strong>429 Too Many Requests</strong>. Если во время акции клиенты упёрлись в лимит usage plan, можно увеличить <strong>rate</strong> (устойчивая частота запросов) и <strong>burst</strong> (допустимый краткий всплеск) в пределах пропускной способности бэкенда. Продолжают действовать ограничения метода, стадии и аккаунта. <a href=\"https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-request-throttling.html\">Throttling REST API</a></p>\n<p><strong>CORS preflight</strong>: браузер может сначала отправить OPTIONS. Ответ сообщает допустимые origins/methods/headers. CORS не защищает endpoint от прямых запросов произвольного клиента, например из CLI, и не выдаёт доступ к private S3 объекту.</p>\n<h3>Monitoring и optimization</h3>\n<table>\n<thead>\n<tr>\n<th>Метрика/сервис</th>\n<th>Что означает</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Count</td>\n<td>Количество API calls</td>\n</tr>\n<tr>\n<td>Latency</td>\n<td>Полное время от получения запроса Gateway до отправки ответа</td>\n</tr>\n<tr>\n<td>IntegrationLatency</td>\n<td>Время взаимодействия с backend</td>\n</tr>\n<tr>\n<td>4XXError / 5XXError</td>\n<td>Client/server errors</td>\n</tr>\n<tr>\n<td>CacheHitCount</td>\n<td>Запрос обслужен из cache</td>\n</tr>\n<tr>\n<td>CacheMissCount</td>\n<td>Понадобилось обращение к backend</td>\n</tr>\n<tr>\n<td>CloudWatch</td>\n<td>Metrics, alarms, logs</td>\n</tr>\n<tr>\n<td>CloudTrail</td>\n<td>Аудит операций с API Gateway</td>\n</tr>\n<tr>\n<td>X-Ray</td>\n<td>Трассировка пути запроса и поиск задержек</td>\n</tr>\n</tbody></table>\n<p>Кэш REST API снижает повторные обращения к backend. Cache key должен различать запросы, ответы на которые различаются. <strong>TTL</strong> задаёт время жизни записи. <strong>Compression</strong> уменьшает размер передаваемого payload, но добавляет работу по сжатию/распаковке.</p>\n",
       "academy": null
     }
   ],
@@ -3562,6 +3562,567 @@ window.CLOUD_CONTENT = {
       "module": "D6",
       "kind": "knowledge-check",
       "source": "D6 Knowledge Check · 10"
+    },
+    {
+      "module": "D4",
+      "question": "Which statements about direct authentication for AWS IAM users are true? (Choose two.)",
+      "options": [
+        "An IAM user signs in to the AWS Management Console with a user name and password.",
+        "Requests to AWS services must be authenticated with suitable AWS credentials.",
+        "An EC2 .pem or .ppk file authenticates calls to the AWS API.",
+        "Applications should use the AWS account root user's credentials with the AWS CLI.",
+        "An AWS account can have only one administrator for IAM users."
+      ],
+      "answer": "AB",
+      "explanation": "Для прямого входа IAM-пользователя в консоль нужны имя пользователя и пароль. Для API-запросов используют AWS credentials. Ключ SSH для EC2 решает другую задачу.",
+      "id": "developing-exam-1",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D5",
+      "question": "If a DynamoDB table has a simple primary key, how does DynamoDB determine where to store each item?",
+      "options": [
+        "It uses the sort key of the item.",
+        "It stores each item in the partition with the most free space.",
+        "It hashes the value of the partition key.",
+        "It uses the value of the first non-key attribute."
+      ],
+      "answer": "C",
+      "explanation": "Простой первичный ключ состоит из partition key. Внутренняя хеш-функция DynamoDB определяет партицию по значению этого ключа.",
+      "id": "developing-exam-2",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D3",
+      "question": "Which AWS CLI command creates a general purpose S3 bucket named my-lab-bucket in us-east-1?",
+      "options": [
+        "aws s3api create-bucket --bucket my-lab-bucket --region us-east-1",
+        "aws s3api create-bucket --name my-lab-bucket --region us-east-1",
+        "aws s3 create-bucket --bucket my-lab-bucket --region us-east-1",
+        "aws s3api put-bucket --bucket my-lab-bucket --region us-east-1"
+      ],
+      "answer": "A",
+      "explanation": "Операция s3api create-bucket принимает имя в --bucket. Для us-east-1 параметр LocationConstraint не нужен.",
+      "id": "developing-exam-3",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D6",
+      "question": "A client sends JSON, but the backend accepts only XML. How can an API Gateway REST API automatically convert the request before it reaches the backend?",
+      "options": [
+        "Add a mapping template to the integration response.",
+        "Add a mapping template to the integration request.",
+        "Set the Content-Type header to application/xml without changing the body.",
+        "Add a usage plan to the REST API."
+      ],
+      "answer": "B",
+      "explanation": "Шаблон в integration request преобразует тело входящего запроса перед вызовом бэкенда. Простая замена Content-Type оставит тело в JSON.",
+      "id": "developing-exam-4",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D3",
+      "question": "What organizes the Amazon S3 namespace at the highest level?",
+      "options": [
+        "Bucket",
+        "Group",
+        "Region",
+        "Object key"
+      ],
+      "answer": "A",
+      "explanation": "Бакет содержит объекты. Ключ идентифицирует объект внутри бакета.",
+      "id": "developing-exam-5",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D3",
+      "question": "An S3 static website bucket policy allows reads from aws:SourceIp 0.0.0.0/0. After Block all public access is enabled, why does the website endpoint stop working for anonymous visitors?",
+      "options": [
+        "The IPv4 range is invalid in a bucket policy.",
+        "Static website hosting was automatically turned off.",
+        "The endpoint must be accessed through the AWS CLI.",
+        "The policy is treated as public because the range includes all IPv4 addresses."
+      ],
+      "answer": "D",
+      "explanation": "Диапазон 0.0.0.0/0 охватывает все IPv4-адреса. S3 считает такое разрешение публичным, и Block Public Access блокирует анонимное чтение.",
+      "id": "developing-exam-6",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D4",
+      "question": "Which IAM resource explicitly grants or denies permissions to a user or a group of users?",
+      "options": [
+        "IAM roles",
+        "IAM groups",
+        "IAM policies",
+        "IAM user credentials"
+      ],
+      "answer": "C",
+      "explanation": "В IAM policy перечислены правила Allow и Deny. Политику доступа можно прикрепить к пользователю или группе.",
+      "id": "developing-exam-7",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D6",
+      "question": "Which option most directly protects an internet-facing API Gateway REST API against common web attacks such as SQL injection and cross-site scripting?",
+      "options": [
+        "Apply throttling to each method.",
+        "Use AWS WAF with Amazon API Gateway.",
+        "Add a JWT authorizer.",
+        "Increase the burst limit."
+      ],
+      "answer": "B",
+      "explanation": "AWS WAF проверяет веб-запросы по правилам. Для прямой интеграции с WAF в API Gateway используют REST API.",
+      "id": "developing-exam-8",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D2",
+      "question": "What happens when an AWS SDK client calls a method such as s3.list_buckets()?",
+      "options": [
+        "The SDK opens an SSH session to S3.",
+        "The SDK reads the bucket list from a local cache only.",
+        "The SDK starts the AWS Management Console to perform the operation.",
+        "The SDK sends an HTTPS request to the Amazon S3 API endpoint it resolves."
+      ],
+      "answer": "D",
+      "explanation": "SDK преобразует вызов метода в подписанный HTTPS-запрос к API. Эндпоинт зависит от настроек клиента и правил сервиса.",
+      "id": "developing-exam-9",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D5",
+      "question": "An in-game purchase requires several DynamoDB writes to succeed or fail together. What should the application use?",
+      "options": [
+        "A DynamoDB Accelerator (DAX) cluster",
+        "DynamoDB global tables",
+        "A batch of independent writes with no transaction",
+        "DynamoDB transactions"
+      ],
+      "answer": "D",
+      "explanation": "TransactWriteItems выполняет связанные записи атомарно. Если одно из изменений нельзя применить, транзакция не применяет ни одного.",
+      "id": "developing-exam-10",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D6",
+      "question": "When using an HTTP proxy integration, how does API Gateway handle requests?",
+      "options": [
+        "It forwards the client request to the HTTP backend with minimal transformation.",
+        "It requires explicit mapping templates for every route.",
+        "It removes all query parameters for security.",
+        "It converts every payload to JSON."
+      ],
+      "answer": "A",
+      "explanation": "HTTP proxy integration передаёт запрос HTTP-бэкенду. Для преобразования тела через шаблон нужна подходящая custom integration в REST API.",
+      "id": "developing-exam-11",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D3",
+      "question": "An S3 static website bucket policy allows access from your home IP. When you open the site from a café, you get AccessDenied. What is the most likely cause?",
+      "options": [
+        "The café's public IP does not match the address in the bucket policy.",
+        "S3 automatically re-enabled website blocking on the bucket.",
+        "S3 applies IP conditions only to AWS CLI calls.",
+        "S3 website endpoints do not support IP-based bucket policy conditions."
+      ],
+      "answer": "A",
+      "explanation": "S3 оценивает условие aws:SourceIp по публичному адресу, с которого пришёл запрос. Для кафе он может отличаться от домашнего.",
+      "id": "developing-exam-12",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D6",
+      "question": "A third-party client sends a given name, surname, work phone, and mobile phone. The backend expects only a full name and mobile phone. Which API Gateway REST API option requires the fewest application changes?",
+      "options": [
+        "Export the API definition and use it to rewrite the client.",
+        "Use a request mapping template to combine the names and pass the mobile phone.",
+        "Create a usage plan that specifies the expected fields.",
+        "Connect the client to the backend using an integration with no payload mapping."
+      ],
+      "answer": "B",
+      "explanation": "Mapping template может объединить имя и фамилию и передать только мобильный телефон. Преобразование выполняет API Gateway.",
+      "id": "developing-exam-13",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D5",
+      "question": "A Students table must allow students to share a LastName. Each student has a unique StudentID. What is the simplest primary key that meets the requirement?",
+      "options": [
+        "Partition key: LastName. Sort key: StudentID.",
+        "Partition key only: LastName.",
+        "Partition key only: StudentID.",
+        "Partition key: StudentID. Sort key: LastName."
+      ],
+      "answer": "C",
+      "explanation": "Уникального StudentID достаточно для идентификации записи. Составной ключ тоже может удовлетворить условию, но содержит дополнительное поле. В исходном чате был выбран D.",
+      "id": "developing-exam-14",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D6",
+      "question": "Why does a newly created AWS Lambda function, with no HTTP endpoint configured, lack a URL that a web client can call directly?",
+      "options": [
+        "Lambda functions only support WebSocket communication.",
+        "HTTP requests must first pass through CloudWatch.",
+        "A function has no dedicated public HTTP URL by default.",
+        "Lambda only accepts traffic through CloudFront."
+      ],
+      "answer": "C",
+      "explanation": "Для HTTP-вызова можно отдельно настроить Lambda Function URL или API Gateway.",
+      "id": "developing-exam-15",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D4",
+      "question": "An IAM statement uses Effect: Deny, Action: [dynamodb:*, s3:*], and NotResource listing a DynamoDB table and specific S3 resources. What does the statement do?",
+      "options": [
+        "It denies writes only to the listed DynamoDB table.",
+        "It denies reads only from the listed S3 resources.",
+        "It denies the listed actions on matching DynamoDB and S3 resources except those in NotResource.",
+        "It denies the listed actions only on the resources in NotResource."
+      ],
+      "answer": "C",
+      "explanation": "NotResource исключает перечисленные ARN из этого правила. Исключение из Deny само по себе не выдаёт Allow.",
+      "id": "developing-exam-16",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D5",
+      "question": "SensorReadings uses the sensor ID as the partition key and the timestamp as the sort key. Which statement is true?",
+      "options": [
+        "Two items can never share the same sensor ID.",
+        "Together, the two attributes form a simple primary key.",
+        "Two items can never share the same timestamp.",
+        "Two items cannot share the same combination of sensor ID and timestamp."
+      ],
+      "answer": "D",
+      "explanation": "У составного первичного ключа уникальна пара. Один датчик может иметь несколько замеров, а разные датчики могут записывать замеры в одно время.",
+      "id": "developing-exam-17",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D2",
+      "question": "How can a Python developer explicitly select the AWS Region when creating a Boto3 service client?",
+      "options": [
+        "A Boto3 client cannot be configured with a Region.",
+        "Put the default Region in the shared credentials file instead of client configuration.",
+        "Set AWS_PROFILE to the Region name.",
+        "Pass the Region as region_name when creating the client."
+      ],
+      "answer": "D",
+      "explanation": "Например, boto3.client('ec2', region_name='eu-west-1'). AWS_PROFILE выбирает именованный профиль.",
+      "id": "developing-exam-18",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D5",
+      "question": "The Employees table uses EmployeeID alone as its partition key. The same EmployeeID may occur in several departments. How can Department become part of the table's primary key?",
+      "options": [
+        "Add Department as the sort key with UpdateTable.",
+        "Edit the existing table's primary key schema directly in the console.",
+        "Create a new table with EmployeeID as partition key and Department as sort key, then migrate the data.",
+        "Create an LSI on Department and promote it to the primary key."
+      ],
+      "answer": "C",
+      "explanation": "Схема первичного ключа DynamoDB задаётся при создании таблицы. Новую схему вводят через новую таблицу и перенос данных.",
+      "id": "developing-exam-19",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D3",
+      "question": "Creating a bucket named images-bucket in the shared global S3 namespace returns BucketAlreadyExists. What should the developer do?",
+      "options": [
+        "Choose a different available bucket name.",
+        "Ask AWS Support to authorize use of the same name.",
+        "Outbid the current bucket owner.",
+        "Create a bucket with that name in another Region of the same partition."
+      ],
+      "answer": "A",
+      "explanation": "Имя бакета в общем пространстве имён S3 уникально в пределах AWS partition. Смена региона внутри той же partition не освобождает имя.",
+      "id": "developing-exam-20",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D2",
+      "question": "You launch an EC2 instance with a Python script using Boto3. Later, you use the AWS Management Console to stop that same instance. Why does this work?",
+      "options": [
+        "Resources created with an SDK cannot be changed in the console.",
+        "An SDK creates an independent copy of the EC2 instance in the console.",
+        "SDK-managed instances are automatically stopped when the script ends.",
+        "The SDK and console use the same underlying AWS service APIs."
+      ],
+      "answer": "D",
+      "explanation": "Console, CLI и SDK работают с одними ресурсами AWS. Для управления конкретным инстансом нужны доступ к аккаунту и правильный регион.",
+      "id": "developing-exam-21",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D3",
+      "question": "After you enable S3 Versioning for a bucket, you can return the bucket to its original Unversioned state. True or false?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "B",
+      "explanation": "После включения доступно состояние Suspended, которое приостанавливает создание версий. Состояние Unversioned было доступно до первого включения.",
+      "id": "developing-exam-22",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D2",
+      "question": "How does an AWS SDK resource API provide access to data?",
+      "options": [
+        "By calling a Lambda function to retrieve resource metadata.",
+        "Through objects and collections that represent AWS resources.",
+        "By requiring the developer to execute raw HTTP requests.",
+        "By automating browser interactions with the AWS Management Console."
+      ],
+      "answer": "B",
+      "explanation": "Resource API даёт объектную модель. Например, Boto3 предоставляет объект Bucket и коллекцию его объектов.",
+      "id": "developing-exam-23",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D3",
+      "question": "A static website is enabled on an S3 bucket, but the website endpoint returns 403 for an existing file. What is the most likely cause?",
+      "options": [
+        "The objects have not been versioned.",
+        "The visitor does not have permission to read the object.",
+        "The bucket name differs from the visitor's domain name.",
+        "S3 website hosting always requires CloudFront."
+      ],
+      "answer": "B",
+      "explanation": "Для существующего объекта 403 означает отсутствие разрешения на чтение. В исходном варианте B упоминал ACL, но доступ также зависит от bucket policy и Block Public Access.",
+      "id": "developing-exam-24",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D5",
+      "question": "Which statement about DynamoDB global tables is true?",
+      "options": [
+        "They replicate data only within one AWS Region.",
+        "They use Amazon S3 to propagate changes between replicas.",
+        "DynamoDB creates replicas and propagates ongoing changes to the selected Regions.",
+        "They can replicate only a user-selected subset of items."
+      ],
+      "answer": "C",
+      "explanation": "Global tables — встроенная репликация между выбранными AWS Regions. DynamoDB управляет репликами и переносом изменений.",
+      "id": "developing-exam-25",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D6",
+      "question": "Which use case is a good fit for a simple Amazon API Gateway HTTP API?",
+      "options": [
+        "An application needs an API proxy in front of an AWS Lambda function.",
+        "A developer wants a separate usage quota for each client.",
+        "An application needs a REST API mapping template to transform the Lambda response body.",
+        "A developer wants a mock integration to test the API without any backend."
+      ],
+      "answer": "A",
+      "explanation": "HTTP API подходит для Lambda proxy. Шаблоны преобразования тела, mock integrations и usage plans доступны в REST API.",
+      "id": "developing-exam-26",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D2",
+      "question": "A developer creates and tags EC2 instances with AWS CLI. Another developer uses the Java SDK to list and describe instances, but sees no results. What is the most likely reason?",
+      "options": [
+        "Java SDK and CLI calls use different IAM action names.",
+        "The SDK is querying a different AWS Region.",
+        "An SDK cannot read tags set by the CLI.",
+        "Instances launched from the CLI are hidden from the SDK."
+      ],
+      "answer": "B",
+      "explanation": "Вызов описания инстансов EC2 выполняется в регионе клиента. Если SDK настроен на другой регион, он не увидит эти инстансы.",
+      "id": "developing-exam-27",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D5",
+      "question": "Which statement about Amazon DynamoDB partitions is true?",
+      "options": [
+        "The developer writes a hash function to tell DynamoDB how to partition items.",
+        "DynamoDB sorts items by sort key before selecting the partition.",
+        "DynamoDB chooses a partition based on the sort key.",
+        "With a simple primary key, DynamoDB stores and retrieves items based on the hash attribute."
+      ],
+      "answer": "D",
+      "explanation": "Hash attribute — другое название partition key. DynamoDB хеширует его для выбора партиции. Sort key упорядочивает записи одного partition key.",
+      "id": "developing-exam-28",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D5",
+      "question": "A DynamoDB table stores thousands of orders with customer ID as the partition key. Which operation efficiently retrieves all orders for one customer?",
+      "options": [
+        "Query with that customer's partition key value.",
+        "Scan, because strong consistency makes it more selective.",
+        "Scan every item and filter by customer afterward.",
+        "Query all partitions without specifying a key."
+      ],
+      "answer": "A",
+      "explanation": "Query читает записи с указанным значением partition key. Scan читает все записи таблицы или индекса до применения фильтра.",
+      "id": "developing-exam-29",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D6",
+      "question": "Which scenario is a good fit for a WebSocket API?",
+      "options": [
+        "Customers use a real-time chat to contact support about orders.",
+        "Sales staff download static daily reports.",
+        "An order submission returns a receipt number once.",
+        "A batch job sends orders to a fulfillment application."
+      ],
+      "answer": "A",
+      "explanation": "WebSocket поддерживает длительное двустороннее соединение. Клиент и сервер могут отправлять сообщения по мере поступления.",
+      "id": "developing-exam-30",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D6",
+      "question": "An internal finance REST API should be accessible only to employees authenticated through Amazon Cognito. Which configuration enforces this?",
+      "options": [
+        "Enable API keys and distribute them to employees.",
+        "Add CORS headers for the employee portal's domain.",
+        "Use a Cognito User Pool Authorizer on the API Gateway methods.",
+        "Allow public access through an IAM role with no employee identity check."
+      ],
+      "answer": "C",
+      "explanation": "Cognito User Pool Authorizer проверяет токены пользователей при вызове метода REST API. CORS и API keys не проверяют личность сотрудника.",
+      "id": "developing-exam-31",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D2",
+      "question": "When an AWS SDK sends a typical request to an AWS service API, which application protocol is used?",
+      "options": [
+        "TCP/IP",
+        "HTTP/HTTPS",
+        "WebSocket",
+        "SSH"
+      ],
+      "answer": "B",
+      "explanation": "Вызовы SDK обычно оформляются как HTTPS-запросы к сервисному API. HTTPS использует TLS для защиты передачи.",
+      "id": "developing-exam-32",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D6",
+      "question": "Which statement about API Gateway stages is true?",
+      "options": [
+        "All stages support automatic deployment on every API type.",
+        "Developers should always use a single stage for every environment.",
+        "Stage names are assigned sequentially from the API version.",
+        "Stage variables can connect different stages to different backends."
+      ],
+      "answer": "D",
+      "explanation": "Stage variables могут задавать параметры интеграции отдельно для dev, test и prod, например выбирать Lambda alias.",
+      "id": "developing-exam-33",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D5",
+      "question": "Which example best demonstrates a flexible schema in a nonrelational database such as DynamoDB?",
+      "options": [
+        "The database rejects every record with a missing non-key field.",
+        "Two items in one table have different sets of non-key attributes.",
+        "The database has to restart when capacity increases.",
+        "A query fails because a relationship between two tables is undefined."
+      ],
+      "answer": "B",
+      "explanation": "Элементы DynamoDB могут содержать разные неключевые атрибуты. Обязательные атрибуты первичного ключа определяются схемой таблицы.",
+      "id": "developing-exam-34",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D6",
+      "question": "GET /products will eventually scan a DynamoDB table. What does an API Gateway mock integration return before the backend is connected?",
+      "options": [
+        "A response calculated from a DynamoDB filter expression.",
+        "A predefined response without calling a backend.",
+        "The full DynamoDB table contents.",
+        "A filtered dataset from the production database.",
+        "Objects from an S3 bucket."
+      ],
+      "answer": "B",
+      "explanation": "Mock integration позволяет отдать заданный ответ для проверки маршрута без вызова DynamoDB или другого бэкенда.",
+      "id": "developing-exam-35",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D2",
+      "question": "You create notes.txt in the home directory of a standard AWS CloudShell environment. What happens when you return the next day in the same Region?",
+      "options": [
+        "You have to restore the file manually from S3.",
+        "The file is deleted at the end of every session.",
+        "The file is synchronized automatically to an S3 bucket.",
+        "The file remains in the persistent CloudShell home directory.",
+        "The file remains only if you export it manually."
+      ],
+      "answer": "D",
+      "explanation": "Обычный CloudShell сохраняет файлы домашнего каталога между сессиями в том же регионе. Для CloudShell VPC environments постоянного хранилища нет.",
+      "id": "developing-exam-36",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D6",
+      "question": "Which statement best defines REST?",
+      "options": [
+        "An architectural style for structuring client-server communication.",
+        "A protocol for sending JSON over HTTP.",
+        "A transport security layer for web traffic.",
+        "A serialization format for service data."
+      ],
+      "answer": "A",
+      "explanation": "REST расшифровывается как Representational State Transfer. Это стиль архитектуры с ограничениями, в том числе client-server и stateless.",
+      "id": "developing-exam-37",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D5",
+      "question": "Which statement best describes Amazon DynamoDB?",
+      "options": [
+        "A key-value and document database that scales horizontally for internet-scale applications.",
+        "A relational engine compatible with MySQL and PostgreSQL.",
+        "An in-memory cache designed to speed up database queries.",
+        "A graph database for traversing relationships."
+      ],
+      "answer": "A",
+      "explanation": "DynamoDB — управляемая NoSQL-база для данных в моделях «ключ–значение» и «документ». Она распределяет данные по партициям.",
+      "id": "developing-exam-38",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D6",
+      "question": "During a promotion, an API Gateway REST API returns 429 Too Many Requests because customers exceed their usage plan throttling limits. Which change allows more requests while keeping a throttle?",
+      "options": [
+        "Disable throttling entirely.",
+        "Increase the Lambda timeout.",
+        "Deploy the same API to extra stages without changing the limits.",
+        "Raise the rate and burst limits in the usage plan."
+      ],
+      "answer": "D",
+      "explanation": "Rate задаёт устойчивую частоту запросов, burst допускает короткий всплеск. Если срабатывает ограничение usage plan, увеличение этих значений оставляет throttling включённым.",
+      "id": "developing-exam-39",
+      "kind": "developing-exam"
+    },
+    {
+      "module": "D6",
+      "question": "Which pair of elements appears in the default base invoke URL of a deployed API Gateway REST API?",
+      "options": [
+        "AWS account ID and stage name",
+        "AWS Region and stage name",
+        "API ID and version number",
+        "AWS Region and version number"
+      ],
+      "answer": "B",
+      "explanation": "Формат — https://{api-id}.execute-api.{region}.amazonaws.com/{stage}/. URL содержит идентификатор API, регион и имя стадии.",
+      "id": "developing-exam-40",
+      "kind": "developing-exam"
     }
   ],
   "quickReview": [

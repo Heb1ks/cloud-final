@@ -7,6 +7,10 @@ const courseNames = ['Foundations', 'Developing'];
 const main = document.querySelector('#main');
 const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const checkKind = 'knowledge-check';
+const examKind = 'developing-exam';
+const examTitle = 'Cloud Developing · Экзаменационный вариант';
+const examQuestions = questions.filter(question => question.kind === examKind);
+const practiceQuestions = questions.filter(question => question.kind !== examKind);
 const storageKey = 'cloud-final-study-v1';
 let storageAvailable = true;
 let state = loadState();
@@ -145,7 +149,7 @@ function showModule(module) {
   state.lastModule = module.id;
   save();
   const next = modules[modules.indexOf(module) + 1];
-  const count = questions.filter(question => question.module === module.id).length;
+  const count = poolFor(module.id).length;
   const checkCount = poolFor(module.id, checkKind).length;
   main.innerHTML = `<a class="back" href="#home">← Все темы</a>
     <div class="study-layout">
@@ -178,7 +182,7 @@ function showModule(module) {
 }
 
 function poolFor(scope, source = 'all') {
-  const pool = scope === 'errors' ? errors() : questions.filter(question =>
+  const pool = scope === 'errors' ? errors() : practiceQuestions.filter(question =>
     scope === 'all' || moduleById.get(question.module).course === scope || question.module === scope);
   return source === 'all' ? pool : pool.filter(question => (question.kind || 'lecture') === source);
 }
@@ -207,6 +211,10 @@ function showPractice(preselected, sourceFilter) {
     <div class="page-heading"><p class="eyebrow">Тренировка к экзамену</p><h1>Тесты</h1>
     <p class="helper">Выбери курс или модуль. Вопросы на английском, разбор на русском появляется после каждого ответа.</p></div>
     ${canResume ? `<div class="notice"><span>Тест в процессе · ${Object.keys(previous.replies).length} из ${previous.ids.length} отвечено</span><a class="btn" href="#quiz">Продолжить</a></div>` : previous ? '<div class="notice"><span>Последний тест завершён</span><a class="btn" href="#quiz">Посмотреть результат</a></div>' : ''}
+    ${examQuestions.length ? `<section class="notice" aria-labelledby="exam-title">
+      <div><strong id="exam-title">${examTitle}</strong><div class="small">${examQuestions.length} вопросов в порядке исходного теста</div></div>
+      <button class="btn primary" type="button" id="start-exam">Начать вариант</button>
+    </section>` : ''}
     <form class="config" id="quiz-settings">
       <div class="field"><label for="scope">Темы</label><select id="scope">
         <option value="all">Все модули · смешанный тест</option>
@@ -228,6 +236,7 @@ function showPractice(preselected, sourceFilter) {
   const scope = document.querySelector('#scope');
   const source = document.querySelector('#source');
   const size = document.querySelector('#quiz-size');
+  document.querySelector('#start-exam')?.addEventListener('click', () => startQuiz(examQuestions, examTitle));
   if (moduleById.has(preselected) || courseNames.includes(preselected)) scope.value = preselected;
   if (sourceFilter === checkKind) source.value = checkKind;
   function updateSizes() {
@@ -269,6 +278,7 @@ function showQuiz() {
   }
   const question = questionById.get(session.ids[session.index]);
   const module = moduleById.get(question.module);
+  const source = question.kind === checkKind ? 'Knowledge Check' : question.kind === examKind ? 'Экзаменационный вариант' : module.course;
   const reply = session.replies[question.id];
   const submitted = typeof reply === 'string';
   const correct = submitted && reply === question.answer;
@@ -276,7 +286,7 @@ function showQuiz() {
   main.innerHTML = `<div class="quiz-frame">
     <a class="back" href="#practice">← Настройки теста</a>
     <div class="quiz-card">
-      <div class="question-top ${module.course.toLowerCase()}"><span class="module-tag">${module.id} · ${question.kind === checkKind ? 'Knowledge Check' : module.course}</span><span class="small">Вопрос ${session.index + 1} из ${session.ids.length}</span></div>
+      <div class="question-top ${module.course.toLowerCase()}"><span class="module-tag">${module.id} · ${source}</span><span class="small">Вопрос ${session.index + 1} из ${session.ids.length}</span></div>
       <progress class="progress" value="${session.index + Number(submitted)}" max="${session.ids.length}" aria-label="Отвечено вопросов"></progress>
       <h1 class="question-title" id="question-heading" lang="en">${escapeHtml(question.question)}</h1>
       <p class="small" id="choice-hint">${required > 1 ? `Выбери нужное число ответов (${required}).` : 'Выбери один вариант ответа.'}</p>
